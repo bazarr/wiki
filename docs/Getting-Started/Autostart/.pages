@@ -1,0 +1,6 @@
+nav:
+    - Windows: /Getting-Started/Autostart/Windows/windows
+    - Linux: /Getting-Started/Autostart/Linux/linux
+    - MacOS: /Getting-Started/Autostart/MacOS/macos
+    - FreeBSD: /Getting-Started/Autostart/FreeBSD/freebsd
+

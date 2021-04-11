@@ -1,0 +1,5 @@
+nav:
+    - Home: index.md
+    - Getting-Started
+    - Troubleshooting
+    - Additional-Configuration

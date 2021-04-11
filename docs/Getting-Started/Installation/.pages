@@ -1,0 +1,7 @@
+nav:
+    - Windows: /Getting-Started/Installation/Windows/windows
+    - Docker: /Getting-Started/Installation/Docker/docker
+    - Linux: /Getting-Started/Installation/Linux/linux
+    - MacOS: /Getting-Started/Installation/MacOS/macos
+    - FreeBSD: /Getting-Started/Installation/FreeBSD/freebsd
+    - Synology: /Getting-Started/Installation/Synology/synology
