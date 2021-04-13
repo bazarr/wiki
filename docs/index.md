@@ -1,4 +1,4 @@
-# Bazarr Documentation
+# Bazarr Wiki
 
 [![Discord chat](https://img.shields.io/discord/382221826564030464?style=flat-square&color=4051B5&logo=discord)](https://docs.bazarr.media/discord){:target="_blank" rel="noopener noreferrer"}
 [![GitHub last commit](https://img.shields.io/github/last-commit/morpheus65535/bazarr?color=4051B5&label=Last%20Update&style=flat-square)](https://github.com/morpheus65535/bazarr/commits/master){:target="_blank" rel="noopener noreferrer"}
@@ -7,7 +7,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/morpheus65535/bazarr?color=4051B5&style=flat-square)](https://github.com/morpheus65535/bazarr/pulls){:target="_blank" rel="noopener noreferrer"}
 [![GitHub issues](https://img.shields.io/github/issues/morpheus65535/bazarr?color=4051B5&style=flat-square)](https://github.com/morpheus65535/bazarr/issues){:target="_blank" rel="noopener noreferrer"}
 
-The Bazarr Documentation (aka wiki) should help guide you through installation and setup as well as help resolve common problems and answer frequently asked questions
+The Bazarr Wiki should help guide you through installation and setup as well as help resolve common problems and answer frequently asked questions
 
 ------
 

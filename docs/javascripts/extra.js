@@ -1,4 +1,4 @@
-var gtag_id = "G-ZZKM4MPQXL";
+var gtag_id = "Bazarr-google-auth";
 
 var script = document.createElement("script");
 script.src = "https://www.googletagmanager.com/gtag/js?id=" + gtag_id;
