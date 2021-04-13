@@ -1,5 +1,7 @@
 # Settings
 
+**THIS SECTION IS OUTDATED AND STILL NEEDS TO GET UPDATED !!!**
+
 - [General](#general)
 - [Sonarr](#sonarr)
 - [Radarr](#radarr)
