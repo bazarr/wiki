@@ -324,6 +324,8 @@ Enable this option for automatic subtitles synchronization.
 
 Now wait till Bazarr gets all the info needed from Sonarr/Radarr.
 
+## IMPORTANT
+
 !!! important
 
     **Don't forget [[First time installation configuration]](/Getting-Started/First-time-installation-configuration/) !!!**
