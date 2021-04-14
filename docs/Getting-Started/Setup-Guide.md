@@ -58,10 +58,7 @@ Click on `Enabled`
 
         **Are your subs often out of sync or just bad? Raise the score!**
 
-1. Episodes from series with those tags (case sensitive) in Sonarr will be excluded from automatic download of Subtitles.
-In Sonarr you add a custom tag to a show, in this case the shows with these tags will be ignored by
-
-    Bazarr. examples: `dutch`, `anime`
+1. Episodes from series with those tags (case sensitive) in Sonarr will be excluded from automatic download of Subtitles. In Sonarr you add a custom tag to a show, in this case the shows with these tags will be ignored by Bazarr.
 
 1. Episodes from series with these types in Sonarr will be excluded from automatic download of Subtitles.
 
@@ -153,8 +150,7 @@ Click on `Enabled`
 
         **Are your subs often out of sync or just bad? Raise the score!**
 
-1. Movies with those tags (case sensitive) in Radarr will be excluded from automatic download of Subtitles.
-In Radarr you add a custom tag to a movie.
+1. Movies with those tags (case sensitive) in Radarr will be excluded from automatic download of Subtitles, In Radarr you add a custom tag to a movie.
 
 1. Automatic download of Subtitles will only happen for monitored movies in Radarr.
 
