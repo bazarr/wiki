@@ -11,7 +11,7 @@ bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) a
     ```
 
     and create a `bazarr` directory.
-1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/archive/refs/heads/master.zip)
+1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
 1. Extract the content of the zipped release to the previously created `bazarr` directory
 1. Change Directory To bazarr:
 

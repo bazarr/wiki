@@ -26,7 +26,7 @@ bazarr requires Python 3.7 or greater and can be run from source.
     !!! Attention
         Do not use `C:\Program Files` or `C:\Program Files (x86)` as you could run into strange issues. Something like `C:\bazarr` is a better choice.
 
-1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/archive/refs/heads/master.zip)
+1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
 1. Extract the content of the zipped release to the previously created `bazarr` directory
 1. Go to the bazarr folder:
 

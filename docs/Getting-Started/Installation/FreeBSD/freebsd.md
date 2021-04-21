@@ -21,7 +21,7 @@ Instruction as provided by @Derkades and fixes by @sindreruud
     ```
 
 1. Create a `bazarr` directory
-1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/archive/refs/heads/master.zip)
+1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
 1. Extract the content of the zipped release to the previously created bazarr directory
 
 1. change directory

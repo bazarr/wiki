@@ -22,7 +22,7 @@ thnx to @inquilino for the fixes/updates
   ```
 
 1. Upgrade Python to version 3.7 or greater.
-1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/archive/refs/heads/master.zip)
+1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
 1. Extract the content of the zipped release to the previously created `bazarr` directory
 1. Install Python requirements using:
 
