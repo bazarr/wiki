@@ -1,5 +1,13 @@
 # FAQ
 
+## I've installed Bazarr using Windows Installer and I'm stuck on version 0.9.1. What should I do?
+
+??? faq "I've installed Bazarr using Windows Installer and I'm stuck on version 0.9.1. What should I do?"
+
+    Simply uninstall Bazarr (you won't lose your actual config and DB), download the latest installer from our website and install it. 
+
+    Make sure to adjust the service logon username and password if you did it previously.
+
 ## Where can I find the logs or database
 
 ??? faq "Where can I find the logs or database?"
