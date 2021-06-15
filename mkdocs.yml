@@ -54,6 +54,7 @@ plugins:
         Setup-Guide.md: Getting-Started/Setup-Guide.md
         Installation.md: Getting-Started/Installation/index.md
         Cloud.md: Additional-Configuration/Performance-Tuning.md
+        stats.md: bazarr-stats.md
 
 theme:
   name: material
