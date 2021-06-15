@@ -9,6 +9,9 @@ repo_name: bazarr/wiki
 copyright: Copyright &copy; 2021 Bazarr
 
 extra:
+  analytics:
+    provider: google
+    property: G-SCTEHY8EX0
   manifest: manifest.webmanifest
   social:
     - icon: fontawesome/brands/discord
@@ -18,9 +21,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-
-extra_javascript:
-  - javascripts/extra.js
 
 markdown_extensions:
   - admonition
@@ -42,15 +42,9 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized:
-      type: timeago
+      type: datetime
       locale: en
-      fallback_to_build_date: false
   - awesome-pages
-#  - macros:
-#      j2_block_start_string: "[[%"
-#      j2_block_end_string: "%]]"
-#      j2_variable_start_string: "[["
-#      j2_variable_end_string: "]]"
   - redirects:
       redirect_maps:
         discord.md: https://discord.gg/MH2e2eb
@@ -66,8 +60,6 @@ theme:
   custom_dir: overrides
   features:
     - navigation.instant
-#    - navigation.tabs
-#    - navigation.expand
   language: en
   palette:
     primary: indigo
