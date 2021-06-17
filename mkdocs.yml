@@ -63,11 +63,22 @@ theme:
     - navigation.instant
   language: en
   palette:
-    primary: indigo
-    accent: indigo
-    scheme: default
+    - media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: indigo
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: indigio
+      accent: indigo
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   font:
-    text: "Roboto"
-    code: "Fira Code"
+    text: "Noto Sans"
+    code: "Encode Sans Expanded"
   favicon: img/favicon.png
   logo: img/logo.png
