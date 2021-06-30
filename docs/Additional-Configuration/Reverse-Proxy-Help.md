@@ -2,6 +2,16 @@
 
 ## Using Nginx and /bazarr/ base url
 
+ ```
+ server {
+    # other code here
+
+    # Increase http2 max sizes
+    http2_max_field_size 16k;
+    http2_max_header_size 16k;
+ }
+ ```
+
  ```php
  location /bazarr/ {
     proxy_pass              http://127.0.0.1:6767/bazarr/;
