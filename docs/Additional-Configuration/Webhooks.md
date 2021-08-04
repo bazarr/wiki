@@ -29,4 +29,4 @@ Click on the middle of the screen on ![plex-webhook-icon](images/plex-webhook-ic
 ![!plex-settings-webhook](images/plex-settings-webhook.png)
 
 1. Add the above URL.
-2. Click on `SAVE CHANGES`
+1. Click on `SAVE CHANGES`
