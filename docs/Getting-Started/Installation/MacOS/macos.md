@@ -33,4 +33,4 @@ bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) a
 
 bazarr will run in this Terminal session. Closing the session will stop bazarr. You can start it up again using 3, 4, 6, 7 and 8.
 
-Access bazarr via browser at [https://localhost:6767/](http://localhost:6767/)
+Access bazarr via browser at [http://localhost:6767/](http://localhost:6767/)
