@@ -2,21 +2,14 @@
 
 bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) and can be run from source.
 
+1. Make sure you are logged in to your Mac as an admin user
 1. Install Python from [this link](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg)
-1. Open Terminal
-1. Change Directory To Applications:
+1. Download latest release of Bazarr from [this link](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip) and expand the downloaded .zip file
+1. Place the resulting `bazarr` directory in your /Applications directory
+1. Open Terminal and change directory to `/Applications/bazarr`:
 
     ```bash
-    cd /Applications
-    ```
-
-    and create a `bazarr` directory.
-1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
-1. Extract the content of the zipped release to the previously created `bazarr` directory
-1. Change Directory To bazarr:
-
-    ```bash
-    cd bazarr
+    cd /Applications/bazarr
     ```
 
 1. Install bazarr requirements:
@@ -31,6 +24,6 @@ bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) a
     python3.8 bazarr.py
     ```
 
-bazarr will run in this Terminal session. Closing the session will stop bazarr. You can start it up again using 1, 2, 3 and 5.
+bazarr will run in this Terminal session. Closing the session will stop bazarr. You can start it up again using steps 5 and 7.
 
 Access bazarr via browser at [http://localhost:6767/](http://localhost:6767/)
