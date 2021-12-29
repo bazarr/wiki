@@ -1,6 +1,7 @@
 # Synology
 
-It is recommended to run Bazarr with docker when your NAS supports it. A package is also available from SynoCommunity: https://synocommunity.com/package/bazarr. 
+It is recommended to run Bazarr with docker when your NAS supports it. A package is also available from SynoCommunity: https://synocommunity.com/package/bazarr.
+
 We will try to explain the basics how to setup Bazarr on Synology with Docker.
 
 !!! TIP
