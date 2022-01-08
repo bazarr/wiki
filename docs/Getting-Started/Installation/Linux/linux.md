@@ -33,6 +33,14 @@ thnx to @inquilino for the fixes/updates
     !!! note
         (Raspbian) Don't worry about `lxml` not being installed at this step, you have installed the module through `apt-get` anyway.
 
+    !!! note "Older Raspberry Pi (ARMv6)"
+        On ARMv6 devices (e.g. older Raspberry Pis, find out with `uname -m`), `numpy` installed from pip might contain instruction set that is not compatible with the architecture ([Ref](https://github.com/morpheus65535/bazarr/issues/1671)). The solution is to replace it with the version from apt repository:
+
+        ```bash
+        python3 -m pip uninstall numpy
+        sudo apt-get install python3-numpy
+        ```
+
 1. Change ownership to your preferred user for running programs (replace both instances of `$user`)
 
     ```bash
