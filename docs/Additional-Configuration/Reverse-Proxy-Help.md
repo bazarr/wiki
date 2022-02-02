@@ -7,8 +7,7 @@
     # other code here
 
     # Increase http2 max sizes
-    http2_max_field_size 16k;
-    http2_max_header_size 16k;
+    large_client_header_buffers 4 16k;
  }
  ```
 
