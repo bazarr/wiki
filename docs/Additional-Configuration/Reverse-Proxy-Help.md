@@ -48,7 +48,7 @@
                 Satisfy Any
         </Proxy
 
-    ProxyPass "/bazarr/ "http://127.0.0.1:6767/bazarr/"
+    ProxyPass "/bazarr/" "http://127.0.0.1:6767/bazarr/"
     ProxyPassReverse "/bazarr/" "http://127.0.0.1:6767/bazarr/"
 
 </VirtualHost
