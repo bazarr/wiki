@@ -1,6 +1,6 @@
 # Bazarr Wiki
 
-[![Discord chat](https://img.shields.io/discord/382221826564030464?style=flat-square&color=4051B5&logo=discord)](https://docs.bazarr.media/discord){:target="_blank" rel="noopener noreferrer"}
+[![Discord chat](https://img.shields.io/discord/382221826564030464?style=flat-square&color=4051B5&logo=discord)](https://wiki.bazarr.media/discord){:target="_blank" rel="noopener noreferrer"}
 [![GitHub last commit](https://img.shields.io/github/last-commit/morpheus65535/bazarr?color=4051B5&label=Last%20Update&style=flat-square)](https://github.com/morpheus65535/bazarr/commits/master){:target="_blank" rel="noopener noreferrer"}
 [![GitHub stars](https://img.shields.io/github/stars/morpheus65535/bazarr?color=4051B5&label=GitHub%20stars&style=flat-square)](https://github.com/morpheus65535/bazarr/stargazers){:target="_blank" rel="noopener noreferrer"}
 [![GitHub contributors](https://img.shields.io/github/contributors/morpheus65535/bazarr?color=4051B5&style=flat-square)](https://github.com/morpheus65535/bazarr/graphs/contributors){:target="_blank" rel="noopener noreferrer"}
@@ -13,7 +13,7 @@ The Bazarr Wiki should help guide you through installation and setup as well as 
 
 ## Support
 
-[![Discord chat](https://img.shields.io/discord/382221826564030464?style=for-the-badge&color=4051B5&logo=discord)](https://docs.bazarr.media/discord){:target="_blank" rel="noopener noreferrer"}
+[![Discord chat](https://img.shields.io/discord/382221826564030464?style=for-the-badge&color=4051B5&logo=discord)](https://wiki.bazarr.media/discord){:target="_blank" rel="noopener noreferrer"}
 
 For a problem or question we suggest using [Discord](https://discord.gg/MH2e2eb){:target="_blank" rel="noopener noreferrer"}, Click the chat badge to join the Discord Channel where you can ask your questions directly.
 
