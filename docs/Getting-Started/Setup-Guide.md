@@ -118,7 +118,7 @@ Click on `Enabled`
 ![!Radarr](images/qs-radarr.png)
 
 1. Enable Radarr.
-1. Enter the hostname or the IP address of the computer running your Sonarr instance.
+1. Enter the hostname or the IP address of the computer running your Radarr instance.
 
     !!! info
 
