@@ -7,7 +7,7 @@ Do you need help or want to report a problem or a bug? You can do that several w
 
 ## But before asking for help or reporting a problem
 
-- Make sure you have searched the wiki and the especially the [[FAQ]](/Troubleshooting/FAQ/).
+- Make sure you have searched the wiki and especially the [[FAQ]](/Troubleshooting/FAQ/).
 - Provide us with as much info as possible.
 - Clearly describe the problem.
 - Briefly describe your setup.
@@ -17,8 +17,8 @@ Do you need help or want to report a problem or a bug? You can do that several w
 - Tell us what you've tried already.
 - Use the [[Logging and Log Files]](/Troubleshooting/Logging-and-Log-Files/) wiki article how to enable debug logging and where to find them, how to provide them !!!
 
-!!! attention
+## Attention !!!
 
-    - **Don't use screenshots of log files.**
-    - **Don't copy/paste log files in the channel without the use of [code blocks](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-) we still prefer links pastebin or similar to the logs**.
-    - **Don't just dump the `bazarr.log` in the channel, Nobody wants to download logs and open them in notepad!**
+- **Don't use screenshots of log files.**
+- **Don't copy/paste log files in the channel without the use of [code blocks](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-) we still prefer links pastebin or similar to the logs**.
+- **Don't just dump the `bazarr.log` in the channel, Nobody wants to download logs and open them in notepad!**
