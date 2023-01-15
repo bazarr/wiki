@@ -53,4 +53,39 @@ thnx to @inquilino for the fixes/updates
     python3 bazarr.py
     ```
 
+1. systemctl auto start service using virtual env
+   1. setup virtual env
+      * `sudo apt install python3-virtualenv` install virtual env
+      * `sudo virtualenv -p python3 /opt/venv/bazarr`
+      * `sudo unzip ~/Downloads/bazarr.zip -d /opt/venv/bazarr/install` unzip download to install location
+      * `sudo chown -R bazarr:bazarr /opt/venv/bazarr/install` setup permissions
+      * `cd /opt/venv/bazarr`
+      * `source bin/activate` activate venv
+      * (venv) `cd install`
+      * (venv) `sudo python3 -m pip install -r requirements.txt` install requirements
+      * (venv) `python3 bazarr.py` run bazarr in virtual env
+   1. setup service to auto start
+      * `sudo touch /etc/systemd/system/bazarr.service` init service file
+      * populate contents with
+      * ```properties
+        [Unit]
+        Description=Bazarr Daemon
+        After=syslog.target network.target
+
+        [Service]
+        User=bazarr
+        Group=bazarr
+        UMask=0003
+
+        Type=simple
+        WorkingDirectory=/opt/venv/bazarr
+        ExecStart=/opt/venv/bazarr/bin/python3 /opt/venv/bazarr/install/bazarr.py
+        Restart=on-abort
+
+        [Install]
+        WantedBy=multi-user.target
+        ```
+      * `systemctl status bazarr` check service status
+      * `systemctl restart bazarr` start/ restart bazarr, run status and check for errors to fix and try again.
+
 1. Open your browser and go to [http://localhost:6767/](http://localhost:6767/)
