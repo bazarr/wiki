@@ -27,3 +27,5 @@ bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) a
 bazarr will run in this Terminal session. Closing the session will stop bazarr. You can start it up again using steps 5 and 7.
 
 Access bazarr via browser at [http://localhost:6767/](http://localhost:6767/)
+
+Please see the [autostart page](../../Autostart/MacOS/macos.md) for launch agents configuration instructions.

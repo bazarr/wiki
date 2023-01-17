@@ -23,3 +23,5 @@
     ```bash
     /usr/local/etc/rc.d/bazarr start
     ```
+
+Please see the [autostart page](../../Autostart/FreeBSD/freebsd.md) for rc configuration instructions.

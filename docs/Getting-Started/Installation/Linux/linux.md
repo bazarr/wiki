@@ -54,3 +54,5 @@ thnx to @inquilino for the fixes/updates
     ```
 
 1. Open your browser and go to [http://localhost:6767/](http://localhost:6767/)
+
+Please see the [autostart page](../../Autostart/Linux/linux.md) for systemd/upstart configuration instructions.
