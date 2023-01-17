@@ -1,7 +1,7 @@
 nav:
     - Windows:
-        - Installer: installer.md
-        - From sources: source.md
+        - Installer: /Getting-Started/Installation/Windows/installer
+        - From sources: /Getting-Started/Installation/Windows/source
     - Docker: /Getting-Started/Installation/Docker/docker
     - Linux: /Getting-Started/Installation/Linux/linux
     - MacOS: /Getting-Started/Installation/MacOS/macos
