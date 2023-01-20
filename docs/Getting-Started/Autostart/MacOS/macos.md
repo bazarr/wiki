@@ -11,7 +11,7 @@ cd /Users/<user name>/Library/LaunchAgents
 nano com.github.morpheus65535.bazarr.plist
 ```
 
-Paste the following into the document and change the location of the logs to `/Users/<user_name>/`: 
+Paste the following into the document and change the location of the logs to `/Users/<user_name>/`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
