@@ -1,4 +1,6 @@
-# Starting with v1.1.5-beta.8, Bazarr can be configured to use Postgres as database engine
+# PostgreSQL Database
+
+Starting with v1.1.5-beta.8, Bazarr can be configured to use Postgres as database engine
 
 ## Database instance deployment
 
