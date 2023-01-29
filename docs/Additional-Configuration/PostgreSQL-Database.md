@@ -1,6 +1,7 @@
-# Starting with v1.1.5-beta.8, Bazarr can be configured to use Postgres as database engine.
+# Starting with v1.1.5-beta.8, Bazarr can be configured to use Postgres as database engine
 
 ## Database instance deployment
+
 First, we need a Postgres instance. This guide is written for usage of the postgres:14 Docker image, but earlier version can be used if it's version >= 9.
 
 _Do not even think about using the latest tag!_
@@ -14,8 +15,9 @@ docker create --name=postgres14 \
     -v /path/to/appdata/postgres14:/var/lib/postgresql/data \
     postgres:14
 ```
-    
+
 ## Database creation
+
 Bazarr needs one database. For example: `bazarr`
 
 You can give the databases any name you want but make sure config.ini file has the correct names.
@@ -23,6 +25,7 @@ You can give the databases any name you want but make sure config.ini file has t
 Bazarr will not create the databases for you. Make sure you create it with your favourite tool before trying to start Bazarr.
 
 ## Schema creation
+
 We need to tell Bazarr to use Postgres. The config.ini should already be populated with the entries we need:
 
 ```
@@ -38,9 +41,11 @@ password = _<postgres_password>_
 If you do not want to migrate an existing SQLite database to Postgres then you have already reached the end of this guide and you can simply start Bazarr!
 
 ## Data migration
+
 Once the database has been created, you can start the Bazarr migration from SQLite to Postgres. Make sure that your SQLite database has been used with Bazarr 1.1.5 or greater prior to migration.
 
 To migrate data we can use PGLoader. It does, however, have some gotchas:
+
 1. By default, transactions are case-insensitive, we use --with "quote identifiers" to make them case-sensitive.
 1. The version packaged in Debian and Ubuntu's apt repo are too old for newer versions of Postgres (Roxedus has not tested packages in other distros).
 1. Roxedus built a binary to enable this support (no code modification was needed, simply had to be built with updated dependencies).
