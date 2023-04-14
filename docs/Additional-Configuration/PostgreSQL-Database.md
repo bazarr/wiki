@@ -40,6 +40,8 @@ username = _<postgres_username>_
 password = _<postgres_password>_
 ```
 
+Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USERNAME` and `POSTGRES_PASSWORD`. These take precedence over the `config.ini` settings.
+
 If you do not want to migrate an existing SQLite database to Postgres then you have already reached the end of this guide and you can simply start Bazarr!
 
 ## Data migration
