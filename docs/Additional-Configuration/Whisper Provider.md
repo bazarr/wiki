@@ -40,7 +40,7 @@ services:
     environment:
       - ASR_MODEL=small
     ports:
-      - 127.0.0.1:9000:9000
+      - 9000:9000
     restart: unless-stopped
 ```
 
@@ -63,7 +63,7 @@ services:
     environment:
       - ASR_MODEL=small
     ports:
-      - 127.0.0.1:9000:9000
+      - 9000:9000
     deploy:
       resources:
         reservations:
