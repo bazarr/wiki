@@ -1,4 +1,4 @@
-## Contributing to the Wiki
+# Contributing to the Wiki
 
 To preview what the wiki will look like, create a new venv and run these commands:
 
