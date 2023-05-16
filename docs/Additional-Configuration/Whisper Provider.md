@@ -24,13 +24,13 @@ Change ASR_MODEL to use the model you like.
 #### CPU
 
 ```
-docker run -d -p 9000:9000 -e ASR_MODEL=base alexyancey/openai-whisper-asr-webservice:latest
+docker run -d -p 9000:9000 -e ASR_MODEL=base onerahmet/openai-whisper-asr-webservice:latest
 ```
 
 #### GPU
 
 ```
-docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base alexyancey/openai-whisper-asr-webservice:latest-gpu
+docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base onerahmet/openai-whisper-asr-webservice:latest-gpu
 ```
 
 ### Bazarr Configuration
