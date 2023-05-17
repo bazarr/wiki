@@ -16,20 +16,17 @@ Larger models are more accurate but take longer. Choose the largest model which 
 | medium | ~5 GB         | ~2x            |
 | large  | ~10 GB        | ~1x            |
 
-
 ## Docker Installation
 
 Change ASR_MODEL to use the model you like.
 
-### CPU
-
-#### Docker CLI
+### CPU - Docker CLI
 
 ```
 docker run -d -p 9000:9000 -e ASR_MODEL=base onerahmet/openai-whisper-asr-webservice:latest
 ```
 
-#### Docker Compose
+### CPU - Docker Compose
 
 ```
 ---
@@ -44,15 +41,13 @@ services:
     restart: unless-stopped
 ```
 
-### GPU
-
-#### Docker CLI
+### GPU - Docker CLI
 
 ```
 docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base onerahmet/openai-whisper-asr-webservice:latest-gpu
 ```
 
-#### Docker Compose
+### GPU - Docker Compose
 
 ```
 ---
@@ -73,7 +68,6 @@ services:
               capabilities: [gpu]
     restart: unless-stopped
 ```
-
 
 ## Bazarr Configuration
 
