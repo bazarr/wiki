@@ -1,0 +1,7 @@
+nav:
+    - Windows: windows.md
+    - MacOS: macos.md
+    - Linux: linux.md
+    - FreeBSD: freebsd.md
+    - Docker: docker.md
+    - Synology: synology.md

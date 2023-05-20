@@ -1,6 +1,7 @@
 nav:
     - Home: index.md
     - Getting-Started
+    - Getting-Started-New
     - Troubleshooting
     - Additional-Configuration
     - Bazarr Usage Stats: bazarr-stats.md
