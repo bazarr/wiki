@@ -47,7 +47,6 @@ You can install Bazarr either by using the automated installer or by running it 
     1. Start Bazarr:
 
         ```shell
-
         python bazarr.py
         ```
 

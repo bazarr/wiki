@@ -4,7 +4,6 @@
 
 - Python >= 3.7
 
-
 === "Ubuntu"
 
     ```shell
@@ -24,8 +23,8 @@
     sudo apt-get update
     sudo apt-get install libxml2-dev libxslt1-dev python3-dev python3-libxml2 python3-lxml unrar-free ffmpeg libatlas-base-dev
     ```
-## Installation
 
+## Installation
 
 !!! info
     In this guide you are installing bazaar in `/opt/bazaar` for the user `bazaar` and the group `media`.
@@ -34,37 +33,36 @@
 
 1. Create the `bazarr` directory and grant permissions for `bazaar` user and `media` group:
 
-    ```shell
-    sudo mkdir /opt/bazarr
-    sudo chown -R bazaar:media /opt/bazarr
-    ```
+   ```shell
+   sudo mkdir /opt/bazarr
+   sudo chown -R bazaar:media /opt/bazarr
+   ```
 
 1. Download bazaar.zip and extract the contents:
 
-    ```shell
-    curl -L "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
-    sudo unzip bazarr.zip -d /opt/bazaar
+   ```shell
+   curl -L "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
+   sudo unzip bazarr.zip -d /opt/bazaar
 
-    ```
+   ```
 
 1. Install Python requirements:
 
-    ```shell
-    python3 -m pip install -r /opt/bazarr/requirements.txt
-    ```
+   ```shell
+   python3 -m pip install -r /opt/bazarr/requirements.txt
+   ```
 
 1. You can now start Bazarr manually using the following command:
 
-    ```shell
-    python3 /opt/bazarr.py
-    ```
+   ```shell
+   python3 /opt/bazarr.py
+   ```
 
 1. To access the bazaar UI, open your browser and go to [http://localhost:6767/](http://localhost:6767/).
 
-:partying_face: Congratulations - you now have a working installation of bazaar!
+Congratulations - you now have a working installation of bazaar!
 
 ## Autostart
-
 
 === "Systemd"
 
@@ -114,6 +112,7 @@
         ```shell
         sudo systemctl enable bazarr
         ```
+
 === "Upstart"
 
     ```shell

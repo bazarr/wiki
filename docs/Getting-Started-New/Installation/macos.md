@@ -2,7 +2,7 @@
 
 ## Requirements and dependencies
 
-* Python >= 3.7
+- Python >= 3.7
 
 [comment]: <> (Is this up to date? Is true for Python > 3.8?)
 
@@ -12,25 +12,26 @@
 1. Install Python from [this link](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg)
 
 [comment]: <> (Does Python have to be this specific version or is this outdated?)
+
 1. Download latest release of Bazarr from [this link](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip) and expand the downloaded .zip file
 1. Place the resulting `bazarr` directory in your `/Applications` directory
 1. Open Terminal and change directory to `/Applications/bazarr`:
 
-    ```bash
-    cd /Applications/bazarr
-    ```
+   ```shell
+   cd /Applications/bazarr
+   ```
 
 1. Install Bazarr requirements:
 
-    ```bash
-    python3.8 -m pip install -r requirements.txt
-    ```
+   ```shell
+   python3.8 -m pip install -r requirements.txt
+   ```
 
 1. Run Bazarr:
 
-    ```bash
-    python3.8 bazarr.py
-    ```
+   ```shell
+   python3.8 bazarr.py
+   ```
 
 Bazarr will run in this Terminal session. Closing the session will stop Bazarr. You can start it up again using steps 5 and 7.
 
@@ -42,7 +43,7 @@ Access Bazarr via browser at [http://localhost:6767/](http://localhost:6767/)
 
 From terminal:
 
-```bash
+```shell
 cd /Users/<user name>/Library/LaunchAgents
 nano com.github.morpheus65535.bazarr.plist
 ```
@@ -73,19 +74,18 @@ Paste the following into the document and change the location of the logs to `/U
 </plist>
 ```
 
-1. Save the document. You should receive a notification that “_Software from ‘Ned Daily’ added items that can run in the background”. This is totally normal.
+1. Save the document. You should receive a notification that “\_Software from ‘Ned Daily’ added items that can run in the background”. This is totally normal.
 
-2. To verify everything works, run to start Bazarr: 
+2. To verify everything works, run to start Bazarr:
 
-    ```shell
-    launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
-    ```
+   ```shell
+   launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
+   ```
 
-3. Run to stop Bazarr: 
-    ```shell
-    launchctl unload /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
-    ```
-
+3. Run to stop Bazarr:
+   ```shell
+   launchctl unload /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
+   ```
 
 ### Create the App
 
@@ -94,10 +94,10 @@ Paste the following into the document and change the location of the logs to `/U
 1. Choose type _Application_
 1. In the search bar, search for _Shell_
 1. Choose _Run Shell Script_
-1. Remove the contents of the shell script and paste: 
-    ```shell
-    launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
-    ```
+1. Remove the contents of the shell script and paste:
+   ```shell
+   launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
+   ```
 1. Go to the _File_ menu and choose _Save_
 1. Name the file _Bazarr.app_ and save it in _Applications_
 

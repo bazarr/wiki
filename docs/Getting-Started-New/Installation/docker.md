@@ -1,6 +1,5 @@
 # Docker
 
-
 !!! WARNING
 
     **You CANNOT store your config directory over an NFS share as it is unsupported by SQLITE. You'll face a locked database error.**
@@ -30,12 +29,9 @@ Feel free to use any of the following well maintained images, in no particular o
     - Versioned tags: `v0.8.3.4-ls59` and `600ef3ab-ls62`
     - Updates: `regular and timely application updates`
     - Configuration files for Bazarr are stored in `/config`.
-    
+
     ```bash
     linuxserver/bazarr
     ```
 
-!!! info
-    For more info on how to configure the images, info about their used tags and their correlation to bazarr branches, visit their respective Docker pages.
-
-
+For more info on how to configure the images, info about their used tags and their correlation to bazarr branches, visit their respective Docker pages.
