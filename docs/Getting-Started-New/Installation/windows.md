@@ -44,7 +44,7 @@ You can install Bazarr either by using the automated installer or by running it 
         cd bazarr
         pip install -r requirements.txt
         ```
-        
+
     1. Start Bazarr:
 
         ```shell

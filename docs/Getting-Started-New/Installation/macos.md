@@ -100,7 +100,7 @@ Paste the following into the document and change the location of the logs to `/U
    ```shell
    launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
    ```
-   
+
 1. Go to the _File_ menu and choose _Save_
 1. Name the file _Bazarr.app_ and save it in _Applications_
 
