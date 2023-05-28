@@ -76,13 +76,14 @@ Paste the following into the document and change the location of the logs to `/U
 
 1. Save the document. You should receive a notification that “\_Software from ‘Ned Daily’ added items that can run in the background”. This is totally normal.
 
-2. To verify everything works, run to start Bazarr:
+1. To verify everything works, run to start Bazarr:
 
    ```shell
    launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
    ```
 
-3. Run to stop Bazarr:
+1. Run to stop Bazarr:
+
    ```shell
    launchctl unload /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
    ```
@@ -95,9 +96,11 @@ Paste the following into the document and change the location of the logs to `/U
 1. In the search bar, search for _Shell_
 1. Choose _Run Shell Script_
 1. Remove the contents of the shell script and paste:
+
    ```shell
    launchctl load /Users/<user name>/Library/LaunchAgents/com.github.morpheus65535.bazarr.plist
    ```
+   
 1. Go to the _File_ menu and choose _Save_
 1. Name the file _Bazarr.app_ and save it in _Applications_
 

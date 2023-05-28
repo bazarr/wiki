@@ -31,6 +31,7 @@ You can install Bazarr either by using the automated installer or by running it 
     1. Make your that Python directory is included in the system PATH variable.
     1. Download the latest release of Bazarr [from here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip).
     1. Create a directory for your Bazarr installation.
+
         ```cmd
         mkdir C:\bazaar
         ```
@@ -42,8 +43,8 @@ You can install Bazarr either by using the automated installer or by running it 
         ```shell
         cd bazarr
         pip install -r requirements.txt
-
         ```
+        
     1. Start Bazarr:
 
         ```shell

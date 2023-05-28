@@ -27,7 +27,7 @@
 ## Installation
 
 !!! info
-    In this guide you are installing bazaar in `/opt/bazaar` for the user `bazaar` and the group `media`.
+In this guide you are installing bazaar in `/opt/bazaar` for the user `bazaar` and the group `media`.
 
     Change this configuration accordingly.
 
