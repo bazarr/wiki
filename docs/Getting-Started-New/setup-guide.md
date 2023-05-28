@@ -40,7 +40,7 @@ After installing Bazarr, open [http://0.0.0.0:6767](http://0.0.0.0:6767).
 
 Bazarr starts searching for matching subtitles once a language profile is assigned to a movie / series.
 
-[comment]: <> (What about new movies, do they really need to be added manually?)
+[comment]: <> (Reference "Default" option for a language profile, needs updated settings page.)
 
 1. Create a language profile.
 1. Open Bazarr on [http://0.0.0.0:6767/](http://0.0.0.0:6767/) and navigate to `movies` / `series`.

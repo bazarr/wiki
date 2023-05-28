@@ -7,9 +7,9 @@ You can install Bazarr either by using the automated installer or by running it 
     Installing and running Bazarr comes with some caveats:
 
     !!! warning
-        1. If you install Bazarr in the `Program Files` directory, the account under which it runs **must have administrative privileges** for Bazarr to be able to update itself.
-        2. Bazarr is running as a Windows service. **Microsoft Windows doesn't support using mapped network drives for process running as a service.** You must either switch to UNC path for your Sonarr/Radarr root folders or use Bazarr path mapping to circumvent that.
-        3. **Please keep in mind that, by default, the Bazarr service will run under Local System account that won't be able to access network shares. You need to change the account used for Bazarr service in `services.msc` console.**
+        1. If you install Bazarr in the `Program Files` directory, the account under which it runs must have administrative privileges for Bazarr to be able to update itself.
+        2. Bazarr is running as a Windows service. Microsoft Windows doesn't support using mapped network drives for process running as a service. You must either switch to UNC path for your Sonarr/Radarr root folders or use Bazarr path mapping to circumvent that.
+        3. Please keep in mind that, by default, the Bazarr service will run under Local System account that won't be able to access network shares. You need to change the account used for Bazarr service in `services.msc` console.
         4. The start menu shortcut (it opens the web UI) won't work anymore if you change Bazarr listening port or IP address.
         5. Bazarr settings, logs and db are stored in `C:\ProgramData\Bazarr`. Keep in mind you'll need to change permission on this directory if you change Bazarr service account to something else than System.
 
@@ -36,7 +36,7 @@ You can install Bazarr either by using the automated installer or by running it 
         ```
 
         [comment]: <> (Why shouldnt you install to `C:\Program Files` or `C:\Program Files (x86)`?)
-    1. Extract `bazarr.zip`s contents to the newly created directory.
+    1. Extract `bazarr.zip` contents to the newly created directory.
     1. Open CMD, navigate to your Bazarr folder and install the Python requirements:
 
         ```shell

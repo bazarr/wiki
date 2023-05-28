@@ -14,7 +14,7 @@
    pkg update && pkg install bazarr
    ```
 
-[comment]: <> (In the other guides Bazarr is usually ran manually - is there an equivalent in BSD as well?)
+[comment]: <> (Consistency: In the other guides Bazarr is usually ran manually - is there an equivalent in BSD as well?)
 
 ## Autostart
 
