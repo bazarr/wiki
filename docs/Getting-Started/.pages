@@ -1,5 +1,3 @@
 nav:
     - Installation
-    - Setup Guide: Setup-Guide.md
-    - First time installation configuration: First-time-installation-configuration.md
-    - Autostart
+    - Setup Guide: setup-guide.md
