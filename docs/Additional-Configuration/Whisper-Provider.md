@@ -4,6 +4,8 @@ Whisper (based on [OpenAI Whisper](https://github.com/openai/whisper)) uses a ne
 
 Whisper supports transcribing in many languages as well as translating from a language to English. The provider works best when it knows the audio language ahead of time. Make sure the 'Deep analyze media file to get audio tracks language' option is enabled to ensure the best results.
 
+Minimum score must be lowered if you want whisper generated subtitles to be automatically "downloaded" because they have a fixed score which is 241/360 (~67%) for episodes and 61/120 (~51%) for movies.
+
 ## Choosing a Model
 
 Larger models are more accurate but take longer. Choose the largest model which you are comfortable with and your CPU/GPU can handle
