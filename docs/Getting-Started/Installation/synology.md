@@ -31,11 +31,9 @@ Then use a program like Putty and SSH to your Synology:
 This will show your UID / PUID (`1026` in the screenshot) and your GID / PGID (`101` in the screenshot) for you admin.
 
 !!! Info
-
     _yes we know it's not recommended to use the admin account but if you already know this then you wouldn't need to read this_ ;)
 
 [comment]: <> (Why is it not recommended to use the admin account? Is there an alternative?)
-
 ## Installation
 
 === "Synology GUI"
@@ -50,7 +48,7 @@ This will show your UID / PUID (`1026` in the screenshot) and your GID / PGID (`
 
         **General**:
 
-        - Container name: bazarr
+        - Container name: bazaar
         - Execute container using high privilege: Ticked
         [comment]: <> ("not sure if it's needed but you can test that later yourself" Is it really needed?)
 
