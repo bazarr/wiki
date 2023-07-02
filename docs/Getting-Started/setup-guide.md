@@ -6,7 +6,7 @@ In this guide we go over essential settings for running `Bazarr` with `Radarr` /
 - we define a language profile
 
 !!! info
-It's assumed that both services run with their default configuration.
+    It's assumed that both services run with their default configuration.
 
     [comment]: <> (add extra pages going more in-depth in regards to caveats when using Docker, reverse Proxies, SSL)
 
@@ -18,7 +18,7 @@ After installing Bazarr, open [http://0.0.0.0:6767](http://0.0.0.0:6767).
 
 === "Sonarr"
 
-    The default configuration of Bazarr matches the default Sonarr settings.
+    The default configuration of Bazaar matches the default Sonarr settings.
 
     1. Navigate to `Settings` > `Sonarr`
     1. Enable the `Use Sonarr` toggle.
@@ -28,7 +28,7 @@ After installing Bazarr, open [http://0.0.0.0:6767](http://0.0.0.0:6767).
 
 === "Radarr"
 
-    The default configuration of Bazarr matches the default Sonarr settings.
+    The default configuration of Bazaar matches the default Sonarr settings.
 
     1. Navigate to `Settings` > `Radarr`
     1. Enable the `Use Radarr` toggle.

@@ -27,22 +27,22 @@
 ## Installation
 
 !!! info
-In this guide you are installing Bazarr in `/opt/bazarr` for the user `bazarr` and the group `media`.
+In this guide you are installing bazaar in `/opt/bazaar` for the user `bazaar` and the group `media`.
 
     Change this configuration accordingly.
 
-1. Create the `bazarr` directory and grant permissions for `bazarr` user and `media` group:
+1. Create the `bazarr` directory and grant permissions for `bazaar` user and `media` group:
 
    ```shell
    sudo mkdir /opt/bazarr
-   sudo chown -R bazarr:media /opt/bazarr
+   sudo chown -R bazaar:media /opt/bazarr
    ```
 
-1. Download bazarr.zip and extract the contents:
+1. Download bazaar.zip and extract the contents:
 
    ```shell
    curl -L "https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip"
-   sudo unzip bazarr.zip -d /opt/bazarr
+   sudo unzip bazarr.zip -d /opt/bazaar
 
    ```
 
@@ -58,9 +58,9 @@ In this guide you are installing Bazarr in `/opt/bazarr` for the user `bazarr` a
    python3 /opt/bazarr.py
    ```
 
-1. To access the Bazarr UI, open your browser and go to [http://localhost:6767/](http://localhost:6767/).
+1. To access the bazaar UI, open your browser and go to [http://localhost:6767/](http://localhost:6767/).
 
-Congratulations - you now have a working installation of Bazarr!
+Congratulations - you now have a working installation of bazaar!
 
 ## Autostart
 
@@ -79,7 +79,7 @@ Congratulations - you now have a working installation of Bazarr!
 
         [Service]
         WorkingDirectory=/opt/bazarr/
-        User=bazarr
+        User=bazaar
         Group=media
         UMask=0002
         Restart=on-failure

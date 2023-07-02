@@ -33,7 +33,7 @@ You can install Bazarr either by using the automated installer or by running it 
     1. Create a directory for your Bazarr installation.
 
         ```cmd
-        mkdir C:\bazarr
+        mkdir C:\bazaar
         ```
 
         [comment]: <> (Why shouldnt you install to `C:\Program Files` or `C:\Program Files (x86)`?)
