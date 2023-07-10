@@ -27,7 +27,7 @@ thnx to @inquilino for the fixes/updates
     ```shell
     wget https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip
     ```
-   
+
 1. Create the `bazarr` directory
 
     ```shell
@@ -41,7 +41,7 @@ thnx to @inquilino for the fixes/updates
     ```
 
 1. cd into /opt/bazarr and install Python requirements:
-  
+
     ```python
     python3 -m pip install -r requirements.txt
     ```
