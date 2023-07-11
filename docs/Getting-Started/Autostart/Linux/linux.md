@@ -10,7 +10,13 @@
 
 This is a systemd service file created by users of Bazarr. It assumes you've installed Bazarr in: `/opt/bazarr`.
 
-You have to create a `bazarr.service` file in `/etc/systemd/system` that would contain the following text:
+You have to create a `bazarr.service` file in `/etc/systemd/system`:
+
+```bash
+sudo nano /etc/systemd/system/bazarr.service
+```
+
+Copy and paste the following text to the service file:
 
 ```php
 [Unit]
@@ -37,11 +43,23 @@ ExecStartPre=/bin/sleep 30
 WantedBy=multi-user.target
 ```
 
-Start the service using `sudo systemctl start bazarr`
+Start the service:
 
-Check if the service is running using `sudo systemctl status bazarr`
+```bash
+sudo systemctl start bazarr
+```
 
-If it's running without errors then you need to enable the service using `sudo systemctl enable bazarr`
+Check if the service is running:
+
+```bash
+sudo systemctl status bazarr
+```
+
+If it's running without errors then you need to enable the service:
+
+```bash
+sudo systemctl enable bazarr
+```
 
 ## Upstart script for Debian Ubuntu
 
