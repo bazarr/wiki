@@ -37,7 +37,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - lightgallery
 
 plugins:
   - search
@@ -45,6 +44,7 @@ plugins:
       type: datetime
       locale: en
   - awesome-pages
+  - glightbox
   - redirects:
       redirect_maps:
         discord.md: https://discord.gg/MH2e2eb
