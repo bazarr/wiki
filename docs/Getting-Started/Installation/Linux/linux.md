@@ -21,7 +21,7 @@ thnx to @inquilino for the fixes/updates
   sudo apt-get install libxml2-dev libxslt1-dev python3-dev python3-libxml2 python3-lxml unrar-free ffmpeg libatlas-base-dev
   ```
 
-1. Upgrade Python to version 3.7 or greater.
+1. Upgrade Python to version 3.8 or greater.
 1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)
 
     ```shell

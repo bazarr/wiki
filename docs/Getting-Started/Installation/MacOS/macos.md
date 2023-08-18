@@ -1,6 +1,6 @@
 # MacOS
 
-bazarr requires Python 3.7.x or 3.8.x (**system Python 2.7.10 not supported**) and can be run from source.
+bazarr requires Python 3.8 or greater and can be run from source.
 
 1. Make sure you are logged in to your Mac as an admin user
 1. Install Python from [this link](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg)
