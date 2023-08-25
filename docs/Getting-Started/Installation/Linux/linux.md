@@ -3,7 +3,7 @@
 ## (Ubuntu / Debian) Install requirements with
 
   ```bash
-  apt-get install python3-dev python3-pip python3-distutils unrar
+  apt-get install python3-dev python3-pip python3-distutils unrar unzip
   ```
 
 ## (Fedora / CentOS) Install requirements with
