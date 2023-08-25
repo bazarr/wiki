@@ -3,7 +3,7 @@
 ## (Ubuntu / Debian) Install requirements with
 
   ```bash
-  apt-get install python3-dev python3-pip python3-distutils
+  apt-get install python3-dev python3-pip python3-distutils unrar
   ```
 
 ## (Fedora / CentOS) Install requirements with
@@ -40,7 +40,12 @@ thnx to @inquilino for the fixes/updates
     sudo unzip bazarr.zip -d /opt/bazarr
     ```
 
-1. cd into /opt/bazarr and install Python requirements:
+1. cd into /opt/bazarr
+    ```shell
+    cd /opt/bazarr
+    ```
+
+1. Install the Python requirements:
 
     ```python
     python3 -m pip install -r requirements.txt
@@ -57,10 +62,10 @@ thnx to @inquilino for the fixes/updates
         sudo apt-get install python3-numpy
         ```
 
-1. Change ownership to your preferred user for running programs (replace both instances of `$user`)
+1. Change ownership to your preferred user for running programs (replace both instances of `$USER`, or leave it to change ownership to current user)
 
     ```bash
-    sudo chown -R $user:$user /opt/bazarr
+    sudo chown -R $USER:$USER /opt/bazarr
     ```
 
 1. You can now start bazarr using the following command:
