@@ -41,6 +41,7 @@ thnx to @inquilino for the fixes/updates
     ```
 
 1. cd into /opt/bazarr
+
     ```shell
     cd /opt/bazarr
     ```
