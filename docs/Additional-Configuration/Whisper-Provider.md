@@ -1,5 +1,7 @@
 # Whisper Provider Setup
 
+Note: Whisper is capable of **transcribing** many languages, but can only **translate** a language into English. It does not support translating to other languages.
+
 Whisper (based on [OpenAI Whisper](https://github.com/openai/whisper)) uses a neural network powered by your CPU or NVIDIA graphics card to generate subtitles for your media.
 
 Whisper supports transcribing in many languages as well as translating from a language to English. The provider works best when it knows the audio language ahead of time. Make sure the 'Deep analyze media file to get audio tracks language' option is enabled to ensure the best results.
