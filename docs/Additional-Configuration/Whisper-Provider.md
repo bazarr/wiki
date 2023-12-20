@@ -99,5 +99,5 @@ When Bazarr doesn't know the language of the media you're trying to get subtitle
 Bazarr's implementation of Whisper is still in early stages. If you have any issues, follow these instructions:
 
 * Enable debug logging
-* Join the Bazarr discord and post your logs, and a description of the problem on the #support channel
+* Join the Bazarr discord and post your logs, and a description of the problem on the #whisper channel
 * Include an @Alex mention to get my attention
