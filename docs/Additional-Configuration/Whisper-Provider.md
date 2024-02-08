@@ -32,7 +32,7 @@ Change ASR_MODEL to use the model you like, and change ASR_ENGINE to select the 
 ### CPU - Docker CLI
 
 ```
-docker run -d -p 9000:9000 -e ASR_MODEL=small ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest
+docker run -d -p 9000:9000 -e ASR_MODEL=small -e ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest
 ```
 
 ### CPU - Docker Compose
@@ -54,7 +54,7 @@ services:
 ### GPU - Docker CLI
 
 ```
-docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=small ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
+docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=small -e ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
 ```
 
 ### GPU - Docker Compose
