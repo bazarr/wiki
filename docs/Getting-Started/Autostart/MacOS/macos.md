@@ -1,6 +1,6 @@
 # MacOS
 
-Install Bazarr following the [instructions](../../Installation/MacOS/macos)
+Install Bazarr following the [instructions](../../Installation/MacOS/macos.md)
 
 ## LaunchAgent on MacOS
 
