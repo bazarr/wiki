@@ -3,10 +3,13 @@
 ## (Ubuntu / Debian) Install requirements with
 
 Before 24.04:
+
   ```bash
   apt-get install 7zip python3-dev python3-pip python3-distutils unrar unzip
   ```
+
 Since 24.04:
+
   ```bash
   apt-get install 7zip python3-dev python3-pip python3-setuptools unrar unzip
   ```
@@ -78,9 +81,9 @@ thnx to @inquilino for the fixes/updates
 
         See /usr/share/doc/python3.12/README.venv for more information.
 
-    note: If you believe this is a mistake, please contact your Python 
-    installation or OS distribution provider. You can override this, at 
-    the risk of breaking your Python installation or OS, by passing 
+    note: If you believe this is a mistake, please contact your Python
+    installation or OS distribution provider. You can override this, at
+    the risk of breaking your Python installation or OS, by passing
     --break-system-packages.
     hint: See PEP 668 for the detailed specification.
     ```
