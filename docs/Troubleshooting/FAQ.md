@@ -152,13 +152,13 @@
 
         Learn Python and create a provider script for Bazarr.
 
-        You can can look in the source code which [providers](https://github.com/morpheus65535/bazarr/tree/master/libs/subliminal_patch/providers) we got and working on.
+        You can can look in the source code which [providers](https://github.com/morpheus65535/bazarr/tree/master/custom_libs/subliminal_patch/providers) we got and working on.
 
         If you need to write one then you can use the 2 following templates depending what the provider supports.
 
-        - [API-Template](https://github.com/morpheus65535/bazarr/blob/master/libs/subliminal_patch/providers/napisy24.py)
+        - [API-Template](https://github.com/morpheus65535/bazarr/blob/master/custom_libs/subliminal_patch/providers/napisy24.py)
 
-        - [Page-Scrapping-Template](https://github.com/morpheus65535/bazarr/blob/master/libs/subliminal_patch/providers/soustitreseu.py)
+        - [Page-Scrapping-Template](https://github.com/morpheus65535/bazarr/blob/master/custom_libs/subliminal_patch/providers/soustitreseu.py)
 
         !!! tip
 
