@@ -44,7 +44,7 @@ Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRE
 
 If you do not want to migrate an existing SQLite database to Postgres then you have already reached the end of this guide and you can simply start Bazarr!
 
-!!! note Running Bazarr radar as non-root
+!!! note "Running Bazarr radar as non-root"
 
     When running the container Bazarr as non root (ie. UID=1000,GID=1000) it might raise the following error:
 
