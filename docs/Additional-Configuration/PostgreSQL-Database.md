@@ -46,7 +46,7 @@ If you do not want to migrate an existing SQLite database to Postgres then you h
 
 !!! note "Running linuxserver.io Bazarr as non-root"
 
-    When running [linuxserver.io Bazarr image](https://docs.linuxserver.io/images/docker-prowlarr/) as non root (ie. UID=1000,GID=1000) it might raise the following error:
+    When running [linuxserver.io Bazarr image](https://docs.linuxserver.io/images/docker-bazarr/) as non root (ie. UID=1000,GID=1000) it might raise the following error:
 
     ```
     sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: could not open certificate file "/root/.postgresql/postgresql.crt": Permission denied
