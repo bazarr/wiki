@@ -44,6 +44,17 @@ Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRE
 
 If you do not want to migrate an existing SQLite database to Postgres then you have already reached the end of this guide and you can simply start Bazarr!
 
+!!! note "Running linuxserver.io Bazarr as non-root"
+
+    When running [linuxserver.io Bazarr image](https://docs.linuxserver.io/images/docker-bazarr/) as non root (ie. UID=1000,GID=1000) it might raise the following error:
+
+    ```
+    sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: could not open certificate file "/root/.postgresql/postgresql.crt": Permission denied
+    connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: FATAL:  pg_hba.conf rejects connection for host "127.0.0.6", user "bazarr-user", database "bazarr_database", no encryption
+    ```
+
+    This can be addressed by setting the environment variable **PGSSLCERT** to "/tmp/postgresql.crt" or any other path that the user has access to.
+
 ## Data migration
 
 Once the database has been created, you can start the Bazarr migration from SQLite to Postgres. Make sure that your SQLite database has been used with Bazarr 1.1.5 or greater prior to migration.
