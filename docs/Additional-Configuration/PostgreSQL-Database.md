@@ -53,7 +53,7 @@ If you do not want to migrate an existing SQLite database to Postgres then you h
     connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: FATAL:  pg_hba.conf rejects connection for host "127.0.0.6", user "bazarr-user", database "bazarr_database", no encryption
     ```
 
-    This can be addressed by setting the environment variable **PGSSLCERT** to "/tmp/postgresql.crt" or any other path that the user has access to. 
+    This can be addressed by setting the environment variable **PGSSLCERT** to "/tmp/postgresql.crt" or any other path that the user has access to.
 
 ## Data migration
 
