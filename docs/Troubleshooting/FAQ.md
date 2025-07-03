@@ -127,11 +127,11 @@
 
 ??? faq "How do I reset my password"
 
-    Edit your config.ini and change your auth type to None and restart Bazarr.
+    Edit your config.yaml and change your auth type to `null` and restart Bazarr.
 
-    ![!How do I reset my password](images/config-ini.png)
+    ![!How do I reset my password](images/config-yaml.png)
 
-    Your config.ini can be found in your [in the same location where your logs or database are](#where-can-i-find-the-logs-or-database)
+    Your config.yaml can be found in your [in the same location where your logs or database are](#where-can-i-find-the-logs-or-database)
 
 ## Which external subtitles does Bazarr recognize
 
