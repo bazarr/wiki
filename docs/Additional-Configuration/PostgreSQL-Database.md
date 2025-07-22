@@ -28,19 +28,19 @@ Bazarr will not create the databases for you. Make sure you create it with your 
 
 ## Schema creation
 
-We need to tell Bazarr to use Postgres. The config.ini should already be populated with the entries we need:
+We need to tell Bazarr to use Postgres. The config.yaml should already be populated with the entries we need:
 
 ```
-[postgresql]
-enabled = True
-host = localhost
-port = 5432
-database = bazarr
-username = _<postgres_username>_
-password = _<postgres_password>_
+postgresql:
+  enabled: true
+  host: localhost
+  port: 5432
+  database: bazarr
+  username: _<postgres_username>_
+  password: _<postgres_password>_
 ```
 
-Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USERNAME` and `POSTGRES_PASSWORD`. These take precedence over the `config.ini` settings.
+Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USERNAME` and `POSTGRES_PASSWORD`. These take precedence over the `config.yaml` settings.
 
 If you do not want to migrate an existing SQLite database to Postgres then you have already reached the end of this guide and you can simply start Bazarr!
 
