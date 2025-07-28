@@ -8,9 +8,9 @@ Whisper supports transcribing in many languages as well as translating from a la
 
 Minimum score must be lowered if you want whisper generated subtitles to be automatically "downloaded" because they have a fixed score which is 241/360 (~67%) for episodes and 61/120 (~51%) for movies.
 
-## whisper-asr-webservice
+## whisper-asr-webservice [SubGen]
 
-Bazarr's Whisper provider communicates with [ahmetoner/whisper-asr-webservice](https://github.com/ahmetoner/whisper-asr-webservice). Refer to its [documentation](https://ahmetoner.com/whisper-asr-webservice/) for more assistance in setting it up.
+Bazarr's Whisper provider communicates with [SubGen](https://github.com/McCloudS/subgen?tab=readme-ov-file#docker). Refer to its [documentation](https://github.com/McCloudS/subgen/blob/main/README.md) for more assistance in setting it up.
 
 ## Choosing a Model
 
@@ -27,49 +27,51 @@ whisper-asr-webservice supports multiple backends. Currently, there are two avai
 
 ## Docker Installation
 
-Change ASR_MODEL to use the model you like, and change ASR_ENGINE to select the backend.
+ The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
 
-### CPU - Docker CLI
+#### Prerequsites for the below examples
 
+*cache dir for the models*
+```bash
+mkdir -p {subgenai_data_folder}/models
 ```
-docker run -d -p 9000:9000 -e ASR_MODEL=small -e ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest
+*.env file*
+```bash
+subgenai_data_folder=/path/to/your/subgen
+WHISPER_MODEL=medium
+WHISPER_THREADS=4
+WEBHOOKPORT=9000
+TRANSCRIBE_DEVICE=cuda
+DEBUG=True
+CLEAR_VRAM_ON_COMPLETE=True
+APPEND=False
+TRANSCRIBE_OR_TRANSLATE=transcribe
+NAMESUBLANG=ai
 ```
 
-### CPU - Docker Compose
+#### GPU (recommended)
 
-```
----
-version: "2.1"
+```bash
 services:
-  whisperasr:
-    image: onerahmet/openai-whisper-asr-webservice:latest
+  subgenai:
+    depends_on:
+      bazarr:
+        condition: service_healthy
+    image: mccloud/subgen:latest
+    container_name: subgenai
+    volumes:
+       - ${subgenai_data_folder}/models:/subgen/models
+       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
     environment:
-      - ASR_MODEL=small
-      - ASR_ENGINE=faster_whisper
-    ports:
-      - 9000:9000
-    restart: unless-stopped
-```
-
-### GPU - Docker CLI
-
-```
-docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=small -e ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
-```
-
-### GPU - Docker Compose
-
-```
----
-version: "2.1"
-services:
-  whisperasr:
-    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
-    environment:
-      - ASR_MODEL=small
-      - ASR_ENGINE=faster_whisper
-    ports:
-      - 9000:9000
+      LOG_LEVEL: debug
+      NAME_SERVERS: 9.9.9.9
+      PROCADDEDMEDIA: True
+      PROCMEDIAONPLAY: False
+      PLEXTOKEN: plextoken
+      PLEXSERVER: http://127.0.0.1:32400
+      CONCURRENT_TRANSCRIPTIONS: 2
+      USE_PATH_MAPPING: False
+      MODEL_PATH: ./models
     deploy:
       resources:
         reservations:
@@ -77,7 +79,31 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-    restart: unless-stopped
+```
+
+#### CPU
+
+```bash
+services:
+  subgenai:
+    depends_on:
+      bazarr:
+        condition: service_healthy
+    image: mccloud/subgen:latest
+    container_name: subgenai
+    volumes:
+       - ${subgenai_data_folder}/models:/subgen/models
+       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
+    environment:
+      LOG_LEVEL: debug
+      NAME_SERVERS: 9.9.9.9
+      PROCADDEDMEDIA: True
+      PROCMEDIAONPLAY: False
+      PLEXTOKEN: plextoken
+      PLEXSERVER: http://127.0.0.1:32400
+      CONCURRENT_TRANSCRIPTIONS: 2
+      USE_PATH_MAPPING: False
+      MODEL_PATH: ./models
 ```
 
 ## Docker on Windows
