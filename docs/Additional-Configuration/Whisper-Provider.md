@@ -38,6 +38,10 @@ mkdir -p {subgenai_data_folder}/models
 *.env file*
 ```bash
 subgenai_data_folder=/path/to/your/subgen
+```
+
+*subgen.env file*
+```bash
 WHISPER_MODEL=medium
 WHISPER_THREADS=4
 WEBHOOKPORT=9000
@@ -89,7 +93,7 @@ services:
     depends_on:
       bazarr:
         condition: service_healthy
-    image: mccloud/subgen:latest
+    image: mccloud/subgen:cpu
     container_name: subgenai
     volumes:
        - ${subgenai_data_folder}/models:/subgen/models
