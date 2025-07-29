@@ -29,21 +29,21 @@ whisper-asr-webservice supports multiple backends. Currently, there are two avai
 
  The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
 
-#### Prerequsites for the below examples
+### Prerequsites for the below examples
 
-*cache dir for the models*
+#### cache dir for the models
 
 ```bash
 mkdir -p {subgenai_data_folder}/models
 ```
 
-*.env file*
+#### .env file
 
 ```yaml
 subgenai_data_folder=/path/to/your/subgen
 ```
 
-*subgen.env file*
+#### subgen.env file
 
 ```yaml
 WHISPER_MODEL=medium
@@ -57,7 +57,7 @@ TRANSCRIBE_OR_TRANSLATE=transcribe
 NAMESUBLANG=ai
 ```
 
-#### GPU (recommended)
+### GPU (recommended)
 
 ```yaml
 services:
@@ -89,7 +89,7 @@ services:
               capabilities: [gpu]
 ```
 
-#### CPU
+### CPU
 
 ```yaml
 services:
