@@ -38,6 +38,7 @@ mkdir -p {subgenai_data_folder}/models
 ```
 
 *.env file*
+
 ```yaml
 subgenai_data_folder=/path/to/your/subgen
 ```
