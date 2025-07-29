@@ -32,16 +32,19 @@ whisper-asr-webservice supports multiple backends. Currently, there are two avai
 #### Prerequsites for the below examples
 
 *cache dir for the models*
+
 ```bash
 mkdir -p {subgenai_data_folder}/models
 ```
+
 *.env file*
-```bash
+```yaml
 subgenai_data_folder=/path/to/your/subgen
 ```
 
 *subgen.env file*
-```bash
+
+```yaml
 WHISPER_MODEL=medium
 WHISPER_THREADS=4
 WEBHOOKPORT=9000
@@ -55,7 +58,7 @@ NAMESUBLANG=ai
 
 #### GPU (recommended)
 
-```bash
+```yaml
 services:
   subgenai:
     depends_on:
@@ -87,7 +90,7 @@ services:
 
 #### CPU
 
-```bash
+```yaml
 services:
   subgenai:
     depends_on:
