@@ -1,0 +1,9 @@
+title: Additional Configuration
+nav:
+    - Settings.md
+    - Plex.md
+    - Webhooks.md
+    - Reverse-Proxy-Help.md
+    - PostgreSQL-Database.md
+    - Whisper-Provider.md
+    - Performance-Tuning.md
