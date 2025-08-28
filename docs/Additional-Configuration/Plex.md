@@ -24,7 +24,7 @@ OAuth is the default authentication method available through the web interface.
 
 **Requirements:**
 - Internet connection during setup
-- Web browser with popup support
+- Web browser with popup windows enabled
 - Plex account with server access
 
 ### API Key Authentication (Legacy)
@@ -46,7 +46,6 @@ plex:
 **Requirements:**
 - Manual config.yaml editing
 - Manual API key retrieval
-- Bazarr restart after changes
 
 ## Setup
 
@@ -61,7 +60,7 @@ plex:
 1. Go to `Settings` → `Plex`
 2. Click "Connect to Plex"
 3. Complete authentication in popup window
-4. Select server from discovered list
+4. Select server (if multiple servers available)
 5. Configure movie and TV libraries
 
 ### Server Selection
@@ -96,7 +95,7 @@ plex:
 
 ## Webhooks
 
-Plex webhooks enable real-time subtitle search when media is played.
+Plex webhooks enable real-time subtitle search when media is played. Webhook creation and management is automated through the Bazarr UI.
 
 **Requirements:**
 - Plex Pass subscription
@@ -105,7 +104,7 @@ Plex webhooks enable real-time subtitle search when media is played.
 
 **Webhook URL Format:**
 ```
-http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-api-key
+http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-bazarr-api-key
 ```
 
 **Webhook Management:**
