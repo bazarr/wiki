@@ -17,12 +17,14 @@ Bazarr integrates with Plex Media Server to enable automatic subtitle management
 OAuth is the default authentication method available through the web interface.
 
 **Benefits:**
+
 - Secure PIN-based authentication flow
 - Automatic server discovery and testing
 - Encrypted token storage with URLSafeSerializer
 - No manual API key retrieval required
 
 **Requirements:**
+
 - Internet connection during setup
 - Web browser with popup windows enabled
 - Plex account with server access
@@ -32,6 +34,7 @@ OAuth is the default authentication method available through the web interface.
 API key authentication is legacy and should be avoided. It's available only through manual `config.yaml` configuration for existing setups.
 
 **Configuration:**
+
 ```yaml
 plex:
   auth_method: apikey
@@ -44,6 +47,7 @@ plex:
 ```
 
 **Requirements:**
+
 - Manual config.yaml editing
 - Manual API key retrieval
 
@@ -52,16 +56,16 @@ plex:
 ### Enable Plex Integration
 
 1. Navigate to `Settings` → `General`
-2. Enable `Use Plex`
-3. Save settings
+1. Enable `Use Plex`
+1. Save settings
 
 ### OAuth Configuration
 
 1. Go to `Settings` → `Plex`
-2. Click "Connect to Plex"
-3. Complete authentication in popup window
-4. Select server (if multiple servers available)
-5. Configure movie and TV libraries
+1. Click "Connect to Plex"
+1. Complete authentication in popup window
+1. Select server (if multiple servers available)
+1. Configure movie and TV libraries
 
 ### Server Selection
 
@@ -98,16 +102,19 @@ plex:
 Plex webhooks enable real-time subtitle search when media is played. Webhook creation and management is automated through the Bazarr UI.
 
 **Requirements:**
+
 - Plex Pass subscription
 - Configured Plex integration
 - Bazarr API key
 
 **Webhook URL Format:**
+
 ```
 http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-bazarr-api-key
 ```
 
 **Webhook Management:**
+
 - `POST /api/plex/webhook/create` - Create webhook automatically
 - `GET /api/plex/webhook/list` - List existing webhooks
 - `POST /api/plex/webhook/delete` - Delete webhook
@@ -119,13 +126,15 @@ http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-bazarr-api-key
 Bazarr automatically migrates API key configurations to OAuth on startup.
 
 **Process:**
+
 1. Detects existing API key configuration
-2. Creates backup of current settings
-3. Validates OAuth configuration
-4. Preserves library names and settings
-5. Implements rollback on failure
+1. Creates backup of current settings
+1. Validates OAuth configuration
+1. Preserves library names and settings
+1. Implements rollback on failure
 
 **Safety Features:**
+
 - Configuration backup before changes
 - Validation before permanent changes
 - Graceful rollback on failure
@@ -136,28 +145,31 @@ Bazarr automatically migrates API key configurations to OAuth on startup.
 If automatic migration fails:
 
 1. Note current server IP, port, and library settings
-2. Enable OAuth in settings
-3. Complete OAuth authentication
-4. Select matching server
-5. Verify library configuration
-6. Test functionality
+1. Enable OAuth in settings
+1. Complete OAuth authentication
+1. Select matching server
+1. Verify library configuration
+1. Test functionality
 
 ## Troubleshooting
 
 ### OAuth Issues
 
 **Authentication Fails:**
+
 - Check internet connectivity
 - Verify popup windows aren't blocked
 - Clear browser cache
 - Verify Plex account server access
 
 **Server Not Found:**
+
 - Verify Plex server is online
 - Check server account association
 - Ensure remote access if needed
 
 **Token Errors:**
+
 - Re-authenticate with OAuth
 - Check if Plex password changed
 - Clear Bazarr Plex settings
@@ -165,16 +177,19 @@ If automatic migration fails:
 ### API Key Issues
 
 **Connection Timeouts:**
+
 - Verify IP address and port
 - Check network connectivity
 - Ensure Plex server is running
 
 **Invalid Token:**
+
 - Regenerate Plex token
 - Verify token permissions
 - Check Plex account status
 
 **Library Not Found:**
+
 - Check exact library names
 - Verify library permissions
 - Check Plex server logs
@@ -182,9 +197,9 @@ If automatic migration fails:
 ### Debug Logging
 
 1. `Settings` → `General` → `Logging`
-2. Set log level to `DEBUG`
-3. Reproduce issue
-4. Check `Settings` → `System` → `Logs`
+1. Set log level to `DEBUG`
+1. Reproduce issue
+1. Check `Settings` → `System` → `Logs`
 
 ## API Reference
 
@@ -211,22 +226,26 @@ If automatic migration fails:
 ## Technical Implementation
 
 ### Encryption
+
 - Uses `URLSafeSerializer` for token storage
 - Secure random salt generation (`secrets.token_hex(16)`)
 - 256-bit cryptographically secure keys
 
 ### OAuth Flow
+
 - PIN-based authentication with CSRF protection
 - Parallel server testing (max 5 threads)
 - Automatic popup window management
 - 600-second PIN TTL with cleanup
 
 ### Library Updates
+
 - Individual item refresh via `PlexServer.refresh()`
 - IMDB ID-based targeting
 - Fallback to full library scan
 
 ### Webhook Processing
+
 - Processes `media.play` events only
 - IMDB ID extraction from Plex GUID arrays
 - Series ID resolution for episodes
