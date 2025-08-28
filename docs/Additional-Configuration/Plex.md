@@ -1,504 +1,242 @@
 # Plex Integration
 
-Bazarr offers comprehensive integration with Plex Media Server, enabling automatic subtitle management and enhanced workflow automation. This integration supports both modern OAuth authentication and legacy API key methods.
+Bazarr integrates with Plex Media Server to enable automatic subtitle management and workflow automation. The integration supports OAuth authentication (default) and legacy API key configuration.
 
-## Overview
+## Features
 
-Plex integration allows Bazarr to:
-
-- **Authenticate with Plex** - Secure OAuth-based authentication or legacy API key authentication
-- **Update Added Dates** - Automatically set movie and episode added dates in Plex
-- **Trigger Library Updates** - Refresh Plex libraries when subtitles are added
-- **Receive Webhooks** - Real-time subtitle search when media is played (Plex Pass required)
+- **OAuth Authentication** - Secure token-based authentication with automatic server discovery
+- **Library Updates** - Refresh specific items after subtitle changes
+- **Added Date Updates** - Set movie and episode added dates automatically
+- **Webhooks** - Real-time subtitle search on media playback (Plex Pass required)
+- **Automatic Migration** - Seamless upgrade from API key to OAuth authentication
 
 ## Authentication Methods
 
-Bazarr supports two authentication methods for Plex integration:
+### OAuth Authentication (Default)
 
-### OAuth Authentication (Recommended)
-
-OAuth provides a secure, user-friendly authentication flow without requiring you to manually obtain API keys.
+OAuth is the default authentication method available through the web interface.
 
 **Benefits:**
-
-- Secure token-based authentication
-- No need to manually find API keys
-- Automatic server discovery
-- Encrypted token storage
-- Seamless user experience
-
-**Requirements:**
-
-- Active internet connection during setup
-- Modern web browser
-- Plex account with access to the servers you want to use
-
-### Legacy API Key Authentication
-
-Traditional authentication method using Plex API keys.
-
-**Benefits:**
-
-- Works offline after initial setup
-- Compatible with older setups
-- Direct server connection
-
-**Requirements:**
-
-- Manual API key retrieval from Plex
-- Manual server configuration
-
-## Configuration
-
-### Initial Setup
-
-1. **Enable Plex Integration**
-   - Navigate to `Settings` → `General`
-   - Enable the `Use Plex` option
-   - Save your settings
-
-2. **Choose Authentication Method**
-   - Go to `Settings` → `Plex`
-   - Select your preferred authentication method
-
-### OAuth Setup (Recommended)
-
-1. **Start OAuth Flow**
-   - In Plex settings, select "OAuth" as the authentication method
-   - Click the "Authenticate with Plex" button
-   - A new browser window will open
-
-2. **Authenticate with Plex**
-   - Sign in to your Plex account in the popup window
-   - Complete the Plex authentication (no additional permissions needed)
-   - Close the authentication window manually when complete
-
-3. **Select Server**
-   - Bazarr will automatically discover your available Plex servers
-   - Select the server you want to use from the dropdown
-   - Test the connection to ensure it's working
-
-4. **Configure Library Settings**
-   - Set your Movie Library name
-   - Set your TV Shows Library name
-   - Configure additional options as needed
-
-### API Key Setup (Legacy)
-
-1. **Obtain Your Plex Token**
-   - Follow [this guide](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/) to find your Plex token
-   - Or use browser developer tools on plex.tv to find the X-Plex-Token header
-
-2. **Configure Server Details**
-   - Enter your Plex server IP address
-   - Set the port (default: 32400)
-   - Enable SSL if your Plex server uses HTTPS
-   - Enter your Plex token
-
-3. **Test Connection**
-   - Use the "Test" button to verify connectivity
-   - Ensure Bazarr can communicate with your Plex server
-
-## Settings Reference
-
-### Authentication Settings
-
-| Setting | Description | OAuth | API Key |
-|---------|-------------|-------|---------|
-| **Authentication Method** | Choose between OAuth and API key authentication | ✓ | ✓ |
-| **Server URL** | Automatically configured during OAuth | Auto | Manual |
-| **Token/API Key** | Encrypted token storage | Auto | Manual |
-| **Server Name** | Display name for the selected server | Auto | Manual |
-
-### Connection Settings
-
-| Setting | Description | Default | Notes |
-|---------|-------------|---------|-------|
-| **IP Address** | Plex server IP address | 127.0.0.1 | Use local IP for best performance |
-| **Port** | Plex server port | 32400 | Standard Plex port |
-| **Use SSL** | Enable HTTPS connection | False | Enable if Plex uses SSL |
-
-### Library Settings
-
-| Setting | Description | Required |
-|---------|-------------|----------|
-| **Movie Library** | Name of your Plex movie library | Yes |
-| **TV Shows Library** | Name of your Plex TV shows library | Yes |
-
-### Integration Features
-
-| Setting | Description | Impact |
-|---------|-------------|--------|
-| **Set Movie Added Date** | Update movie added date when subtitles are found | Enables tracking in Plex |
-| **Set Episode Added Date** | Update episode added date when subtitles are found | Enables tracking in Plex |
-| **Update Movie Library** | Refresh movie library after subtitle changes | Forces Plex to detect new subtitles |
-| **Update Series Library** | Refresh TV library after subtitle changes | Forces Plex to detect new subtitles |
-
-## Advanced Configuration
-
-### Security Considerations
-
-**OAuth Security Features:**
-
-- Tokens are encrypted at rest using Fernet symmetric encryption
-- Automatic token refresh every 24 hours
 - Secure PIN-based authentication flow
-- Rate limiting on authentication endpoints
+- Automatic server discovery and testing
+- Encrypted token storage with URLSafeSerializer
+- No manual API key retrieval required
 
-**API Key Security:**
+**Requirements:**
+- Internet connection during setup
+- Web browser with popup support
+- Plex account with server access
 
-- Store API keys securely
-- Use HTTPS when possible
-- Limit API key scope if supported by Plex
+### API Key Authentication (Legacy)
 
-### Connection Optimization
+API key authentication is legacy and should be avoided. It's available only through manual `config.yaml` configuration for existing setups.
 
-**Local Network:**
+**Configuration:**
+```yaml
+plex:
+  auth_method: apikey
+  ip: 192.168.1.100
+  port: 32400
+  ssl: false
+  apikey: your-plex-token-here
+  movie_library: Movies
+  series_library: TV Shows
+```
 
-- Use local IP addresses for better performance
-- Ensure Bazarr and Plex are on the same network
-- Configure firewall rules if necessary
+**Requirements:**
+- Manual config.yaml editing
+- Manual API key retrieval
+- Bazarr restart after changes
 
-**Remote Access:**
+## Setup
 
-- OAuth works seamlessly with remote servers
-- API key method may require additional configuration
-- Consider VPN for secure remote access
+### Enable Plex Integration
+
+1. Navigate to `Settings` → `General`
+2. Enable `Use Plex`
+3. Save settings
+
+### OAuth Configuration
+
+1. Go to `Settings` → `Plex`
+2. Click "Connect to Plex"
+3. Complete authentication in popup window
+4. Select server from discovered list
+5. Configure movie and TV libraries
+
+### Server Selection
+
+- Single server: automatically selected
+- Multiple servers: choose from dropdown and click "Select Server"
+- Connection testing performed automatically
 
 ### Library Configuration
 
-**Library Names:**
+- Libraries automatically fetched from selected server
+- Only movie and show libraries displayed
+- Select one library per content type
 
-- Use exact library names as they appear in Plex
-- Case-sensitive matching
-- Verify library names in Plex settings
+## Settings Reference
 
-**Multiple Libraries:**
+| Setting | Description | OAuth | API Key |
+|---------|-------------|-------|---------|
+| Authentication Method | OAuth (web UI) / apikey (config) | Default | Manual |
+| Server Discovery | Automatic with testing | Yes | Manual |
+| Token Storage | Encrypted with URLSafeSerializer | Yes | Yes |
+| Library Fetching | Automatic from server | Yes | Manual |
 
-- Each library type (Movies/TV) supports one library
-- Use library with the most content if you have multiple
-- Consider organizing content into single libraries
+### Integration Options
+
+| Feature | Description |
+|---------|-------------|
+| Set Movie Added Date | Update added date when subtitles found |
+| Set Episode Added Date | Update added date when subtitles found |
+| Update Movie Library | Refresh specific movies after changes |
+| Update Series Library | Refresh specific episodes after changes |
+
+## Webhooks
+
+Plex webhooks enable real-time subtitle search when media is played.
+
+**Requirements:**
+- Plex Pass subscription
+- Configured Plex integration
+- Bazarr API key
+
+**Webhook URL Format:**
+```
+http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-api-key
+```
+
+**Webhook Management:**
+- `POST /api/plex/webhook/create` - Create webhook automatically
+- `GET /api/plex/webhook/list` - List existing webhooks
+- `POST /api/plex/webhook/delete` - Delete webhook
+
+## Migration
+
+### Automatic Migration (Default)
+
+Bazarr automatically migrates API key configurations to OAuth on startup.
+
+**Process:**
+1. Detects existing API key configuration
+2. Creates backup of current settings
+3. Validates OAuth configuration
+4. Preserves library names and settings
+5. Implements rollback on failure
+
+**Safety Features:**
+- Configuration backup before changes
+- Validation before permanent changes
+- Graceful rollback on failure
+- Migration attempt tracking
+
+### Manual Migration
+
+If automatic migration fails:
+
+1. Note current server IP, port, and library settings
+2. Enable OAuth in settings
+3. Complete OAuth authentication
+4. Select matching server
+5. Verify library configuration
+6. Test functionality
 
 ## Troubleshooting
 
-### Common OAuth Issues
+### OAuth Issues
 
 **Authentication Fails:**
-
-1. Ensure internet connectivity
-2. Check if popup windows are blocked
-3. Try clearing browser cache and cookies
-4. Verify Plex account has access to servers
+- Check internet connectivity
+- Verify popup windows aren't blocked
+- Clear browser cache
+- Verify Plex account server access
 
 **Server Not Found:**
-
-1. Check if Plex server is online
-2. Verify server is associated with your Plex account
-3. Ensure server allows remote access if needed
-4. Check Plex server logs for connection issues
+- Verify Plex server is online
+- Check server account association
+- Ensure remote access if needed
 
 **Token Errors:**
+- Re-authenticate with OAuth
+- Check if Plex password changed
+- Clear Bazarr Plex settings
 
-1. Try re-authenticating with OAuth
-2. Check if Plex account password was changed
-3. Verify server permissions haven't changed
-4. Clear Bazarr's Plex settings and start over
-
-### Common API Key Issues
+### API Key Issues
 
 **Connection Timeouts:**
+- Verify IP address and port
+- Check network connectivity
+- Ensure Plex server is running
 
-1. Verify IP address and port
-2. Check network connectivity
-3. Ensure Plex server is running
-4. Test with direct server access
-
-**Invalid Token Errors:**
-
-1. Regenerate Plex token
-2. Check token hasn't expired
-3. Verify token has necessary permissions
-4. Ensure Plex account is active
+**Invalid Token:**
+- Regenerate Plex token
+- Verify token permissions
+- Check Plex account status
 
 **Library Not Found:**
+- Check exact library names
+- Verify library permissions
+- Check Plex server logs
 
-1. Check exact library names
-2. Verify library permissions
-3. Ensure libraries are shared properly
-4. Check Plex server logs
+### Debug Logging
 
-### Migration Issues
-
-**Upgrading from API Key to OAuth:**
-
-1. Existing settings are preserved during migration
-2. OAuth can be set up alongside existing API key
-3. Switch authentication method in settings
-4. Test thoroughly before removing old settings
-
-### General Troubleshooting
-
-**Enable Debug Logging:**
-
-1. Go to `Settings` → `General` → `Logging`
+1. `Settings` → `General` → `Logging`
 2. Set log level to `DEBUG`
-3. Reproduce the issue
-4. Check logs in `Settings` → `System` → `Logs`
-
-**Test Connection:**
-
-1. Use the built-in connection test
-2. Check network connectivity to Plex server
-3. Verify Plex server is accessible from Bazarr
-4. Test with minimal configuration first
-
-## Integration with Other Features
-
-### Webhooks Integration
-
-Plex webhooks provide real-time subtitle search when media is played:
-
-1. **Requirements:**
-   - Plex Pass subscription
-   - Properly configured Plex integration
-   - Bazarr API key
-
-2. **Setup:**
-   - Follow the [Webhooks guide](Webhooks.md#plex) for detailed setup
-   - Use OAuth or API key authentication as configured
-
-3. **Benefits:**
-   - Instant subtitle search on media playback
-   - Reduced manual intervention
-   - Better user experience
-
-### Subtitle Management
-
-**Automatic Updates:**
-
-- Plex libraries are updated when subtitles are added
-- Added dates are updated for tracking purposes
-- Subtitle changes are reflected immediately
-
-**Manual Management:**
-
-- Force library updates from Bazarr
-- Update specific movies or episodes
-- Refresh metadata as needed
-
-## Migration Guide
-
-### From API Key to OAuth
-
-1. **Backup Current Settings:**
-   - Note current server configuration
-   - Document library names and settings
-   - Export configuration if needed
-
-2. **Set Up OAuth:**
-   - Change authentication method to OAuth
-   - Complete authentication flow
-   - Verify server selection matches previous setup
-
-3. **Verify Settings:**
-   - Check library names are correctly set
-   - Test connection and functionality
-   - Ensure all features work as expected
-
-4. **Cleanup:**
-   - Old API key settings are preserved for rollback
-   - Remove old settings once OAuth is confirmed working
-
-### From Legacy Setup
-
-If upgrading from very old Bazarr versions:
-
-1. **Check Current Configuration:**
-   - Verify Plex integration is working
-   - Document current settings
-   - Test basic functionality
-
-2. **Update Authentication:**
-   - Choose appropriate authentication method
-   - Migrate settings using built-in migration tools
-   - Test after migration
-
-## Best Practices
-
-### Security
-
-- **Use OAuth when possible** for better security
-- **Keep software updated** for latest security features
-- **Use local network connections** when available
-- **Monitor authentication logs** for suspicious activity
-
-### Performance
-
-- **Use local IP addresses** for Plex servers
-- **Configure appropriate timeouts** for your network
-- **Enable library updates selectively** to avoid excessive refreshes
-- **Monitor system resources** during heavy operations
-
-### Maintenance
-
-- **Regularly test connections** to ensure reliability
-- **Monitor logs** for errors or warnings
-- **Keep backups** of working configurations
-- **Update settings** when Plex server changes
+3. Reproduce issue
+4. Check `Settings` → `System` → `Logs`
 
 ## API Reference
-
-For developers and advanced users, Bazarr provides REST API endpoints for Plex integration:
 
 ### OAuth Endpoints
 
 - `POST /api/plex/oauth/pin` - Create authentication PIN
 - `GET /api/plex/oauth/pin/{pinId}/check` - Check PIN status
-- `GET /api/plex/oauth/validate` - Validate stored token
+- `GET /api/plex/oauth/validate` - Validate token
 - `GET /api/plex/oauth/servers` - List available servers
+- `GET /api/plex/oauth/libraries` - Fetch libraries
 - `POST /api/plex/oauth/logout` - Clear authentication
 
 ### Server Management
 
 - `POST /api/plex/test-connection` - Test server connectivity
-- `POST /api/plex/select-server` - Select active server
+- `GET /api/plex/select-server` - Get selected server
+- `POST /api/plex/select-server` - Select server
 
-### Legacy Operations
+### API Key Management
 
-- Plex operations available through existing Bazarr API
-- Library updates via standard API endpoints
-- Webhook integration through `/api/webhooks/plex`
+- `POST /api/plex/apikey` - Save and encrypt API key
+- `POST /api/plex/encrypt-apikey` - Encrypt existing key
+
+## Technical Implementation
+
+### Encryption
+- Uses `URLSafeSerializer` for token storage
+- Secure random salt generation (`secrets.token_hex(16)`)
+- 256-bit cryptographically secure keys
+
+### OAuth Flow
+- PIN-based authentication with CSRF protection
+- Parallel server testing (max 5 threads)
+- Automatic popup window management
+- 600-second PIN TTL with cleanup
+
+### Library Updates
+- Individual item refresh via `PlexServer.refresh()`
+- IMDB ID-based targeting
+- Fallback to full library scan
+
+### Webhook Processing
+- Processes `media.play` events only
+- IMDB ID extraction from Plex GUID arrays
+- Series ID resolution for episodes
+- API key authentication required
 
 ---
 
 ## Related Documentation
 
-- [Webhooks Configuration](Webhooks.md) - Set up Plex webhooks for real-time integration
-- [Performance Tuning](Performance-Tuning.md) - Optimize Bazarr performance with Plex
-- [Settings Reference](Settings.md) - Complete settings documentation
-
-## Quick Start Guide
-
-### For New Users
-
-1. **Enable Plex Integration**
-
-   ```
-   Settings → Plex → Use Plex Media Server: ✓
-
-   ```
-
-2. **Configure Authentication (OAuth Recommended)**
-
-   ```
-   Settings → Plex → Authentication Method: OAuth
-
-   ```
-
-3. **Authenticate**
-   - Click "Authenticate with Plex"
-   - Sign in when prompted
-   - Complete the Plex authentication (no additional permissions needed)
-
-4. **Select Server & Configure Libraries**
-   - Choose your Plex server from the dropdown
-   - Enter your movie library name (e.g., "Movies")
-   - Enter your TV shows library name (e.g., "TV Shows")
-
-5. **Test & Save**
-   - Use the "Test" button to verify connection
-   - Save your settings
-
-### For Existing API Key Users
-
-If you're currently using API key authentication and want to upgrade to OAuth:
-
-1. **Note Current Settings** (for backup)
-   - Current server IP and port
-   - Library names
-   - Any custom configurations
-
-2. **Switch to OAuth**
-
-   ```
-   Settings → Plex → Authentication Method: OAuth
-
-   ```
-
-3. **Complete OAuth Setup**
-   - Follow the OAuth authentication flow
-   - Select the same server you were using before
-   - Verify library names match your previous setup
-
-4. **Verify & Test**
-   - Test the connection
-   - Ensure all features work as expected
-   - Your old API key settings are preserved as backup
-
-## Example Configurations
-
-### Home Network Setup (Recommended)
-
-```
-Authentication Method: OAuth
-Server: [Auto-discovered from OAuth]
-Movie Library: Movies
-TV Shows Library: TV Shows
-Set Added Date: ✓ (both Movies and Episodes)
-Update Libraries: ✓ (both Movies and Series)
-
-```
-
-### Remote Access Setup
-
-```
-Authentication Method: OAuth (automatically handles remote access)
-Server: [Select remote server from list]
-Movie Library: Movies
-TV Shows Library: TV Shows
-Update Libraries: ✓ (recommended for remote setups)
-
-```
-
-### Legacy Setup (API Key)
-
-```
-Authentication Method: API Key
-IP Address: 192.168.1.100
-Port: 32400
-SSL: ✗ (unless your Plex uses HTTPS)
-API Key: [Your Plex token]
-Movie Library: Movies
-TV Shows Library: TV Shows
-
-```
-
-## Common Configuration Scenarios
-
-### Single User, Local Plex Server
-
-- Use **OAuth** for simplest setup
-- Enable all integration features
-- Use local network IP for best performance
-
-### Multi-User Plex Server
-
-- Each Bazarr user should use **OAuth** with their own Plex account
-- Consider library access permissions
-- Test with appropriate user accounts
-
-### Dockerized Bazarr
-
-- **OAuth** works seamlessly in containers
-- No special network configuration needed
-- Server discovery works automatically
-
-### VPN/Remote Setup
-
-- **OAuth** handles remote access automatically
-- Ensure Plex server allows remote connections
-- Consider connection timeouts for slower networks
-
----
-
-*This documentation covers the new OAuth implementation available in recent Bazarr versions. For older versions, only API key authentication is available.*
+- [Webhooks Configuration](Webhooks.md)
+- [Performance Tuning](Performance-Tuning.md)
+- [Settings Reference](Settings.md)
