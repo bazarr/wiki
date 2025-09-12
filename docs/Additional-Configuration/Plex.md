@@ -2,6 +2,8 @@
 
 Bazarr integrates with Plex Media Server to enable automatic subtitle management and workflow automation. The integration supports OAuth authentication (default) and legacy API key configuration.
 
+**It should be noted that this functionality is available from Bazarr version 1.5.3 and onwards - and still needs Sonarr and Radarr to function.**
+
 ## Features
 
 - **OAuth Authentication** - Secure token-based authentication with automatic server discovery
