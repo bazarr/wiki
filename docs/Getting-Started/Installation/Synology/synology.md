@@ -4,6 +4,19 @@ It is recommended to run Bazarr with docker when your NAS supports it. A package
 
 We will try to explain the basics how to setup Bazarr on Synology with Docker.
 
+!!! WARNING
+    For a very long time and for previously unknown reasons, we have had a number of users running into database issues when running Bazarr on Synology. These are usually SQLite database locked errors or even worse. A Bazarr Discord user using the handle gr8Alex may have finally uncovered the issue (around early October, 2025). This user has minimized these errors by preventing the Synology cloud backup system from accessing the Bazarr database, found at `db/bazarr.db` within your installation of Bazarr. Here are the instructions on one way to replicate those efforts (you may have opinions on other/better ways to do so for your installation):
+
+1. Launch Cloud Sync
+1. Go to Task List tab
+1. Click on job that backs up your Bazarr directory
+1. Click Edit
+1. Click File Filter Tab
+1. At the bottom of the screen enter the file names you want to exclude, one at a time and in this case, click `Add` for `bazarr.db`
+   ![!synology_bazarr_db](images/synology_bazarr_db.png)
+
+Hopefully, following the above instructions will prevent the mysterious database issues from happening for your installation under Synology.
+
 !!! TIP
     Depending if you're smart and decide switch everything to Docker then you're done after this guide.
 
