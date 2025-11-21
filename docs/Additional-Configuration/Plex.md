@@ -38,14 +38,7 @@ API key authentication is legacy and should be avoided. It's available only thro
 **Configuration:**
 
 ```yaml
-plex:
-  auth_method: apikey
-  ip: 192.168.1.100
-  port: 32400
-  ssl: false
-  apikey: your-plex-token-here
-  movie_library: Movies
-  series_library: TV Shows
+--8<-- "includes/Additional-Configuration/plex.yml"
 ```
 
 **Requirements:**

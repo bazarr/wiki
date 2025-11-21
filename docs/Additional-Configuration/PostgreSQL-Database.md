@@ -30,14 +30,8 @@ Bazarr will not create the databases for you. Make sure you create it with your 
 
 We need to tell Bazarr to use Postgres. The config.yaml should already be populated with the entries we need:
 
-```text
-postgresql:
-  enabled: true
-  host: localhost
-  port: 5432
-  database: bazarr
-  username: _<postgres_username>_
-  password: _<postgres_password>_
+```yaml
+--8<-- "includes/Additional-Configuration/postgresql.yml"
 ```
 
 Alternatively you may use the environment variables `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USERNAME` and `POSTGRES_PASSWORD`. These take precedence over the `config.yaml` settings.

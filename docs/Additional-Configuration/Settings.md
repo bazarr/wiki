@@ -329,11 +329,11 @@ Enable the automatic selection of desired languages for new series added **after
 
 ###### Languages-
 
- Select the languages to be added to required languages for new series.
+Select the languages to be added to required languages for new series.
 
 ###### Hearing-impaired
 
- Enable this to require hearing-impaired subtitles instead of standard one.
+Enable this to require hearing-impaired subtitles instead of standard one.
 
 ##### Forced
 
@@ -342,7 +342,7 @@ Forced subtitles are the subtitles appearing on screen when the characters speak
 - Like Dothraki in Game of Thrones.
 - Star Trek when someone speaks Klingon.
 
- Values:
+Values:
 
 - False: Search for normal subtitles.
 - True: Search for only forced subtitles. (keep in mind that forced subs aren't available in every languages and are hard to find).
