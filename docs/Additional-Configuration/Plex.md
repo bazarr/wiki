@@ -83,21 +83,21 @@ plex:
 
 ## Settings Reference
 
-| Setting | Description | OAuth | API Key |
-|---------|-------------|-------|---------|
-| Authentication Method | OAuth (web UI) / apikey (config) | Default | Manual |
-| Server Discovery | Automatic with testing | Yes | Manual |
-| Token Storage | Encrypted with URLSafeSerializer | Yes | Yes |
-| Library Fetching | Automatic from server | Yes | Manual |
+| Setting               | Description                      | OAuth   | API Key |
+| --------------------- | -------------------------------- | ------- | ------- |
+| Authentication Method | OAuth (web UI) / apikey (config) | Default | Manual  |
+| Server Discovery      | Automatic with testing           | Yes     | Manual  |
+| Token Storage         | Encrypted with URLSafeSerializer | Yes     | Yes     |
+| Library Fetching      | Automatic from server            | Yes     | Manual  |
 
 ### Integration Options
 
-| Feature | Description |
-|---------|-------------|
-| Set Movie Added Date | Update added date when subtitles found |
-| Set Episode Added Date | Update added date when subtitles found |
-| Update Movie Library | Refresh specific movies after changes |
-| Update Series Library | Refresh specific episodes after changes |
+| Feature                | Description                             |
+| ---------------------- | --------------------------------------- |
+| Set Movie Added Date   | Update added date when subtitles found  |
+| Set Episode Added Date | Update added date when subtitles found  |
+| Update Movie Library   | Refresh specific movies after changes   |
+| Update Series Library  | Refresh specific episodes after changes |
 
 ## Webhooks
 
@@ -111,7 +111,7 @@ Plex webhooks enable real-time subtitle search when media is played. Webhook cre
 
 **Webhook URL Format:**
 
-```
+```none
 http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-bazarr-api-key
 ```
 

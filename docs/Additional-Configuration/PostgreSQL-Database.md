@@ -8,7 +8,7 @@ First, we need a Postgres instance. This guide is written for usage of the postg
 
 _Do not even think about using the latest tag!_
 
-```
+```none
 docker create --name=postgres14 \
     -e POSTGRES_PASSWORD=_<postgres_password>_ \
     -e POSTGRES_USER=_<postgres_username>_ \
@@ -30,7 +30,7 @@ Bazarr will not create the databases for you. Make sure you create it with your 
 
 We need to tell Bazarr to use Postgres. The config.yaml should already be populated with the entries we need:
 
-```
+```none
 postgresql:
   enabled: true
   host: localhost
@@ -74,7 +74,7 @@ Begin the migration by doing the following:
 1. Open your preferred database management tool and connect to the Postgres database instance
 1. Run the following commands:
 
-```
+```none
 DELETE FROM "system" WHERE 1=1;
 DELETE FROM "table_settings_languages" WHERE 1=1;
 DELETE FROM "table_settings_notifier" WHERE 1=1;
@@ -84,13 +84,13 @@ Start the migration by using either of these options:
 
 with docker:
 
-```
+```none
 docker run --rm -v /absolute/path/to/bazarr.db:/bazarr.db --network=host ghcr.io/roxedus/pgloader --with "quote identifiers" --with "data only" --cast "column table_blacklist.timestamp to timestamp" --cast "column table_blacklist_movie.timestamp to timestamp" --cast "column table_history.timestamp to timestamp" --cast "column table_history_movie.timestamp to timestamp" /bazarr.db "postgresql://_<postgres_username>_:_<postgres_password>_@hostname:5432/bazarr"
 ```
 
 without docker:
 
-```
+```none
 pgloader --with "quote identifiers" --with "data only" --cast "column table_blacklist.timestamp to timestamp" --cast "column table_blacklist_movie.timestamp to timestamp" --cast "column table_history.timestamp to timestamp" --cast "column table_history_movie.timestamp to timestamp" /bazarr.db "postgresql://_<postgres_username>_:_<postgres_password>_@hostname:5432/bazarr"
 ```
 

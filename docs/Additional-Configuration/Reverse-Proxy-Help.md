@@ -2,16 +2,16 @@
 
 ## Using Nginx and /bazarr/ base url
 
- ```
+```none
  server {
     # other code here
 
     # Increase http2 max sizes
     large_client_header_buffers 4 16k;
  }
- ```
+```
 
- ```php
+```php
  location /bazarr/ {
     proxy_pass              http://127.0.0.1:6767/bazarr/;
     proxy_set_header        X-Real-IP               $remote_addr;
@@ -28,7 +28,7 @@
         proxy_pass http://127.0.0.1:6767/bazarr/api;
     }
  }
- ```
+```
 
 ## Using Apache 2.3.12 or greater and /bazarr/ base url
 
