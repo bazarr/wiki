@@ -13,7 +13,7 @@ We will try to explain the basics how to setup Bazarr on Synology with Docker.
 1. Click Edit
 1. Click File Filter Tab
 1. At the bottom of the screen enter the file names you want to exclude, one at a time and in this case, click `Add` for `bazarr.db`
-   ![!synology_bazarr_db](images/synology_bazarr_db.png)
+    ![!synology_bazarr_db](images/synology_bazarr_db.png)
 
 Hopefully, following the above instructions will prevent the mysterious database issues from happening for your installation under Synology.
 
@@ -81,12 +81,12 @@ select `latest` for the stable build.
 ![!tag-latest](images/tag-latest.png)
 
 or select `nightly` if you want to use the dev version.
- ![!tag-nightly](images/tag-nightly.png)
+![!tag-nightly](images/tag-nightly.png)
 
 In this example I will use the dev build.
 
 Then on the left select `Image` and wait till it's loaded you can see when it's done where the arrow is pointed and it stops building.
- ![!docker-image](images/docker-image.png)
+![!docker-image](images/docker-image.png)
 
 Then double click on the created image.
 

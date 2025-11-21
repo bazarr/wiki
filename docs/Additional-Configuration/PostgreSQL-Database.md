@@ -8,7 +8,7 @@ First, we need a Postgres instance. This guide is written for usage of the postg
 
 _Do not even think about using the latest tag!_
 
-```none
+```text
 docker create --name=postgres14 \
     -e POSTGRES_PASSWORD=_<postgres_password>_ \
     -e POSTGRES_USER=_<postgres_username>_ \
@@ -30,7 +30,7 @@ Bazarr will not create the databases for you. Make sure you create it with your 
 
 We need to tell Bazarr to use Postgres. The config.yaml should already be populated with the entries we need:
 
-```none
+```text
 postgresql:
   enabled: true
   host: localhost
@@ -48,7 +48,7 @@ If you do not want to migrate an existing SQLite database to Postgres then you h
 
     When running [linuxserver.io Bazarr image](https://docs.linuxserver.io/images/docker-bazarr/) as non root (ie. UID=1000,GID=1000) it might raise the following error:
 
-    ```
+    ```none
     sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: could not open certificate file "/root/.postgresql/postgresql.crt": Permission denied
     connection to server at "bazarr-database" (192.168.1.123), port 5432 failed: FATAL:  pg_hba.conf rejects connection for host "127.0.0.6", user "bazarr-user", database "bazarr_database", no encryption
     ```

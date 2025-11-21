@@ -27,7 +27,7 @@ whisper-asr-webservice supports multiple backends. Currently, there are two avai
 
 ## Docker Installation
 
- The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
+The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
 
 ### Prerequsites for the below examples
 
@@ -65,20 +65,20 @@ services:
     depends_on:
       bazarr:
         condition: service_healthy
-    image: mccloud/subgen:latest
+    image: 'mccloud/subgen:latest'
     container_name: subgenai
     volumes:
-       - ${subgenai_data_folder}/models:/subgen/models
-       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
+      - '${subgenai_data_folder}/models:/subgen/models'
+      - '${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro'
     environment:
       LOG_LEVEL: debug
       NAME_SERVERS: 9.9.9.9
-      PROCADDEDMEDIA: True
-      PROCMEDIAONPLAY: False
+      PROCADDEDMEDIA: true
+      PROCMEDIAONPLAY: false
       PLEXTOKEN: plextoken
-      PLEXSERVER: http://127.0.0.1:32400
+      PLEXSERVER: 'http://127.0.0.1:32400'
       CONCURRENT_TRANSCRIPTIONS: 2
-      USE_PATH_MAPPING: False
+      USE_PATH_MAPPING: false
       MODEL_PATH: ./models
     deploy:
       resources:
@@ -86,7 +86,8 @@ services:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu]
+              capabilities:
+                - gpu
 ```
 
 ### CPU
@@ -97,20 +98,20 @@ services:
     depends_on:
       bazarr:
         condition: service_healthy
-    image: mccloud/subgen:cpu
+    image: 'mccloud/subgen:cpu'
     container_name: subgenai
     volumes:
-       - ${subgenai_data_folder}/models:/subgen/models
-       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
+      - '${subgenai_data_folder}/models:/subgen/models'
+      - '${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro'
     environment:
       LOG_LEVEL: debug
       NAME_SERVERS: 9.9.9.9
-      PROCADDEDMEDIA: True
-      PROCMEDIAONPLAY: False
+      PROCADDEDMEDIA: true
+      PROCMEDIAONPLAY: false
       PLEXTOKEN: plextoken
-      PLEXSERVER: http://127.0.0.1:32400
+      PLEXSERVER: 'http://127.0.0.1:32400'
       CONCURRENT_TRANSCRIPTIONS: 2
-      USE_PATH_MAPPING: False
+      USE_PATH_MAPPING: false
       MODEL_PATH: ./models
 ```
 

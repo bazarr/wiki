@@ -2,17 +2,17 @@
 
 ## Using Nginx and /bazarr/ base url
 
-```none
- server {
+```text
+server {
     # other code here
 
     # Increase http2 max sizes
     large_client_header_buffers 4 16k;
- }
+}
 ```
 
 ```php
- location /bazarr/ {
+location /bazarr/ {
     proxy_pass              http://127.0.0.1:6767/bazarr/;
     proxy_set_header        X-Real-IP               $remote_addr;
     proxy_set_header        Host                    $http_host;
@@ -27,7 +27,7 @@
         auth_request off;
         proxy_pass http://127.0.0.1:6767/bazarr/api;
     }
- }
+}
 ```
 
 ## Using Apache 2.3.12 or greater and /bazarr/ base url
@@ -60,18 +60,18 @@
 
 ```bash
 access_control:
-  default_policy:
-  rules:
+    default_policy:
+    rules:
     - domain:
         - bazarr.<domain>.com
-      resources:
+    resources:
         - '^/api/.*$'
-      policy: bypass
+    policy: bypass
 
 server:
-  read_buffer_size: 8192
-  write_buffer_size: 8192
-  path: authelia
+    read_buffer_size: 8192
+    write_buffer_size: 8192
+    path: authelia
 ```
 
 ### Dockers
