@@ -4,30 +4,30 @@
 
 Before 24.04:
 
-  ```bash
-  apt-get install 7zip python3-dev python3-pip python3-distutils unrar unzip
-  ```
+```bash
+apt-get install 7zip python3-dev python3-pip python3-distutils unrar unzip
+```
 
 Since 24.04:
 
-  ```bash
-  apt-get install 7zip python3-dev python3-pip python3-setuptools unrar unzip
-  ```
+```bash
+apt-get install 7zip python3-dev python3-pip python3-setuptools unrar unzip
+```
 
 ## (Fedora / CentOS) Install requirements with
 
-  ```bash
-  yum install python3-devel python3-pip python3-distutils
-  ```
+```bash
+yum install python3-devel python3-pip python3-distutils
+```
 
 ## (Raspbian and maybe other ARM based distro)
 
 thnx to @inquilino for the fixes/updates
 
-  ```bash
-  sudo apt-get update
-  sudo apt-get install libxml2-dev libxslt1-dev python3-dev python3-libxml2 python3-lxml unrar-free ffmpeg libatlas-base-dev
-  ```
+```bash
+sudo apt-get update
+sudo apt-get install libxml2-dev libxslt1-dev python3-dev python3-libxml2 python3-lxml unrar-free ffmpeg libatlas-base-dev
+```
 
 1. Upgrade Python to version 3.8 or greater.
 1. Download latest release of Bazarr [here](https://github.com/morpheus65535/bazarr/releases/latest/download/bazarr.zip)

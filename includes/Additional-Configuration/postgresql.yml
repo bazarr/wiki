@@ -1,0 +1,7 @@
+postgresql:
+  enabled: true
+  host: localhost
+  port: 5432
+  database: bazarr
+  username: _<postgres_username>_
+  password: _<postgres_password>_

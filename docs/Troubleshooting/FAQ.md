@@ -56,7 +56,7 @@
 
         *If you're using a system with a GUI(Synology, unRAID, OMV, etc.) to configure docker use one of the following from terminal(puTTy) to get the docker compose or docker build command.*`
 
-         `sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock red5d/docker-autocompose CONTAINER_NAME`
+        `sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock red5d/docker-autocompose CONTAINER_NAME`
 
         *And yes this even works on a Synology*
         *if you don't know how you probably didn't read the [[Installation-Synology]](/Getting-Started/Installation/Synology/synology/)*

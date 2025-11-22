@@ -38,14 +38,7 @@ API key authentication is legacy and should be avoided. It's available only thro
 **Configuration:**
 
 ```yaml
-plex:
-  auth_method: apikey
-  ip: 192.168.1.100
-  port: 32400
-  ssl: false
-  apikey: your-plex-token-here
-  movie_library: Movies
-  series_library: TV Shows
+--8<-- "includes/Additional-Configuration/plex.yml"
 ```
 
 **Requirements:**
@@ -83,21 +76,21 @@ plex:
 
 ## Settings Reference
 
-| Setting | Description | OAuth | API Key |
-|---------|-------------|-------|---------|
-| Authentication Method | OAuth (web UI) / apikey (config) | Default | Manual |
-| Server Discovery | Automatic with testing | Yes | Manual |
-| Token Storage | Encrypted with URLSafeSerializer | Yes | Yes |
-| Library Fetching | Automatic from server | Yes | Manual |
+| Setting               | Description                      | OAuth   | API Key |
+| --------------------- | -------------------------------- | ------- | ------- |
+| Authentication Method | OAuth (web UI) / apikey (config) | Default | Manual  |
+| Server Discovery      | Automatic with testing           | Yes     | Manual  |
+| Token Storage         | Encrypted with URLSafeSerializer | Yes     | Yes     |
+| Library Fetching      | Automatic from server            | Yes     | Manual  |
 
 ### Integration Options
 
-| Feature | Description |
-|---------|-------------|
-| Set Movie Added Date | Update added date when subtitles found |
-| Set Episode Added Date | Update added date when subtitles found |
-| Update Movie Library | Refresh specific movies after changes |
-| Update Series Library | Refresh specific episodes after changes |
+| Feature                | Description                             |
+| ---------------------- | --------------------------------------- |
+| Set Movie Added Date   | Update added date when subtitles found  |
+| Set Episode Added Date | Update added date when subtitles found  |
+| Update Movie Library   | Refresh specific movies after changes   |
+| Update Series Library  | Refresh specific episodes after changes |
 
 ## Webhooks
 
@@ -111,7 +104,7 @@ Plex webhooks enable real-time subtitle search when media is played. Webhook cre
 
 **Webhook URL Format:**
 
-```
+```none
 http(s)://your-bazarr-url/api/webhooks/plex?apikey=your-bazarr-api-key
 ```
 

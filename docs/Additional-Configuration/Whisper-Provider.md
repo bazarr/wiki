@@ -27,7 +27,7 @@ whisper-asr-webservice supports multiple backends. Currently, there are two avai
 
 ## Docker Installation
 
- The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
+The complete Docker Compose file can be found [here](https://github.com/McCloudS/subgen/blob/main/docker-compose.yml).
 
 ### Prerequsites for the below examples
 
@@ -60,58 +60,13 @@ NAMESUBLANG=ai
 ### GPU (recommended)
 
 ```yaml
-services:
-  subgenai:
-    depends_on:
-      bazarr:
-        condition: service_healthy
-    image: mccloud/subgen:latest
-    container_name: subgenai
-    volumes:
-       - ${subgenai_data_folder}/models:/subgen/models
-       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
-    environment:
-      LOG_LEVEL: debug
-      NAME_SERVERS: 9.9.9.9
-      PROCADDEDMEDIA: True
-      PROCMEDIAONPLAY: False
-      PLEXTOKEN: plextoken
-      PLEXSERVER: http://127.0.0.1:32400
-      CONCURRENT_TRANSCRIPTIONS: 2
-      USE_PATH_MAPPING: False
-      MODEL_PATH: ./models
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+--8<-- "includes/Additional-Configuration/whisper-gpu.yml"
 ```
 
 ### CPU
 
 ```yaml
-services:
-  subgenai:
-    depends_on:
-      bazarr:
-        condition: service_healthy
-    image: mccloud/subgen:cpu
-    container_name: subgenai
-    volumes:
-       - ${subgenai_data_folder}/models:/subgen/models
-       - ${subgenai_data_folder}/subgen.env:/subgen/subgen.env:ro
-    environment:
-      LOG_LEVEL: debug
-      NAME_SERVERS: 9.9.9.9
-      PROCADDEDMEDIA: True
-      PROCMEDIAONPLAY: False
-      PLEXTOKEN: plextoken
-      PLEXSERVER: http://127.0.0.1:32400
-      CONCURRENT_TRANSCRIPTIONS: 2
-      USE_PATH_MAPPING: False
-      MODEL_PATH: ./models
+--8<-- "includes/Additional-Configuration/whisper-cpu.yml"
 ```
 
 ## Docker on Windows

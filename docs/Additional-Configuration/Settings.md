@@ -85,7 +85,7 @@ Enter here (if required), a list of comma separated hostname or IPv4 addresses t
 
 ![image-20200723200359127](images/image-20200723200359127.png)
 
- Self explanatory.
+Self explanatory.
 
 #### Logging
 
@@ -228,7 +228,7 @@ Choose the Anti-Captcha provider you want to use. and add the necessary credenti
 
 #### Performance / Optimization
 
- ![image-20200723211755850](images/image-20200723211755850.png)
+![image-20200723211755850](images/image-20200723211755850.png)
 
 ##### Adaptive Searching
 
@@ -257,7 +257,7 @@ When enabled it hides embedded subtitles for languages that are not wanted.
 
 #### Post-Processing
 
- ![image-20200723212422568](images/image-20200723212422568.png)
+![image-20200723212422568](images/image-20200723212422568.png)
 
 ##### Encode Subtitles To UTF8
 
@@ -281,7 +281,7 @@ Only synchronize the subtitles if the score is below your chosen score.
 
 #### Use Custom Post-Processing
 
-  ![image-20200723213106103](images/image-20200723213106103.png)
+![image-20200723213106103](images/image-20200723213106103.png)
 
 ##### Use Custom Post-Processing-
 
@@ -307,7 +307,7 @@ Enter in this field the script or binary path to execute with the desired argume
 
 #### Subtitles Languages
 
- ![image-20200520233329803](images/image-20200520233329803.png)
+![image-20200520233329803](images/image-20200520233329803.png)
 
 ##### Single Language
 
@@ -321,7 +321,7 @@ Select the languages you want to be able to use in Bazarr. This doesn't add any 
 
 #### Default Settings
 
- ![image-20200520234444241](images/image-20200520234444241.png)
+![image-20200520234444241](images/image-20200520234444241.png)
 
 ##### Series Default Setting
 
@@ -329,11 +329,11 @@ Enable the automatic selection of desired languages for new series added **after
 
 ###### Languages-
 
- Select the languages to be added to required languages for new series.
+Select the languages to be added to required languages for new series.
 
 ###### Hearing-impaired
 
- Enable this to require hearing-impaired subtitles instead of standard one.
+Enable this to require hearing-impaired subtitles instead of standard one.
 
 ##### Forced
 
@@ -342,7 +342,7 @@ Forced subtitles are the subtitles appearing on screen when the characters speak
 - Like Dothraki in Game of Thrones.
 - Star Trek when someone speaks Klingon.
 
- Values:
+Values:
 
 - False: Search for normal subtitles.
 - True: Search for only forced subtitles. (keep in mind that forced subs aren't available in every languages and are hard to find).
@@ -356,7 +356,7 @@ Same as for series.
 
 ### Providers
 
- ![image-20200520235129443](images/image-20200520235129443.png)
+![image-20200520235129443](images/image-20200520235129443.png)
 
 Select the subtitles providers you would like to enable. It is best to select multiple providers and create/use a account with them especially when you have a lot of wanted subtitles.
 Some subtitle providers requires a extra paid Anti-Captcha Service.
@@ -375,7 +375,7 @@ For each notification provider, you need to enable (if desired) and, in the corr
 
 #### Sonarr/Radarr Sync
 
- ![image-20200724144801431](images/image-20200724144801431.png)
+![image-20200724144801431](images/image-20200724144801431.png)
 
 ##### Update Series list from Sonarr
 
@@ -391,7 +391,7 @@ How often to sync with Radarr for new Movies
 
 #### Disk Indexing
 
- ![image-20200724145153311](images/image-20200724145153311.png)
+![image-20200724145153311](images/image-20200724145153311.png)
 
 ##### Update all Episode Subtitles from disk
 

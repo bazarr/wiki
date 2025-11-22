@@ -49,8 +49,7 @@ Example a RaspberryPi.
 
 ### Random small tweaks that can help with several issues
 
-- Set scanning to only monitored and unmonitor ended shows in Sonarr/Radarr.
-  And enable them later.
+- Set scanning to only monitored and unmonitor ended shows in Sonarr/Radarr. And enable them later.
 - Disable shows, movies that won't have subs ever in your preferred language some shows won't get subs ever. Keep in mind a lot of subs are user made. And some shows or movies are just not worth the time to create.
 - More Providers
-- Pay for anti-captha for the other providers that need it
+- Pay for anti-captcha for the other providers that need it

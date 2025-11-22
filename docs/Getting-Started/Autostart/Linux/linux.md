@@ -86,10 +86,10 @@ respawn
 # Make sure script is started with system locale
 
 script
-   if [ -r /etc/default/locale ]; then
-       . /etc/default/locale
-       export LANG
-   fi
-   exec python /opt/bazarr/bazarr.py
+    if [ -r /etc/default/locale ]; then
+        . /etc/default/locale
+        export LANG
+    fi
+    exec python /opt/bazarr/bazarr.py
 end script
 ```

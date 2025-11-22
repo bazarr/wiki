@@ -17,23 +17,23 @@ Paste the following into the document and change the location of the logs to `/U
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>Label</key>
-    <string>com.github.morpheus65535.bazarr</string>
-    <key>ProgramArguments</key>
-    <array>
-      <string>/usr/local/bin/python3.8</string>
-      <string>/Applications/bazarr/bazarr.py</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>KeepAlive</key>
-    <true/>
-    <key>StandardErrorPath</key>
-    <string>/usr/local/var/log/bazarr.log</string>
-    <key>StandardOutPath</key>
-    <string>/usr/local/var/log/bazarr.log</string>
-  </dict>
+    <dict>
+        <key>Label</key>
+        <string>com.github.morpheus65535.bazarr</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/local/bin/python3.8</string>
+            <string>/Applications/bazarr/bazarr.py</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <true/>
+        <key>StandardErrorPath</key>
+        <string>/usr/local/var/log/bazarr.log</string>
+        <key>StandardOutPath</key>
+        <string>/usr/local/var/log/bazarr.log</string>
+    </dict>
 </plist>
 ```
 

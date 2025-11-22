@@ -11,9 +11,9 @@ Do you need help or want to report a problem or a bug? You can do that several w
 - Provide us with as much info as possible.
 - Clearly describe the problem.
 - Briefly describe your setup.
-   - Including things like your OS.
-   - Which version of Bazarr (System => Status => About).
-   - Upgrade to the latest if possible.
+    - Including things like your OS.
+    - Which version of Bazarr (System => Status => About).
+    - Upgrade to the latest if possible.
 - Tell us what you've tried already.
 - Use the [[Logging and Log Files]](/Troubleshooting/Logging-and-Log-Files/) wiki article how to enable debug logging and where to find them, how to provide them !!!
 
