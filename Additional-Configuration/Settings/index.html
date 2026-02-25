@@ -1,0 +1,3821 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki for Bazarr, Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.">
+      
+      
+        <meta name="author" content="TRaSH">
+      
+      
+        <link rel="canonical" href="http://wiki.bazarr.media/Additional-Configuration/Settings/">
+      
+      
+        <link rel="prev" href="../../Troubleshooting/Windows_installer_reinstall/">
+      
+      
+        <link rel="next" href="../Plex/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Settings - Bazarr Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CEncode+Sans+Expanded:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Encode Sans Expanded"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-SCTEHY8EX0"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-SCTEHY8EX0",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-SCTEHY8EX0",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bazarr Wiki" class="md-header__button md-logo" aria-label="Bazarr Wiki" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bazarr Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigio" data-md-color-accent="blue" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bazarr/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    bazarr/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bazarr Wiki" class="md-nav__button md-logo" aria-label="Bazarr Wiki" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Bazarr Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bazarr/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    bazarr/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Windows/installer" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Windows/source" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Docker/docker" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Linux/linux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/MacOS/macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/FreeBSD/freebsd" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeBSD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Synology/synology" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting-Started/Setup-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting-Started/First-time-installation-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First time installation configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autostart
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Autostart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/Windows/windows" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/Linux/linux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/MacOS/macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/FreeBSD/freebsd" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeBSD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Asking-for-help-or-report-a-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asking for help or report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Logging-and-Log-Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging and Log Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/OpenSubtitles-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSubtitles migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Windows_installer_reinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows installer reinstall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Additional Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bind-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bind Address
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bind Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Username
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Username-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignored-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignored addresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonarr
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonarr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host-
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hostname-or-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname or IP address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-number-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Number-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-base-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Base-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-only-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Only Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-series-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded Series Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Folder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-previously-downloaded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Previously Downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-days-to-go-back-in-history-to-upgrade-subtitles-up-to-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Number of days to go back in history to upgrade subtitles (up to 30)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-manually-downloaded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Manually Downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-captcha-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-Captcha Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance / Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance / Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-enabled-providers-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Enabled Providers Simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-embedded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Embedded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-embedded-pgs-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore Embedded PGS Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-desired-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Only Desired Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encode-subtitles-to-utf8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encode Subtitles To UTF8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable CHMOD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization-score-threshold-for-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization score threshold for series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization-score-threshold-for-movies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization score threshold for movies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-custom-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Custom Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Custom Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-custom-post-processing-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Custom Post-Processing-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-score-threshold-for-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing score threshold for series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-score-threshold-for-movies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing score threshold for movies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Languages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles Languages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabled Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#series-default-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Series Default Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movies-default-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movies Default Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarrradarr-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonarr/Radarr Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonarr/Radarr Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-series-list-from-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Series list from Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-episodes-list-from-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Episodes list from Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-movies-list-from-radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Movies list from Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-all-episode-subtitles-from-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update all Episode Subtitles from disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-all-movie-subtitles-from-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update all Movie Subtitles from disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-upgrade-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and Upgrade Subtitles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search and Upgrade Subtitles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search-for-missing-series-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for Missing Series Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-missing-movies-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for Missing Movies Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-previously-downloaded-subtitles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade previously downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plex Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reverse-Proxy-Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Proxy Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PostgreSQL-Database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Whisper-Provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whisper Provider Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance-Tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Tuning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bazarr-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr Usage Stats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bind-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bind Address
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bind Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Username
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#username-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Username-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignored-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignored addresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonarr
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonarr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host-
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hostname-or-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname or IP address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-number-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Number-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-base-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Base-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-only-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Only Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-series-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded Series Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle Folder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-previously-downloaded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Previously Downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-days-to-go-back-in-history-to-upgrade-subtitles-up-to-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Number of days to go back in history to upgrade subtitles (up to 30)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-manually-downloaded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Manually Downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-captcha-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-Captcha Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance / Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance / Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-enabled-providers-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Enabled Providers Simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-embedded-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Embedded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-embedded-pgs-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore Embedded PGS Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-desired-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Only Desired Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encode-subtitles-to-utf8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encode Subtitles To UTF8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable CHMOD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization-score-threshold-for-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization score threshold for series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-synchronization-score-threshold-for-movies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles synchronization score threshold for movies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-custom-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Custom Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Custom Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-custom-post-processing-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Custom Post-Processing-
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-score-threshold-for-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing score threshold for series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-score-threshold-for-movies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing score threshold for movies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-processing command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Languages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitles-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles Languages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subtitles Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabled Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#series-default-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Series Default Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movies-default-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movies Default Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarrradarr-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonarr/Radarr Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sonarr/Radarr Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-series-list-from-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Series list from Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-episodes-list-from-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Episodes list from Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-movies-list-from-radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Movies list from Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Indexing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disk Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-all-episode-subtitles-from-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update all Episode Subtitles from disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-all-movie-subtitles-from-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update all Movie Subtitles from disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-upgrade-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and Upgrade Subtitles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search and Upgrade Subtitles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search-for-missing-series-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for Missing Series Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-missing-movies-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for Missing Movies Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-previously-downloaded-subtitles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade previously downloaded Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h1>
+<p><strong>THIS SECTION IS OUTDATED AND STILL NEEDS TO GET UPDATED !!!</strong></p>
+<ul>
+<li><a href="#general">General</a></li>
+<li><a href="#sonarr">Sonarr</a></li>
+<li><a href="#radarr">Radarr</a></li>
+<li><a href="#subtitles">Subtitles</a></li>
+<li><a href="#languages">Languages</a></li>
+<li><a href="#providers">Providers</a></li>
+<li><a href="#notifications">Notifications</a></li>
+<li><a href="#scheduler">Scheduler</a></li>
+</ul>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h2>
+<h3 id="host">Host<a class="headerlink" href="#host" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723194801432.png" data-desc-position="bottom"><img alt="image-20200723194801432" src="../images/image-20200723194801432.png"></a></p>
+<h4 id="bind-address">Bind Address<a class="headerlink" href="#bind-address" title="Permanent link">¶</a></h4>
+<p>Valid IP4 address or '0.0.0.0' for all interfaces</p>
+<blockquote>
+<p><strong>Leave it as <code>0.0.0.0</code> if you want to listen on every available IP address (recommended). If you are running inside a docker container, that's the recommended value.</strong></p>
+</blockquote>
+<h5 id="port-number">Port Number<a class="headerlink" href="#port-number" title="Permanent link">¶</a></h5>
+<p>Should be an available TCP port on the computer running Bazarr. Default is 6767 and it is the recommended value.</p>
+<h5 id="url-base">URL Base<a class="headerlink" href="#url-base" title="Permanent link">¶</a></h5>
+<p>This option gives you the opportunity to serve Bazarr in a sub-directory. Ex.: <code>http://127.0.0.1:6767/bazarr/</code> instead of the default <code>http://127.0.0.1:6767/</code></p>
+<p>Mainly used when you use a reverse proxy, if you don't use a reverse proxy or don't know what it is leave this empty!!!</p>
+<h4 id="security">Security<a class="headerlink" href="#security" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723195938008.png" data-desc-position="bottom"><img alt="image-20200723195938008" src="../images/image-20200723195938008.png"></a></p>
+<h5 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">¶</a></h5>
+<p>Select the type of authentication process desired from basic (browser popup) or forms login. Be aware that basic auth is not secure if not used in conjunction with SSL (using a reverse proxy).</p>
+<h5 id="username">Username<a class="headerlink" href="#username" title="Permanent link">¶</a></h5>
+<p>Enter here the username to access Bazarr.</p>
+<h5 id="password">Password<a class="headerlink" href="#password" title="Permanent link">¶</a></h5>
+<p>Enter here the password to access Bazarr.</p>
+<h5 id="api-key">API Key<a class="headerlink" href="#api-key" title="Permanent link">¶</a></h5>
+<p>Your API Key.</p>
+<h4 id="proxy">Proxy<a class="headerlink" href="#proxy" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723200207185.png" data-desc-position="bottom"><img alt="image-20200723200207185" src="../images/image-20200723200207185.png"></a></p>
+<h5 id="type">Type<a class="headerlink" href="#type" title="Permanent link">¶</a></h5>
+<p>Select the desired proxy type from HTTP(S), Socks4 or Socks5.</p>
+<h5 id="hostname">Hostname<a class="headerlink" href="#hostname" title="Permanent link">¶</a></h5>
+<p>Enter here the hostname of your proxy.</p>
+<h5 id="port">Port<a class="headerlink" href="#port" title="Permanent link">¶</a></h5>
+<p>Enter here the TCP port of your proxy.</p>
+<h5 id="username-">Username-<a class="headerlink" href="#username-" title="Permanent link">¶</a></h5>
+<p>Enter here the username (if required) to authenticate to your proxy.</p>
+<h5 id="password-">Password-<a class="headerlink" href="#password-" title="Permanent link">¶</a></h5>
+<p>Enter here the password (if required) to authenticate to your proxy.</p>
+<h5 id="ignored-addresses">Ignored addresses<a class="headerlink" href="#ignored-addresses" title="Permanent link">¶</a></h5>
+<p>Enter here (if required), a list of comma separated hostname or IPv4 addresses to be excluded from going through the proxy.</p>
+<h4 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723200359127.png" data-desc-position="bottom"><img alt="image-20200723200359127" src="../images/image-20200723200359127.png"></a></p>
+<p>Self explanatory.</p>
+<h4 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723200459213.png" data-desc-position="bottom"><img alt="image-20200723200459213" src="../images/image-20200723200459213.png"></a></p>
+<p>This option enables debug logging and should be enabled for a short period to facilitate debugging process.</p>
+<h4 id="analytics">Analytics<a class="headerlink" href="#analytics" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723200850798.png" data-desc-position="bottom"><img alt="image-20200723200850798" src="../images/image-20200723200850798.png"></a></p>
+<p>Send anonymous usage information, nothing that can identify you. This includes information on which providers you use, what languages you search for, Bazarr, Python, Sonarr, Radarr and what OS version you are using. We will use this information to prioritize features and bug fixes. Please, keep this enabled as this is the only way we have to better understand how you use Bazarr.</p>
+<hr>
+<h3 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">¶</a></h3>
+<h4 id="host-">Host-<a class="headerlink" href="#host-" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200520223746802.png" data-desc-position="bottom"><img alt="image-20200520223746802" src="../images/image-20200520223746802.png"></a></p>
+<h5 id="hostname-or-ip-address">Hostname or IP address<a class="headerlink" href="#hostname-or-ip-address" title="Permanent link">¶</a></h5>
+<p>Enter the hostname or the IP address of the computer running your Sonarr instance.</p>
+<blockquote>
+<p><strong>Be aware that when using Bazarr in docker, you cannot reach another container on the same Docker host using the loopback address (ex.: 127.0.0.1 or localhost). Loopback address refer to the Bazarr Docker container, not the Docker host.</strong></p>
+</blockquote>
+<h5 id="port-number-">Port Number-<a class="headerlink" href="#port-number-" title="Permanent link">¶</a></h5>
+<p>Enter the TCP port of your Sonarr instance. Default is 8989.</p>
+<h5 id="url-base-">URL Base-<a class="headerlink" href="#url-base-" title="Permanent link">¶</a></h5>
+<p>Mainly used by those who expose Sonarr behind a reverse proxy (ex.: /sonarr). Don't forget the leading slash. In fact, it should look exactly the same as in Sonarr settings. Mainly used when you use a reverse proxy.</p>
+<blockquote>
+<p><strong>If you don't use a reverse proxy or don't know what it is leave this empty !!!</strong></p>
+</blockquote>
+<h5 id="ssl-enabled">SSL enabled<a class="headerlink" href="#ssl-enabled" title="Permanent link">¶</a></h5>
+<p>Enable this if your Sonarr instance is exposed trough SSL.</p>
+<blockquote>
+<p><strong>Not needed if you reach it with a local IP address.</strong></p>
+</blockquote>
+<h5 id="api-key_1">API key<a class="headerlink" href="#api-key_1" title="Permanent link">¶</a></h5>
+<p>Enter your Sonarr API key here.</p>
+<blockquote>
+<p>Click the <code>Test</code> button after filling in all the fields. Make sure the test is successful before you proceed.</p>
+</blockquote>
+<h4 id="options">Options<a class="headerlink" href="#options" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723142916426.png" data-desc-position="bottom"><img alt="image-20200723142916426" src="../images/image-20200723142916426.png"></a></p>
+<h5 id="minimum-score">Minimum Score<a class="headerlink" href="#minimum-score" title="Permanent link">¶</a></h5>
+<p>Select the minimal score (in percentage) required for a subtitles file to be downloaded. <em>Are your subs often out of sync? Raise the score!</em></p>
+<h5 id="download-only-monitored">Download Only Monitored<a class="headerlink" href="#download-only-monitored" title="Permanent link">¶</a></h5>
+<p>Automatic download of Subtitles will only happen for monitored shows/episodes in Sonarr.</p>
+<h5 id="excluded-tags">Excluded Tags<a class="headerlink" href="#excluded-tags" title="Permanent link">¶</a></h5>
+<p>Episodes from series with those tags (case sensitive) in Sonarr will be excluded from automatic download of Subtitles.
+In Sonarr you add a custom made tag to a show, in this case the shows with these tags will be ignored by Bazarr. examples: <code>dutch</code>, <code>anime</code></p>
+<h5 id="excluded-series-types">Excluded Series Types<a class="headerlink" href="#excluded-series-types" title="Permanent link">¶</a></h5>
+<p>Episodes from series with those types in Sonarr will be excluded from automatic download of Subtitles.
+Options: Standard, Anime, Daily</p>
+<h4 id="path-mappings">Path Mappings<a class="headerlink" href="#path-mappings" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723144000147.png" data-desc-position="bottom"><img alt="image-20200723144000147" src="../images/image-20200723144000147.png"></a></p>
+<p><strong>You should only use this section if Sonarr and Bazarr use a different path to access the same episode file (.mkv).</strong>
+<strong>(for example if you run Sonarr on a different device then Bazarr or have a Synology and mix packages with Docker.)</strong></p>
+<blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/animated-exclamation-mark-image-0006.gif" data-desc-position="bottom"><img alt="animated-exclamation-mark-image-0006" src="../images/animated-exclamation-mark-image-0006.gif"></a></p>
+<p><strong>IF YOU GOT THE SAME VALUES ON BOTH SIDES THEN YOU DON'T NEED IT !!!</strong>
+<strong>IT SHOULD ALSO BE REMOVED OR ELSE YOU WILL GET A ERROR.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/animated-exclamation-mark-image-0006.gif" data-desc-position="bottom"><img alt="animated-exclamation-mark-image-0006" src="../images/animated-exclamation-mark-image-0006.gif"></a></p>
+</blockquote>
+<p>Click on <code>Add</code> and you will get a popup window
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200724211005207.png" data-desc-position="bottom"><img alt="image-20200724211005207" src="../images/image-20200724211005207.png"></a></p>
+<p>Ex.:</p>
+<ul>
+<li>Browse or type the path for Sonarr: <code>/media/tv_shows/seriesX/</code></li>
+<li>Browse or type the path for Bazarr: `\nas\tv\seriesX\</li>
+</ul>
+<p>The common part of both path can be discarded and you should use those values:</p>
+<ul>
+<li>Path for Sonarr: <code>/media/tv_shows/</code></li>
+<li>Path for Bazarr: <code>\\nas\tv\</code></li>
+</ul>
+<blockquote>
+<p><em>If everything runs on Docker you normally don't need to use this. Except if you have messed up path mappings and then it would be smarter to fix those first to have consistency and well planned paths.</em></p>
+</blockquote>
+<hr>
+<h3 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">¶</a></h3>
+<p>The same setup as you did for Sonarr except for the default Port Number: 7878</p>
+<hr>
+<h3 id="subtitles">Subtitles<a class="headerlink" href="#subtitles" title="Permanent link">¶</a></h3>
+<h4 id="subtitles-options">Subtitles Options<a class="headerlink" href="#subtitles-options" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723205858233.png" data-desc-position="bottom"><img alt="image-20200723205858233" src="../images/image-20200723205858233.png"></a></p>
+<h5 id="subtitle-folder">Subtitle Folder<a class="headerlink" href="#subtitle-folder" title="Permanent link">¶</a></h5>
+<p>Choose the location where you want your subtitles to be stored, <code>Alongside Media File</code> is the recommended value.</p>
+<h5 id="upgrade-previously-downloaded-subtitles">Upgrade Previously Downloaded Subtitles<a class="headerlink" href="#upgrade-previously-downloaded-subtitles" title="Permanent link">¶</a></h5>
+<p>Schedule a task to upgrade Subtitles previously downloaded by Bazarr.</p>
+<h5 id="number-of-days-to-go-back-in-history-to-upgrade-subtitles-up-to-30">Number of days to go back in history to upgrade subtitles (up to 30)<a class="headerlink" href="#number-of-days-to-go-back-in-history-to-upgrade-subtitles-up-to-30" title="Permanent link">¶</a></h5>
+<p>Number of days to go back in history to upgrade Subtitles (up to 30).</p>
+<h5 id="upgrade-manually-downloaded-subtitles">Upgrade Manually Downloaded Subtitles<a class="headerlink" href="#upgrade-manually-downloaded-subtitles" title="Permanent link">¶</a></h5>
+<p>Enable or disable the upgrade of manually searched and downloaded subtitles.</p>
+<h4 id="anti-captcha-options">Anti-Captcha Options<a class="headerlink" href="#anti-captcha-options" title="Permanent link">¶</a></h4>
+<p><strong>Some providers require a Anti-Captcha when using their API.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723180451078.png" data-desc-position="bottom"><img alt="image-20200723180451078" src="../images/image-20200723180451078.png"></a></p>
+<p>Choose the Anti-Captcha provider you want to use. and add the necessary credentials.</p>
+<blockquote>
+<p>We recommend <a href="https://anti-captcha.com/">Anti-Captcha.com</a>.</p>
+</blockquote>
+<h4 id="performance-optimization">Performance / Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723211755850.png" data-desc-position="bottom"><img alt="image-20200723211755850" src="../images/image-20200723211755850.png"></a></p>
+<h5 id="adaptive-searching">Adaptive Searching<a class="headerlink" href="#adaptive-searching" title="Permanent link">¶</a></h5>
+<p>When enabled, Bazarr will search less frequently to limit API calls to providers.
+This option enables search on a weekly basis for episodes or movies that are unsuccessful after 4 weeks.</p>
+<h5 id="search-enabled-providers-simultaneously">Search Enabled Providers Simultaneously<a class="headerlink" href="#search-enabled-providers-simultaneously" title="Permanent link">¶</a></h5>
+<p>Search multiple providers at once (Don't choose this on low powered devices)</p>
+<h5 id="use-embedded-subtitles">Use Embedded Subtitles<a class="headerlink" href="#use-embedded-subtitles" title="Permanent link">¶</a></h5>
+<p>When disabled, this option forces Bazarr to not take care of embedded subtitles when deciding if a language is missing.</p>
+<p>When enabled you several extra options</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200725150727044.png" data-desc-position="bottom"><img alt="image-20200725150727044" src="../images/image-20200725150727044.png"></a></p>
+<h5 id="ignore-embedded-pgs-subtitles">Ignore Embedded PGS Subtitles<a class="headerlink" href="#ignore-embedded-pgs-subtitles" title="Permanent link">¶</a></h5>
+<p>When enabled it Ignores PGS Subtitles in <code>Embedded Subtitles</code> detection. Only relevant if <code>Use embedded Subtitles</code> is enabled.</p>
+<h5 id="show-only-desired-languages">Show Only Desired Languages<a class="headerlink" href="#show-only-desired-languages" title="Permanent link">¶</a></h5>
+<p>When enabled it hides embedded subtitles for languages that are not wanted.</p>
+<h4 id="post-processing">Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723212422568.png" data-desc-position="bottom"><img alt="image-20200723212422568" src="../images/image-20200723212422568.png"></a></p>
+<h5 id="encode-subtitles-to-utf8">Encode Subtitles To UTF8<a class="headerlink" href="#encode-subtitles-to-utf8" title="Permanent link">¶</a></h5>
+<p>Re-encode downloaded Subtitles to UTF8. Should be left enabled in most cases.</p>
+<h5 id="enable-chmod">Enable CHMOD<a class="headerlink" href="#enable-chmod" title="Permanent link">¶</a></h5>
+<p>This option,it is only available on *nix based operating systems, gives the possibility to set permissions on subtitle files created by Bazarr.</p>
+<h5 id="subtitles-synchronization">Subtitles synchronization<a class="headerlink" href="#subtitles-synchronization" title="Permanent link">¶</a></h5>
+<p>Enable the subtitles synchronization after downloading a subtitles.</p>
+<h5 id="subtitles-synchronization-score-threshold-for-series">Subtitles synchronization score threshold for series<a class="headerlink" href="#subtitles-synchronization-score-threshold-for-series" title="Permanent link">¶</a></h5>
+<p>Only synchronize the subtitles if the score is below your chosen score.</p>
+<h5 id="subtitles-synchronization-score-threshold-for-movies">Subtitles synchronization score threshold for movies<a class="headerlink" href="#subtitles-synchronization-score-threshold-for-movies" title="Permanent link">¶</a></h5>
+<p>Only synchronize the subtitles if the score is below your chosen score.</p>
+<h4 id="use-custom-post-processing">Use Custom Post-Processing<a class="headerlink" href="#use-custom-post-processing" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200723213106103.png" data-desc-position="bottom"><img alt="image-20200723213106103" src="../images/image-20200723213106103.png"></a></p>
+<h5 id="use-custom-post-processing-">Use Custom Post-Processing-<a class="headerlink" href="#use-custom-post-processing-" title="Permanent link">¶</a></h5>
+<p>Enable the post-processing execution after downloading a subtitles.</p>
+<h5 id="post-processing-score-threshold-for-series">Post-processing score threshold for series<a class="headerlink" href="#post-processing-score-threshold-for-series" title="Permanent link">¶</a></h5>
+<p>Only runs Post-processing if the score is below your chosen score.</p>
+<h5 id="post-processing-score-threshold-for-movies">Post-processing score threshold for movies<a class="headerlink" href="#post-processing-score-threshold-for-movies" title="Permanent link">¶</a></h5>
+<p>Only runs Post-processing  if the score is below your chosen score.</p>
+<h5 id="post-processing-command">Post-processing command<a class="headerlink" href="#post-processing-command" title="Permanent link">¶</a></h5>
+<p>Enter in this field the script or binary path to execute with the desired arguments. Please be aware that double-quote could be necessary around arguments.</p>
+<p><strong>Be aware that your command cannot start or end with quote/double-quote. You must append something like <code>2&gt;&amp;1</code> to the end of your command.</strong></p>
+<hr>
+<h3 id="languages">Languages<a class="headerlink" href="#languages" title="Permanent link">¶</a></h3>
+<h4 id="subtitles-languages">Subtitles Languages<a class="headerlink" href="#subtitles-languages" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200520233329803.png" data-desc-position="bottom"><img alt="image-20200520233329803" src="../images/image-20200520233329803.png"></a></p>
+<h5 id="single-language">Single Language<a class="headerlink" href="#single-language" title="Permanent link">¶</a></h5>
+<p>We don't recommend enabling this option unless absolutely required (ie: media player not supporting language code in subtitles filename). Be aware the language code (ex.: en) is not going to be included in the subtitles file name when enabling this.</p>
+<blockquote>
+<p><strong>Recommended value is off</strong></p>
+</blockquote>
+<h5 id="enabled-languages">Enabled Languages<a class="headerlink" href="#enabled-languages" title="Permanent link">¶</a></h5>
+<p>Select the languages you want to be able to use in Bazarr. This doesn't add any required languages to series or movies, it just filter out the language list everywhere in the UI to have a more readable drop-down.</p>
+<h4 id="default-settings">Default Settings<a class="headerlink" href="#default-settings" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200520234444241.png" data-desc-position="bottom"><img alt="image-20200520234444241" src="../images/image-20200520234444241.png"></a></p>
+<h5 id="series-default-setting">Series Default Setting<a class="headerlink" href="#series-default-setting" title="Permanent link">¶</a></h5>
+<p>Enable the automatic selection of desired languages for new series added <strong>after</strong> the activation of this option.</p>
+<h6 id="languages-">Languages-<a class="headerlink" href="#languages-" title="Permanent link">¶</a></h6>
+<p>Select the languages to be added to required languages for new series.</p>
+<h6 id="hearing-impaired">Hearing-impaired<a class="headerlink" href="#hearing-impaired" title="Permanent link">¶</a></h6>
+<p>Enable this to require hearing-impaired subtitles instead of standard one.</p>
+<h5 id="forced">Forced<a class="headerlink" href="#forced" title="Permanent link">¶</a></h5>
+<p>Forced subtitles are the subtitles appearing on screen when the characters speak a foreign or alien language, or there is a sign, location, or other text in the scene.</p>
+<ul>
+<li>Like Dothraki in Game of Thrones.</li>
+<li>Star Trek when someone speaks Klingon.</li>
+</ul>
+<p>Values:</p>
+<ul>
+<li>False: Search for normal subtitles.</li>
+<li>True: Search for only forced subtitles. (keep in mind that forced subs aren't available in every languages and are hard to find).</li>
+<li>Both: Search for normal subtitles and forced subtitles.</li>
+</ul>
+<h5 id="movies-default-setting">Movies Default Setting<a class="headerlink" href="#movies-default-setting" title="Permanent link">¶</a></h5>
+<p>Same as for series.</p>
+<hr>
+<h3 id="providers">Providers<a class="headerlink" href="#providers" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200520235129443.png" data-desc-position="bottom"><img alt="image-20200520235129443" src="../images/image-20200520235129443.png"></a></p>
+<p>Select the subtitles providers you would like to enable. It is best to select multiple providers and create/use a account with them especially when you have a lot of wanted subtitles.
+Some subtitle providers requires a extra paid Anti-Captcha Service.</p>
+<blockquote>
+<p><strong><em>If possible don't forget to support them for their free service</em></strong></p>
+</blockquote>
+<hr>
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">¶</a></h3>
+<p>For each notification provider, you need to enable (if desired) and, in the corresponding input field, provide a valid config string as described in Apprise <a href="https://github.com/caronc/apprise/wiki">wiki</a>.</p>
+<hr>
+<h3 id="scheduler">Scheduler<a class="headerlink" href="#scheduler" title="Permanent link">¶</a></h3>
+<h4 id="sonarrradarr-sync">Sonarr/Radarr Sync<a class="headerlink" href="#sonarrradarr-sync" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200724144801431.png" data-desc-position="bottom"><img alt="image-20200724144801431" src="../images/image-20200724144801431.png"></a></p>
+<h5 id="update-series-list-from-sonarr">Update Series list from Sonarr<a class="headerlink" href="#update-series-list-from-sonarr" title="Permanent link">¶</a></h5>
+<p>How often to sync with Sonarr for new Series</p>
+<h5 id="update-episodes-list-from-sonarr">Update Episodes list from Sonarr<a class="headerlink" href="#update-episodes-list-from-sonarr" title="Permanent link">¶</a></h5>
+<p>How often to sync with Sonarr for new Episodes</p>
+<h5 id="update-movies-list-from-radarr">Update Movies list from Radarr<a class="headerlink" href="#update-movies-list-from-radarr" title="Permanent link">¶</a></h5>
+<p>How often to sync with Radarr for new Movies</p>
+<h4 id="disk-indexing">Disk Indexing<a class="headerlink" href="#disk-indexing" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200724145153311.png" data-desc-position="bottom"><img alt="image-20200724145153311" src="../images/image-20200724145153311.png"></a></p>
+<h5 id="update-all-episode-subtitles-from-disk">Update all Episode Subtitles from disk<a class="headerlink" href="#update-all-episode-subtitles-from-disk" title="Permanent link">¶</a></h5>
+<p>How often should Bazarr Update all Episodes Subtitles from disk</p>
+<ul>
+<li>Daily</li>
+<li>Weekly</li>
+<li>Manually</li>
+</ul>
+<h6 id="day-of-the-week">Day of the week<a class="headerlink" href="#day-of-the-week" title="Permanent link">¶</a></h6>
+<p>Which day of the week</p>
+<h6 id="hour-of-the-day">Hour of the day<a class="headerlink" href="#hour-of-the-day" title="Permanent link">¶</a></h6>
+<p>Which hour of the day</p>
+<h5 id="update-all-movie-subtitles-from-disk">Update all Movie Subtitles from disk<a class="headerlink" href="#update-all-movie-subtitles-from-disk" title="Permanent link">¶</a></h5>
+<p>Same as series</p>
+<h4 id="search-and-upgrade-subtitles">Search and Upgrade Subtitles<a class="headerlink" href="#search-and-upgrade-subtitles" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/image-20200724145514902.png" data-desc-position="bottom"><img alt="image-20200724145514902" src="../images/image-20200724145514902.png"></a></p>
+<h5 id="search-for-missing-series-subtitles">Search for Missing Series Subtitles<a class="headerlink" href="#search-for-missing-series-subtitles" title="Permanent link">¶</a></h5>
+<p>How often should Bazarr Search for Missing Series Subtitles</p>
+<h5 id="search-for-missing-movies-subtitles">Search for Missing Movies Subtitles<a class="headerlink" href="#search-for-missing-movies-subtitles" title="Permanent link">¶</a></h5>
+<p>How often should Bazarr Search for Missing Movies Subtitles</p>
+<h5 id="upgrade-previously-downloaded-subtitles_1">Upgrade previously downloaded Subtitles<a class="headerlink" href="#upgrade-previously-downloaded-subtitles_1" title="Permanent link">¶</a></h5>
+<p>How often should Bazarr upgrade previously downloaded Subtitles</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 25, 2026 11:42:19 UTC">February 25, 2026 11:42:19</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2021 Bazarr
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://wiki.bazarr.media/discord" target="_blank" rel="noopener" title="wiki.bazarr.media" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/morpheus65535/bazarr" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zM265.8 407.7c0-1.8 0-6 .1-11.6.1-11.4.1-28.8.1-43.7 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-26.6-7.5-56.6-7.5-83.2 0 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 9 .1 21.7.1 30.6 0 4.8.1 8.6.1 10 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3-8.4 1.5-11.5-3.7-11.5-8m-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3-1.9.4-3.7-.4-3.9-1.7m-9.1 3.2c-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4 0 1.3-1.5 2.4-3.5 2.4m-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4-.4 1.3-2.4 1.9-4.1 1.3m-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1-.9 1.1-2.8.9-4.3-.6m-8.5-10c-1.1-1.5-1.1-3.2 0-3.9 1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1-.9.6-2.6 0-3.7-1.5m-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5-.9.9-2.4.4-3.5-.6m-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6-.4.9-1.7 1.1-2.8.4"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
