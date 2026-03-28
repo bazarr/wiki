@@ -6,7 +6,9 @@ Whisper (based on [OpenAI Whisper](https://github.com/openai/whisper)) uses a ne
 
 Whisper supports transcribing in many languages as well as translating from a language to English. The provider works best when it knows the audio language ahead of time. Make sure the 'Deep analyze media file to get audio tracks language' option is enabled to ensure the best results.
 
-Minimum score must be lowered if you want whisper generated subtitles to be automatically "downloaded" because they have a fixed score which is 241/360 (~67%) for episodes and 61/120 (~51%) for movies.
+Minimum score must be lowered if you want whisper generated subtitles to be automatically "downloaded" because they have a fixed score which is 220/360 (~61%) for episodes and 60/180 (~33%) for movies.
+
+These scores are fixed because Whisper always matches only `series` + `season` + `episode` for episodes and `title` for movies (see [morpheus65535:bazarr/custom_libs/subliminal_patch/providers/whisperai.py](https://github.com/morpheus65535/bazarr/blob/master/custom_libs/subliminal_patch/providers/whisperai.py) the `get_matches` method), against the point values defined in [morpheus65535:bazarr/custom_libs/subliminal_patch/providers/whisperai.py](https://github.com/morpheus65535/bazarr/blob/master/custom_libs/subliminal_patch/score.py). The score may be +1 higher (221/360 or 61/180) if your language profile's hearing impaired preference matches the subtitle.
 
 ## whisper-asr-webservice [SubGen]
 
