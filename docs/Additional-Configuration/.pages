@@ -3,6 +3,7 @@ nav:
     - Settings.md
     - Plex.md
     - Webhooks.md
+    - Custom-Notifications.md
     - Reverse-Proxy-Help.md
     - PostgreSQL-Database.md
     - Whisper-Provider.md

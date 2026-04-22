@@ -367,7 +367,9 @@ Some subtitle providers requires a extra paid Anti-Captcha Service.
 
 ### Notifications
 
-For each notification provider, you need to enable (if desired) and, in the corresponding input field, provide a valid config string as described in Apprise [wiki](https://github.com/caronc/apprise/wiki).
+Bazarr provides notification support powered by Apprise. To add a particular notification provider, select it from the list of available options and provide a valid config string as described in the Apprise [wiki](https://github.com/caronc/apprise/wiki).
+
+Refer to the [custom notifications](Custom-Notifications.md) guide for advanced usage.
 
 ------
 
