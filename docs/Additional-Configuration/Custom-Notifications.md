@@ -1,5 +1,8 @@
 # Custom Notifications
 
+!!! info
+    Media variables in custom notifications require Bazarr 1.5.7-beta or newer.
+
 The JSON, XML, and Form notification providers support Apprise's payload manipulation feature for custom notification payloads.
 
 You can refer to the Apprise wiki for details on the specific syntax for the [JSON](https://appriseit.com/services/json/#payload-manipulation), [XML](https://appriseit.com/services/xml/#payload-manipulation), and [Form](https://appriseit.com/services/form/#payload-manipulation) providers.
