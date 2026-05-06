@@ -2,6 +2,7 @@ title: Additional Configuration
 nav:
     - Settings.md
     - Plex.md
+    - Jellyfin.md
     - Webhooks.md
     - Custom-Notifications.md
     - Reverse-Proxy-Help.md
