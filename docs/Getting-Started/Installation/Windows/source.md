@@ -1,8 +1,8 @@
 # Run from source
 
-bazarr requires Python 3.8 or greater and can be run from source.
+bazarr requires Python 3.10 or greater and can be run from source.
 
-1. Install Python 3.8 or greater (Till [Python 3.8.6](https://www.python.org/downloads/release/python-386/) Tested) from [this link](https://www.python.org/downloads/release/python-386/) and make sure to check the box to have Python directory added to the system path variable.
+1. Install Python 3.10 or greater (Till [Python 3.10.11](https://www.python.org/downloads/release/python-31011/) Tested) from [this link](https://www.python.org/downloads/release/python-31011/) and make sure to check the box to have Python directory added to the system path variable.
 1. Open up CMD and go to the folder you want to install bazarr.
 
     !!! Attention

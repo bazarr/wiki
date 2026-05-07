@@ -22,7 +22,7 @@ Paste the following into the document and change the location of the logs to `/U
         <string>com.github.morpheus65535.bazarr</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/usr/local/bin/python3.8</string>
+            <string>/usr/local/bin/python3.10</string>
             <string>/Applications/bazarr/bazarr.py</string>
         </array>
         <key>RunAtLoad</key>

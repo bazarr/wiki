@@ -16,8 +16,8 @@
 
 1. A GUI should pop up. Use the following configuration
 
-    - Path: Should be the location to your Python 3.8 executable. Example: `C:\Python38\python.exe`
-    - Startup Directory: Should be the location of your `Python38` folder. Example: `C:\Python38`
+    - Path: Should be the location to your Python 3.10 executable. Example: `C:\Python310\python.exe`
+    - Startup Directory: Should be the location of your `Python310` folder. Example: `C:\Python310`
     - Arguments: Should be the location of your `bazarr.py` file. Example: `C:\bazarr\bazarr.py`
 
     !!! Warning
