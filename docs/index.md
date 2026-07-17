@@ -23,14 +23,14 @@ If you actually found a valid bug please use [Github](https://github.com/morpheu
 
 ### Stable Branch: master
 
-![version](https://img.shields.io/badge/dynamic/json?query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhotio%2Fbazarr%2Frelease%2FVERSION.json&label=Latest%20Version&style=for-the-badge&color=4051B5)
+![version](https://img.shields.io/badge/dynamic/json?query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhotio%2Fbazarr%2Frelease%2Fmeta.json&label=Latest%20Version&style=for-the-badge&color=4051B5)
 
 - (stable)
 - Builds Pushed after a testing period in development
 
 ### Dev Branch: development
 
-![version](https://img.shields.io/badge/dynamic/json?query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhotio%2Fbazarr%2Fnightly%2FVERSION.json&label=Latest%20Version&style=for-the-badge&color=4051B5)
+![version](https://img.shields.io/badge/dynamic/json?query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhotio%2Fbazarr%2Fnightly%2Fmeta.json&label=Latest%20Version&style=for-the-badge&color=4051B5)
 
 - (development)
 - Builds pushed when complete
