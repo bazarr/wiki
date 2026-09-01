@@ -1,0 +1,2172 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wiki for Bazarr, Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.">
+      
+      
+        <meta name="author" content="TRaSH">
+      
+      
+        <link rel="canonical" href="http://wiki.bazarr.media/Additional-Configuration/Settings/Subtitles/">
+      
+      
+        <link rel="prev" href="../Providers/">
+      
+      
+        <link rel="next" href="../../../Getting-Started/First-time-installation-configuration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Subtitle Settings - Bazarr Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CEncode+Sans+Expanded:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Encode Sans Expanded"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-SCTEHY8EX0"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-SCTEHY8EX0",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-SCTEHY8EX0",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#subtitle-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Bazarr Wiki" class="md-header__button md-logo" aria-label="Bazarr Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bazarr Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Subtitle Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigio" data-md-color-accent="blue" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bazarr/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    bazarr/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bazarr Wiki" class="md-nav__button md-logo" aria-label="Bazarr Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Bazarr Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bazarr/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    bazarr/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Windows/installer" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Windows/source" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Docker/docker" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Linux/linux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/MacOS/macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/FreeBSD/freebsd" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeBSD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Installation/Synology/synology" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Getting-Started/Setup-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Getting-Started/First-time-installation-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First time installation configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autostart
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Autostart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/Windows/windows" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/Linux/linux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/MacOS/macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/Getting-Started/Autostart/FreeBSD/freebsd" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FreeBSD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Troubleshooting/FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Troubleshooting/Asking-for-help-or-report-a-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asking for help or report a problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Troubleshooting/Logging-and-Log-Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging and Log Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Troubleshooting/OpenSubtitles-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSubtitles migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Troubleshooting/Windows_installer_reinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows installer reinstall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Additional Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plex Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Jellyfin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jellyfin Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Custom-Notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reverse-Proxy-Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Proxy Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PostgreSQL-Database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Whisper-Provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whisper Provider Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Performance-Tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Tuning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bazarr-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr Usage Stats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#files-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subtitle-file-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitle File Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-subtitles-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded Subtitles Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance / Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whisper-as-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whisper As Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-zero-subtitle-content-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sub-Zero Subtitle Content Modifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Post-Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="subtitle-settings">Subtitle Settings<a class="headerlink" href="#subtitle-settings" title="Permanent link">¶</a></h1>
+<p>Comprehensive subtitle file management, search optimization, and post-processing.</p>
+<h2 id="files-tab">Files Tab<a class="headerlink" href="#files-tab" title="Permanent link">¶</a></h2>
+<p>Manage how subtitle files are stored, formatted, and processed on disk.</p>
+<h3 id="subtitle-file-options">Subtitle File Options<a class="headerlink" href="#subtitle-file-options" title="Permanent link">¶</a></h3>
+<p><strong>Subtitle Folder</strong></p>
+<p>Choose where to store downloaded subtitles:</p>
+<ul>
+<li>
+<p><strong>AlongSide Media File</strong> (recommended): Same folder as the video file. Best for media player compatibility and keeping everything organized.</p>
+<ul>
+<li>Example: <code>/videos/Movies/Inception/</code> contains <code>Inception.mkv</code> and <code>Inception.en.srt</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Relative Path to Media File</strong>: Store subtitles in a subfolder relative to the video file</p>
+<ul>
+<li>Example: Subtitles in <code>./Subs/</code> subdirectory</li>
+</ul>
+</li>
+<li>
+<p><strong>Absolute Path</strong>: Store all subtitles in a custom directory</p>
+<ul>
+<li>Must specify the absolute path in "Custom Subtitles Folder"</li>
+</ul>
+</li>
+</ul>
+<p><strong>Hearing-Impaired Subtitles Extension</strong></p>
+<p>File extension used for hearing-impaired subtitles:</p>
+<ul>
+<li><strong>.hi</strong> (Hearing-Impaired) - Standard convention</li>
+<li><strong>.sdh</strong> (Subtitles for the Deaf or Hard-of-Hearing) - More descriptive</li>
+<li><strong>.cc</strong> (Close Captioned) - Alternative</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>With <code>.sdh</code> selected, HI English subtitles save as <code>movie.en.sdh.srt</code></p>
+</div>
+<p><strong>Encode Subtitles To UTF-8</strong></p>
+<p>Re-encode all downloaded subtitles to UTF-8 encoding.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep this enabled. Ensures compatibility with all players and systems worldwide. Only disable if you have specific encoding requirements.</p>
+</div>
+<p><strong>Change Subtitle File Permission After Download (chmod)</strong></p>
+<p>(Unix/Linux/macOS only) Set file permissions on subtitle files after downloading.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>0755</code> for world-readable files, <code>0644</code> for user/group readable</p>
+</div>
+<!-- -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Must be a 4-digit octal number. Only works on non-Windows systems.</p>
+</div>
+<h3 id="embedded-subtitles-handling">Embedded Subtitles Handling<a class="headerlink" href="#embedded-subtitles-handling" title="Permanent link">¶</a></h3>
+<p><strong>Enable .strm Support</strong></p>
+<p>Support for <code>.strm</code> files (text files containing stream URLs). Bazarr reads the URL and analyzes it for embedded subtitle tracks.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Useful if you use .strm files to point to external streams instead of local files.</p>
+</div>
+<p><strong>Treat Embedded Subtitles as Downloaded</strong></p>
+<p>When enabled, Bazarr considers embedded subtitles as satisfying language requirements (treats them as "already downloaded").</p>
+<p>When disabled, only external subtitle files count as downloaded.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Impact on Searches</strong></p>
+<ul>
+<li><strong>Enabled</strong>: Won't search for external subs if embedded ones exist</li>
+<li><strong>Disabled</strong>: Will search for external subs even if embedded ones exist</li>
+</ul>
+</div>
+<p><strong>Embedded Subtitles Parser</strong></p>
+<p>Choose which tool analyzes video files for embedded subtitles:</p>
+<ul>
+<li><strong>FFprobe</strong> (default, faster): Part of Bazarr. Good for most cases.</li>
+<li><strong>mediainfo</strong> (slower, more thorough): Requires separate installation. May provide better results for complex files.</li>
+</ul>
+<p><strong>Ignore Embedded PGS Subtitles</strong></p>
+<p>Ignore PGS (Presentation Graphics Stream) subtitles - bitmap-based subtitles found in Blu-ray rips.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>If you don't want to replace bitmap-based subtitles with text-based ones, enable this.</p>
+</div>
+<p><strong>Ignore Embedded VobSub Subtitles</strong></p>
+<p>Ignore VobSub subtitles - image-based subtitles from DVD sources.</p>
+<p><strong>Ignore Embedded ASS Subtitles</strong></p>
+<p>Ignore ASS (Advanced SubStation Alpha) subtitles - text format with styling/formatting.</p>
+<p><strong>Show Only Desired Languages</strong></p>
+<p>Hide embedded subtitles for languages NOT in your language profiles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cleaner interface showing only the languages you care about.</p>
+</div>
+<hr>
+<h2 id="search-tab">Search Tab<a class="headerlink" href="#search-tab" title="Permanent link">¶</a></h2>
+<p>Configure subtitle search behavior, quality thresholds, and optimization.</p>
+<h3 id="upgrading-subtitles">Upgrading Subtitles<a class="headerlink" href="#upgrading-subtitles" title="Permanent link">¶</a></h3>
+<p><strong>Upgrade Previously Downloaded Subtitles</strong></p>
+<p>Enable periodic searching for higher-quality versions of already-downloaded subtitles.</p>
+<p><strong>Number of Days to Go Back</strong></p>
+<p>How far back in history to look when upgrading (1-30 days).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Set to 14 days means Bazarr looks for upgrades for subtitles downloaded in the last 2 weeks.</p>
+</div>
+<p><strong>Upgrade Manually Downloaded or Translated Subtitles</strong></p>
+<p>When enabled, include manually downloaded and translated subtitles in upgrade searches.</p>
+<hr>
+<h3 id="search-scores">Search Scores<a class="headerlink" href="#search-scores" title="Permanent link">¶</a></h3>
+<p><strong>Minimum Score For Episodes</strong></p>
+<ul>
+<li><strong>Range</strong>: 0-100%</li>
+<li>Episodes only download subtitles automatically if they score at least this percentage</li>
+</ul>
+<p><strong>Minimum Score For Movies</strong></p>
+<ul>
+<li><strong>Range</strong>: 0-100%</li>
+<li>Movies only download subtitles automatically if they score at least this percentage</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Scoring Guide</strong></p>
+<ul>
+<li><strong>90-100%</strong>: Strict matching, only best quality matches downloaded</li>
+<li><strong>75-90%</strong>: Balanced approach, good quality matches</li>
+<li><strong>50-75%</strong>: Lenient, more results but potentially lower quality</li>
+<li><strong>Below 50%</strong>: Not recommended, high risk of wrong or very poor subtitles</li>
+</ul>
+</div>
+<p><strong>Why Score Matters</strong>: Scores are calculated based on:</p>
+<ul>
+<li>Exact filename matching</li>
+<li>Release name matching</li>
+<li>Uploader reputation</li>
+<li>Provider verification</li>
+<li>Other quality indicators</li>
+</ul>
+<hr>
+<h3 id="performance-optimization">Performance / Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">¶</a></h3>
+<p><strong>Adaptive Searching</strong></p>
+<p>Skip searching providers for subtitles that have been searched for recently. After an initial search window, only search periodically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Purpose</strong></p>
+<ul>
+<li>Reduces API calls to subtitle providers</li>
+<li>Improves search speed</li>
+<li>Saves bandwidth</li>
+<li>Good for high-traffic instances</li>
+</ul>
+</div>
+<p><strong>Delay Before Adaptive Search Takes Effect</strong></p>
+<p>Time window after first search during which Bazarr continues searching even if recent.</p>
+<ul>
+<li><strong>Default</strong>: 3 weeks</li>
+<li><strong>Options</strong>: 1-4 weeks</li>
+</ul>
+<p><strong>Delay Between Adaptive Searches</strong></p>
+<p>How frequently Bazarr re-searches in adaptive mode after initial window.</p>
+<ul>
+<li><strong>Default</strong>: 1 week</li>
+<li><strong>Options</strong>: 3 days - 4 weeks</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>Delay: 3 weeks, Delta: 1 week</li>
+<li>First search on Day 1</li>
+<li>Adaptive searching starts Day 22 (3 weeks later)</li>
+<li>Searches again on Day 29, Day 36, etc. (every 1 week)</li>
+</ul>
+</div>
+<p><strong>Search Enabled Providers Simultaneously</strong></p>
+<p>Search all enabled providers in parallel instead of sequentially.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><strong>Pros</strong>: Faster overall search time</li>
+<li><strong>Cons</strong>: Higher CPU usage, more simultaneous network requests</li>
+<li><strong>Recommendation</strong>: Disable on low-powered devices (Raspberry Pi, NAS, older systems)</li>
+</ul>
+</div>
+<p><strong>Skip Video File Hash Calculation</strong></p>
+<p>Skip computing video file hashes during searches.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><strong>Pros</strong>: Faster searches, prevents waking sleeping hard drives</li>
+<li><strong>Cons</strong>: May reduce subtitle matching quality/accuracy</li>
+<li><strong>Use When</strong>: Running on NAS with spinning drives or slow storage</li>
+</ul>
+</div>
+<hr>
+<h2 id="processing-tab">Processing Tab<a class="headerlink" href="#processing-tab" title="Permanent link">¶</a></h2>
+<p>Automatic subtitle modification, synchronization, and post-processing.</p>
+<h3 id="whisper-as-fallback">Whisper As Fallback<a class="headerlink" href="#whisper-as-fallback" title="Permanent link">¶</a></h3>
+<p>Automatic AI-based subtitle generation using OpenAI Whisper when provider searches fail.</p>
+<p><strong>Use Whisper as Fallback for Automated Searches</strong></p>
+<p>When no provider reaches the minimum score, Bazarr generates subtitles using Whisper.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Applies to</strong></p>
+<ul>
+<li>Scheduled automated searches</li>
+<li>Search for Missing Subtitles tasks</li>
+<li><strong>NOT</strong> to manual single searches</li>
+</ul>
+</div>
+<p><strong>Use Whisper as Fallback for Single Series Searches</strong></p>
+<p>Extend Whisper fallback to manual searches from the Wanted menu.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Can significantly increase processing time for single searches.</p>
+</div>
+<h3 id="sub-zero-subtitle-content-modifications">Sub-Zero Subtitle Content Modifications<a class="headerlink" href="#sub-zero-subtitle-content-modifications" title="Permanent link">¶</a></h3>
+<p>Automatically fix and enhance downloaded subtitles. Modifications happen immediately after download:</p>
+<p><strong>Hearing Impaired</strong></p>
+<p>Remove hearing impaired tags and descriptions like:</p>
+<ul>
+<li><code>[DOOR SLAMS]</code>, <code>[PHONE RINGS]</code>, <code>[THUNDER]</code></li>
+<li>HD audio indicators</li>
+<li>Hearing impaired metadata</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cleaner subtitles for those who don't need these cues.</p>
+</div>
+<p><strong>Remove Tags</strong></p>
+<p>Remove all style and formatting tags:</p>
+<ul>
+<li>Colors, bold, italic, underline</li>
+<li>Font changes</li>
+<li>Size modifications</li>
+<li>All ASS/SSA formatting</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Plain text subtitles for maximum compatibility.</p>
+</div>
+<p><strong>Remove Emoji</strong></p>
+<p>Strip emoji characters from subtitles.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Some players don't render emoji well or clutter subtitles.</p>
+</div>
+<p><strong>OCR Fixes</strong></p>
+<p>Fix common errors from OCR (optical character recognition) conversion:</p>
+<ul>
+<li>When bitmap subtitles are converted to text</li>
+<li>Common OCR mistakes (e.g., "l" vs "1", "O" vs "0")</li>
+</ul>
+<p><strong>Common Fixes</strong></p>
+<p>Fix general text issues:</p>
+<ul>
+<li>Whitespace and punctuation problems</li>
+<li>Common typos</li>
+<li>Line breaks</li>
+</ul>
+<p><strong>Fix Uppercase</strong></p>
+<p>Convert all-uppercase subtitles to proper case:</p>
+<ul>
+<li><code>THE QUICK BROWN FOX</code> → <code>The Quick Brown Fox</code></li>
+<li>Makes uppercase subtitles readable</li>
+</ul>
+<p><strong>Color</strong></p>
+<p>Add color to subtitles. Options:</p>
+<ul>
+<li>White, Light Gray, Red, Green, Yellow, Blue, Magenta, Cyan</li>
+<li>Black, Dark Red, Dark Green, Dark Yellow, Dark Blue, Dark Magenta, Dark Cyan, Dark Grey</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only works with players supporting color tags (ASS/SSA format).</p>
+</div>
+<p><strong>Reverse RTL</strong></p>
+<p>Reverse punctuation in right-to-left (RTL) language subtitles:</p>
+<ul>
+<li>For problematic playback devices</li>
+<li>Fixes RTL language rendering issues</li>
+</ul>
+<hr>
+<h3 id="audio-synchronization">Audio Synchronization<a class="headerlink" href="#audio-synchronization" title="Permanent link">¶</a></h3>
+<p>Automatic timing alignment using ffsubsync (machine learning-based synchronization).</p>
+<p><strong>Enable Automatic Subtitles Audio Synchronization</strong></p>
+<p>Automatically sync subtitle timing to audio after download.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Significantly increases processing time (can take minutes per subtitle). Disable if system is slow or has limited resources.</p>
+</div>
+<p><strong>Series Score Threshold For Audio Sync</strong></p>
+<p>Only auto-sync episode subtitles scoring <strong>below</strong> this threshold.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Threshold 80 means sync only subtitles scoring below 80%, likely misaligned.</p>
+</div>
+<p><strong>Movies Score Threshold For Audio Sync</strong></p>
+<p>Only auto-sync movie subtitles scoring <strong>below</strong> this threshold.</p>
+<p><strong>Synchronization Reference</strong></p>
+<p>Choose what ffsubsync uses to align subtitles:</p>
+<ul>
+<li><strong>Use Audio Track as Reference</strong> (better quality, slower): Analyzes audio to find timing. More accurate but resource-intensive.</li>
+<li><strong>Use Embedded Subtitles as Reference</strong> (faster): Uses existing embedded subtitles as timing reference. Faster but less accurate if embedded subtitles are wrong.</li>
+</ul>
+<p><strong>Prefer Original Language Audio Track</strong></p>
+<p>Use the show/movie's original language audio track (from Sonarr/Radarr metadata) as sync reference.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><strong>Benefit</strong>: Accurate syncing for original language audio</li>
+<li><strong>Fallback</strong>: Uses default audio track if original language not available</li>
+</ul>
+</div>
+<p><strong>Do Not Fix Framerate Mismatch</strong></p>
+<p>Skip framerate correction during synchronization.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>If you know framerate isn't mismatched, can speed up sync.</p>
+</div>
+<p><strong>Golden-Section Search</strong></p>
+<p>Use advanced mathematical search to find optimal framerate ratio.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Better results for framerate-mismatched content but slower processing.</p>
+</div>
+<p><strong>Max Offset Seconds</strong></p>
+<p>Maximum timing offset allowed for any subtitle segment.</p>
+<ul>
+<li><strong>Options</strong>: 60, 120, 300, 600 seconds</li>
+<li><strong>Default</strong>: 60 seconds</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>If set to 60, no subtitle will be offset more than 60 seconds from original timing.</p>
+</div>
+<p><strong>Generate Debug File Instead of Synchronizing</strong></p>
+<p>Create debug files (.tar.gz) for ffsubsync issue reporting instead of actually syncing.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>When opening issues on ffsubsync GitHub to help developers debug problems.</p>
+</div>
+<hr>
+<h3 id="custom-post-processing">Custom Post-Processing<a class="headerlink" href="#custom-post-processing" title="Permanent link">¶</a></h3>
+<p>Execute custom scripts or commands after downloading subtitles.</p>
+<p><strong>Enable Custom Post-Processing</strong></p>
+<p>Activate custom command execution after each subtitle download.</p>
+<p><strong>Series Score Threshold For Post-Processing</strong></p>
+<p>Only post-process episode subtitles scoring <strong>below</strong> this threshold.</p>
+<p><strong>Movies Score Threshold For Post-Processing</strong></p>
+<p>Only post-process movie subtitles scoring <strong>below</strong> this threshold.</p>
+<p><strong>Post-Processing Command</strong></p>
+<p>The script or binary to execute. Available variables include:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{directory}</code></td>
+<td>Full path of episode/movie file parent directory</td>
+</tr>
+<tr>
+<td><code>{episode}</code></td>
+<td>Full path of episode/movie file</td>
+</tr>
+<tr>
+<td><code>{episode_name}</code></td>
+<td>Filename without directory or extension</td>
+</tr>
+<tr>
+<td><code>{subtitles}</code></td>
+<td>Full path of the subtitles file</td>
+</tr>
+<tr>
+<td><code>{subtitles_language}</code></td>
+<td>Language of subtitles (may include :hi or :forced)</td>
+</tr>
+<tr>
+<td><code>{subtitles_language_code2}</code></td>
+<td>2-letter language code (e.g., <code>en</code>, <code>en:hi</code>)</td>
+</tr>
+<tr>
+<td><code>{subtitles_language_code2_dot}</code></td>
+<td>2-letter code with dot separator (e.g., <code>en.hi</code>)</td>
+</tr>
+<tr>
+<td><code>{subtitles_language_code3}</code></td>
+<td>3-letter language code (e.g., <code>eng</code>)</td>
+</tr>
+<tr>
+<td><code>{subtitles_language_code3_dot}</code></td>
+<td>3-letter code with dot separator</td>
+</tr>
+<tr>
+<td><code>{episode_language}</code></td>
+<td>Audio language of the media file</td>
+</tr>
+<tr>
+<td><code>{episode_language_code2}</code></td>
+<td>2-letter audio language code</td>
+</tr>
+<tr>
+<td><code>{episode_language_code3}</code></td>
+<td>3-letter audio language code</td>
+</tr>
+<tr>
+<td><code>{score}</code></td>
+<td>Subtitle quality score</td>
+</tr>
+<tr>
+<td><code>{subtitle_id}</code></td>
+<td>Provider ID of the subtitle</td>
+</tr>
+<tr>
+<td><code>{provider}</code></td>
+<td>Provider that supplied the subtitle</td>
+</tr>
+<tr>
+<td><code>{uploader}</code></td>
+<td>Uploader of the subtitle file</td>
+</tr>
+<tr>
+<td><code>{release_info}</code></td>
+<td>Release info for the subtitle file</td>
+</tr>
+<tr>
+<td><code>{series_id}</code></td>
+<td>Sonarr series ID (empty for movies)</td>
+</tr>
+<tr>
+<td><code>{episode_id}</code></td>
+<td>Sonarr episode ID or Radarr movie ID</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>/scripts/fix_subtitles.py<span class="w"> </span><span class="s2">"{subtitles}"</span><span class="w"> </span><span class="s2">"{episode_language_code2}"</span>
+bash<span class="w"> </span>/usr/local/bin/post-process.sh<span class="w"> </span><span class="s2">"{subtitles}"</span><span class="w"> </span><span class="s2">"{episode}"</span>
+</code></pre></div>
+</div>
+<!-- -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your command cannot start or end with quotes. Append <code>2&gt;&amp;1</code> to capture output.</p>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="September 1, 2026 01:54:02 UTC">September 1, 2026 01:54:02</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Bazarr
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="http://wiki.bazarr.media/discord" target="_blank" rel="noopener" title="wiki.bazarr.media" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/morpheus65535/bazarr" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zM265.8 407.7c0-1.8 0-6 .1-11.6.1-11.4.1-28.8.1-43.7 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-26.6-7.5-56.6-7.5-83.2 0 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 9 .1 21.7.1 30.6 0 4.8.1 8.6.1 10 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3-8.4 1.5-11.5-3.7-11.5-8m-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3-1.9.4-3.7-.4-3.9-1.7m-9.1 3.2c-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4 0 1.3-1.5 2.4-3.5 2.4m-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4-.4 1.3-2.4 1.9-4.1 1.3m-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1-.9 1.1-2.8.9-4.3-.6m-8.5-10c-1.1-1.5-1.1-3.2 0-3.9 1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1-.9.6-2.6 0-3.7-1.5m-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5-.9.9-2.4.4-3.5-.6m-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6-.4.9-1.7 1.1-2.8.4"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
