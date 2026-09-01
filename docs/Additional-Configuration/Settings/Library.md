@@ -24,7 +24,7 @@ Toggle **Enabled** to activate Sonarr integration with Bazarr.
 > [!NOTE]
 > Once enabled, Bazarr will sync with Sonarr to get information about your TV series and episodes.
 
-### Host Configuration
+### Sonarr Host Configuration
 
 **Address**
 
@@ -65,7 +65,7 @@ Click the test button after configuration. A successful test confirms Bazarr can
 > [!IMPORTANT]
 > Always test the connection before proceeding with the rest of the setup.
 
-### Synchronization Options
+### Sonarr Synchronization Options
 
 **Sync with Sonarr on Live Connection Establishment**
 
@@ -81,6 +81,7 @@ Episodes from series with these tags (case-sensitive) in Sonarr will be excluded
 > [!EXAMPLE]
 > If you tag anime series with "anime" in Sonarr, add "anime" here to exclude them from automatic downloads. Tags are case-sensitive.
 
+<!-- -->
 > [!TIP]
 > Use multiple tags separated by commas. For example: `anime, no-subs, manual-only`
 
@@ -130,7 +131,7 @@ Season 0 contains specials, extras, behind-the-scenes content, and bonus episode
 > [!EXAMPLE]
 > Most users enable this since extras rarely need subtitles and they can clutter search results.
 
-### Path Mappings
+### Sonarr Path Mappings
 
 Use this section only if Sonarr and Bazarr access the same files using different paths. This is necessary when:
 
@@ -153,18 +154,21 @@ Click "Add" to create a new mapping:
 Bazarr will translate between these paths when checking file properties and downloading subtitles.
 
 > [!EXAMPLE]
+>
 > - If Sonarr uses `/media/tv_shows/` and Bazarr uses `\\nas\tv\`, create a mapping between these base paths
 > - Bazarr will then translate `/media/tv_shows/Breaking_Bad/Season01/` to `\\nas\tv\Breaking_Bad\Season01\` automatically
 > - This allows both systems to find and work with the same files
 
+<!-- -->
 > [!NOTE]
 > For Docker setups with consistent volume mounts, path mappings are usually not needed. Please review TRaSH's [Hardlink Tutorial](https://trash-guides.info/hardlinks) for best practices.
 
-### Webhook Integration
+### Sonarr Webhook Integration
 
 To trigger subtitle searches immediately when episodes are imported (instead of waiting for scheduled tasks), use this webhook command in Sonarr:
 
 > [!EXAMPLE]
+>
 > ```bash
 > curl -H "Content-Type: application/json" \
 >   -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
@@ -188,7 +192,7 @@ Toggle **Enabled** to activate Radarr integration with Bazarr.
 > [!NOTE]
 > Once enabled, Bazarr will sync with Radarr to get information about your movies.
 
-### Host Configuration
+### Radarr Host Configuration
 
 **Address**
 
@@ -229,7 +233,7 @@ Click the test button after configuration. A successful test confirms Bazarr can
 > [!IMPORTANT]
 > Always test the connection before proceeding with the rest of the setup.
 
-### Synchronization Options
+### Radarr Synchronization Options
 
 **Sync with Radarr on Live Connection Establishment**
 
@@ -245,6 +249,7 @@ Movies with these tags (case-sensitive) in Radarr will be excluded from subtitle
 > [!EXAMPLE]
 > If you tag foreign language films with "original-lang" in Radarr, add "original-lang" here to exclude them from automatic downloads if you only want subtitles for English movies.
 
+<!-- -->
 > [!TIP]
 > Use multiple tags separated by commas. For example: `no-subs, manual-only, dubbed-only`
 
@@ -269,7 +274,7 @@ When enabled, Bazarr won't search for subtitles immediately when movies are impo
 > [!NOTE]
 > Use this if you do bulk imports to Radarr and want to avoid overwhelming subtitle providers with simultaneous requests.
 
-### Path Mappings
+### Radarr Path Mappings
 
 Use the same approach as Sonarr for path mappings when Radarr and Bazarr access files differently.
 
@@ -286,17 +291,20 @@ Click "Add" to create a new mapping:
 Bazarr will translate between these paths when checking file properties and downloading subtitles.
 
 > [!EXAMPLE]
+>
 > - If Radarr uses `/media/movies/` and Bazarr uses `\\nas\films\`, create a mapping between these paths
 > - Bazarr will then translate `/media/movies/Inception.mkv` to `\\nas\films\Inception.mkv` automatically
 
+<!-- -->
 > [!NOTE]
 > For Docker setups with consistent volume mounts, path mappings are usually not needed.
 
-### Webhook Integration
+### Radarr Webhook Integration
 
 To trigger subtitle searches immediately when movies are imported (instead of waiting for scheduled tasks), use this webhook command in Radarr:
 
 > [!EXAMPLE]
+>
 > ```bash
 > curl -H "Content-Type: application/json" \
 >   -H "X-API-KEY: YOUR_BAZARR_API_KEY" \

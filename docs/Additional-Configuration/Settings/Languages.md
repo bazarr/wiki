@@ -80,12 +80,13 @@ Each profile consists of:
 3. **Cutoff Language**: (Optional) Stop searching other languages once this language is found
 
 > [!EXAMPLE]
+>
 > - Profile: `English, Dutch, German, French` with cutoff `Dutch`
 > - If Dutch found → Download Dutch and stop searching
 > - If Dutch not found → Continue searching German and French
 > - English only downloaded if nothing else matches
 
-#### Tag-Based Automatic Language Profile Selection
+### Tag-Based Automatic Language Profile Selection
 
 Assign language profiles to shows/movies automatically based on Sonarr/Radarr tags.
 
@@ -109,10 +110,11 @@ Enter tags that, when present on a show/movie, **remove** any assigned language 
 > [!EXAMPLE]
 > Tag a show "no-subtitles" and add it to Remove Profile Tags. Shows with this tag won't have a profile applied, even if another tag matches a profile.
 
+<!-- -->
 > [!NOTE]
 > **Conflict Resolution**: If a show has both a matching profile tag and a removal tag, the **removal tag takes priority**.
 
-#### Default Language Profiles for Newly Added Content
+### Default Language Profiles for Newly Added Content
 
 Automatically apply a language profile to new content added to Bazarr.
 

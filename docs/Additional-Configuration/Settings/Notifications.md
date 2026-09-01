@@ -30,6 +30,7 @@ Advanced usage patterns are covered in the [Custom Notifications guide](../Custo
 Suppress notifications when you manually download or upload subtitles from the UI.
 
 > [!NOTE]
+>
 > - **Effect**: Only automatic searches/downloads trigger notifications
 > - **Use Case**: Reduce notification noise from manual operations
 
@@ -38,5 +39,6 @@ Suppress notifications when you manually download or upload subtitles from the U
 Send notifications even when a synced episode/movie already has all required subtitles.
 
 > [!NOTE]
+>
 > - **Default**: Off
 > - **Use Case**: Useful for workflow confirmation that Bazarr processed the content

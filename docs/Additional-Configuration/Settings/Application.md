@@ -96,6 +96,7 @@ Number of concurrent jobs allowed in the jobs manager. Bazarr will process multi
 
 > [!NOTE]
 > **Tuning Guide**
+>
 > - **Too High**: Can cause performance issues, system slowdowns, and excessive resource usage
 > - **Too Low**: Jobs remain queued longer than necessary
 > - **Recommendation**: Start with your CPU core count and adjust based on system responsiveness
@@ -142,6 +143,7 @@ Password for proxy authentication (only required if your proxy needs authenticat
 List of domains or IP addresses that should bypass the proxy. Separate multiple entries with commas.
 
 > [!NOTE]
+>
 > - Supports: Domain names, IPv4 addresses, and subdomain wildcards
 > - Not supported: Asterisk wildcards, regex, CIDR notation
 > - **Example**: `.example.com` will exclude all subdomains of example.com

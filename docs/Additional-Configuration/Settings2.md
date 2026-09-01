@@ -19,6 +19,7 @@ This comprehensive guide covers all available settings in Bazarr. Settings are o
 Connect and manage your media libraries through Sonarr (TV series) and Radarr (movies). Configure synchronization, subtitle searching, and path mappings.
 
 **Topics covered:**
+
 - Sonarr connection and synchronization options
 - Sonarr path mappings for different file access paths
 - Radarr connection and synchronization options
@@ -36,6 +37,7 @@ Connect and manage your media libraries through Sonarr (TV series) and Radarr (m
 Configure connections to external media services like Plex and Jellyfin.
 
 **Topics covered:**
+
 - Plex Media Server integration
 - Plex library configuration and automation
 - Jellyfin integration
@@ -51,6 +53,7 @@ Configure connections to external media services like Plex and Jellyfin.
 Configure subtitle languages, create language profiles, and manage language mappings.
 
 **Topics covered:**
+
 - Language selection and filtering
 - Embedded track language handling
 - Language mappings for provider compatibility
@@ -67,6 +70,7 @@ Configure subtitle languages, create language profiles, and manage language mapp
 Configure subtitle providers, translation services, anti-captcha services, and metadata sources.
 
 **Topics covered:**
+
 - Enabled subtitle providers selection
 - Automatic subtitle translation (Google Translate, Gemini, Lingarr)
 - Anti-captcha services (Anti-Captcha.com, Death by Captcha, CaptchaAI)
@@ -82,6 +86,7 @@ Configure subtitle providers, translation services, anti-captcha services, and m
 Comprehensive subtitle file management, search optimization, and post-processing.
 
 **Topics covered:**
+
 - Subtitle file storage options
 - Embedded subtitle handling
 - Search behavior and score thresholds
@@ -101,6 +106,7 @@ Comprehensive subtitle file management, search optimization, and post-processing
 Set up notification channels and configure when notifications are sent using Apprise.
 
 **Topics covered:**
+
 - Notification channel configuration (Email, Discord, Slack, Telegram, etc.)
 - Apprise integration and configuration
 - Notification filters and options
@@ -115,6 +121,7 @@ Set up notification channels and configure when notifications are sent using App
 Core Bazarr configuration including host settings, security, authentication, proxy, jobs manager, scheduler, UI preferences, and maintenance options.
 
 **Topics covered:**
+
 - Host configuration (address, port, base URL, hostname)
 - Security settings (authentication, API keys, CORS)
 - Jobs Manager configuration

@@ -46,6 +46,7 @@ Re-encode all downloaded subtitles to UTF-8 encoding.
 > [!EXAMPLE]
 > `0755` for world-readable files, `0644` for user/group readable
 
+<!-- -->
 > [!WARNING]
 > Must be a 4-digit octal number. Only works on non-Windows systems.
 
@@ -66,6 +67,7 @@ When disabled, only external subtitle files count as downloaded.
 
 > [!NOTE]
 > **Impact on Searches**
+>
 > - **Enabled**: Won't search for external subs if embedded ones exist
 > - **Disabled**: Will search for external subs even if embedded ones exist
 
@@ -137,6 +139,7 @@ When enabled, include manually downloaded and translated subtitles in upgrade se
 
 > [!NOTE]
 > **Scoring Guide**
+>
 > - **90-100%**: Strict matching, only best quality matches downloaded
 > - **75-90%**: Balanced approach, good quality matches
 > - **50-75%**: Lenient, more results but potentially lower quality
@@ -160,6 +163,7 @@ Skip searching providers for subtitles that have been searched for recently. Aft
 
 > [!NOTE]
 > **Purpose**
+>
 > - Reduces API calls to subtitle providers
 > - Improves search speed
 > - Saves bandwidth
@@ -180,6 +184,7 @@ How frequently Bazarr re-searches in adaptive mode after initial window.
 - **Options**: 3 days - 4 weeks
 
 > [!EXAMPLE]
+>
 > - Delay: 3 weeks, Delta: 1 week
 > - First search on Day 1
 > - Adaptive searching starts Day 22 (3 weeks later)
@@ -190,6 +195,7 @@ How frequently Bazarr re-searches in adaptive mode after initial window.
 Search all enabled providers in parallel instead of sequentially.
 
 > [!NOTE]
+>
 > - **Pros**: Faster overall search time
 > - **Cons**: Higher CPU usage, more simultaneous network requests
 > - **Recommendation**: Disable on low-powered devices (Raspberry Pi, NAS, older systems)
@@ -199,6 +205,7 @@ Search all enabled providers in parallel instead of sequentially.
 Skip computing video file hashes during searches.
 
 > [!NOTE]
+>
 > - **Pros**: Faster searches, prevents waking sleeping hard drives
 > - **Cons**: May reduce subtitle matching quality/accuracy
 > - **Use When**: Running on NAS with spinning drives or slow storage
@@ -219,6 +226,7 @@ When no provider reaches the minimum score, Bazarr generates subtitles using Whi
 
 > [!NOTE]
 > **Applies to**
+>
 > - Scheduled automated searches
 > - Search for Missing Subtitles tasks
 > - **NOT** to manual single searches
@@ -339,6 +347,7 @@ Choose what ffsubsync uses to align subtitles:
 Use the show/movie's original language audio track (from Sonarr/Radarr metadata) as sync reference.
 
 > [!NOTE]
+>
 > - **Benefit**: Accurate syncing for original language audio
 > - **Fallback**: Uses default audio track if original language not available
 
@@ -418,10 +427,12 @@ The script or binary to execute. Available variables include:
 | `{episode_id}`                   | Sonarr episode ID or Radarr movie ID               |
 
 > [!EXAMPLE]
+>
 > ```bash
 > python /scripts/fix_subtitles.py "{subtitles}" "{episode_language_code2}"
 > bash /usr/local/bin/post-process.sh "{subtitles}" "{episode}"
 > ```
 
+<!-- -->
 > [!WARNING]
 > Your command cannot start or end with quotes. Append `2>&1` to capture output.

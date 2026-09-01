@@ -10,17 +10,17 @@ Integrate with Plex Media Server for subtitle management in Plex libraries.
 
 Enable Plex integration.
 
-### Connection
+### Plex Connection
 
 **Authentication**
 
 Authenticate with your Plex account using OAuth (recommended). This grants Bazarr access to your Plex servers.
 
-### Server Configuration
+### Plex Server Configuration
 
 Select which Plex server Bazarr should manage subtitles for (if you have multiple).
 
-### Movie Library
+### Plex Movie Library
 
 **Library Name**
 
@@ -34,7 +34,7 @@ Updates the movie's "added date" in Plex so newly subtitled movies appear in the
 
 Refreshes the movie in Plex so the newly downloaded subtitle file is detected and made available. **Highly Recommended**.
 
-### Series Library
+### Plex Series Library
 
 **Library Name**
 
@@ -48,7 +48,7 @@ Updates the episode's "added date" in Plex so newly subtitled episodes appear in
 
 Refreshes the episode in Plex so newly downloaded subtitle files are detected. **Highly Recommended**.
 
-### Automation
+### Plex Automation
 
 **Webhooks**
 
@@ -68,17 +68,17 @@ Integrate with Jellyfin for subtitle management in Jellyfin libraries.
 
 Enable Jellyfin integration.
 
-### Connection
+### Jellyfin Connection
 
 **Authentication**
 
 Authenticate with your Jellyfin server. Configure the server address, username, and API key or access token.
 
-### Server Configuration
+### Jellyfin Server Configuration
 
 Select which Jellyfin server Bazarr should manage subtitles for (if you have multiple).
 
-### Movie Library
+### Jellyfin Movie Library
 
 **Library Name**
 
@@ -92,7 +92,7 @@ Updates the movie's "added date" in Jellyfin so newly subtitled movies appear in
 
 Refreshes the movie in Jellyfin so the newly downloaded subtitle file is detected and made available. **Highly Recommended**.
 
-### Series Library
+### Jellyfin Series Library
 
 **Library Name**
 
@@ -106,7 +106,7 @@ Updates the episode's "added date" in Jellyfin so newly subtitled episodes appea
 
 Refreshes the episode in Jellyfin so newly downloaded subtitle files are detected. **Highly Recommended**.
 
-### Automation
+### Jellyfin Automation
 
 **Webhooks**
 

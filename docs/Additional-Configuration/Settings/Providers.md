@@ -10,13 +10,16 @@ Select which subtitle providers Bazarr should use when searching for subtitles.
 
 > [!TIP]
 > **Best Practices**
+>
 > - Enable multiple providers for better coverage
 > - Create accounts with providers for faster/better results
 > - Some providers require paid anti-captcha services
 > - Support free providers when possible
 
+<!-- -->
 > [!NOTE]
 > **Provider Types**
+>
 > - **Freemium**: Free tier available, optional premium
 > - **Paid**: Requires subscription or credits
 > - **Free**: Completely free
@@ -157,11 +160,14 @@ Disable SSL/TLS certificate verification for all provider connections.
 > [!CAUTION]
 > Security risk! Only use if you understand the implications and have SSL issues with providers.
 
+<!-- -->
 > [!WARNING]
 > **When to Use**
+>
 > - Provider has self-signed certificate
 > - Corporate proxy intercepting SSL
 > - Testing/development environment
 
+<!-- -->
 > [!CAUTION]
 > Do NOT use in production unless absolutely necessary.
