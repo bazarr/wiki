@@ -171,10 +171,10 @@ To trigger subtitle searches immediately when episodes are imported (instead of 
 
     ```bash
     curl -H "Content-Type: application/json" \
-      -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
-      -X POST \
-      -d '{ "eventType": "Download", "episodeFiles": [ { "id": SONARR_EPISODEFILE_ID } ] }' \
-      http://your-bazarr-address:6767/api/webhooks/sonarr
+        -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
+        -X POST \
+        -d '{ "eventType": "Download", "episodeFiles": [ { "id": SONARR_EPISODEFILE_ID } ] }' \
+        http://your-bazarr-address:6767/api/webhooks/sonarr
     ```
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
@@ -307,10 +307,10 @@ To trigger subtitle searches immediately when movies are imported (instead of wa
 
     ```bash
     curl -H "Content-Type: application/json" \
-      -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
-      -X POST \
-      -d '{ "eventType": "Download", "movieFile": { "id": RADARR_MOVIEFILE_ID } }' \
-      http://your-bazarr-address:6767/api/webhooks/radarr
+        -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
+        -X POST \
+        -d '{ "eventType": "Download", "movieFile": { "id": RADARR_MOVIEFILE_ID } }' \
+        http://your-bazarr-address:6767/api/webhooks/radarr
     ```
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
