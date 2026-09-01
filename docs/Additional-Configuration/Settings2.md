@@ -2,16 +2,6 @@
 
 This comprehensive guide covers all available settings in Bazarr. Settings are organized into several main categories accessible from the Settings menu.
 
-## Table of Contents
-
-- [Library](#library)
-- [Integrations](#integrations)
-- [Languages](#languages)
-- [Providers](#providers)
-- [Subtitles](#subtitles)
-- [Notifications](#notifications)
-- [Application](#application)
-
 ---
 
 ## Library
@@ -139,13 +129,13 @@ Core Bazarr configuration including host settings, security, authentication, pro
 
 ### Initial Setup
 
-1. **Configure Library First** - Connect Sonarr/Radarr (TV and movies)
-2. **Test Connections** - Use test buttons to verify connectivity
-3. **Select Languages** - Enable the languages you want subtitles for
-4. **Create Language Profiles** - Define automatic subtitle selection rules
-5. **Enable Providers** - Select multiple subtitle providers for better coverage
-6. **Configure Integrations** - Set up Plex/Jellyfin if using them
-7. **Save Settings** - Always save after making changes
+1. **Configure Library First**: Connect Sonarr/Radarr (TV and movies)
+2. **Test Connections**: Use test buttons to verify connectivity
+3. **Select Languages**: Enable the languages you want subtitles for
+4. **Create Language Profiles**: Define automatic subtitle selection rules
+5. **Enable Providers**: Select multiple subtitle providers for better coverage
+6. **Configure Integrations**: Set up Plex/Jellyfin if using them
+7. **Save Settings**: Always save after making changes
 
 ### Optimization Tips
 
