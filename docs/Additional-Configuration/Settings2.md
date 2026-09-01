@@ -171,14 +171,3 @@ Core Bazarr configuration including host settings, security, authentication, pro
 - **Update Branch**: Keep Bazarr updated for bug fixes and improvements
 
 ---
-
-## Related Documentation
-
-For more detailed help and troubleshooting, see:
-
-- [Troubleshooting Guide](../Troubleshooting/Asking-for-help-or-report-a-problem.md)
-- [Setup Guide](../Getting-Started/Setup-Guide.md)
-- [Performance Tuning](../Additional-Configuration/Performance-Tuning.md)
-- [Webhooks](../Additional-Configuration/Webhooks.md)
-- [Custom Notifications](../Additional-Configuration/Custom-Notifications.md)
-- [Whisper Provider](../Additional-Configuration/Whisper-Provider.md)
