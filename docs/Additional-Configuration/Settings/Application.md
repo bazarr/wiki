@@ -15,8 +15,8 @@ Core configuration for Bazarr's network interface and basic operation.
 
 Specifies which network interface Bazarr should listen on.
 
-> [!TIP]
-> Use `*` to listen on every available IP address (recommended). If running inside a Docker container, `*` is the recommended value.
+!!! tip
+    Use `*` to listen on every available IP address (recommended). If running inside a Docker container, `*` is the recommended value.
 
 **Port**
 
@@ -28,8 +28,8 @@ The TCP port on which Bazarr will listen. Ensure this port is available and not 
 
 Allows you to serve Bazarr in a sub-directory, useful for reverse proxy setups. For example: `http://127.0.0.1:6767/bazarr/` instead of the default `http://127.0.0.1:6767/`
 
-> [!WARNING]
-> This is only necessary if you're using a reverse proxy. Otherwise, leave it empty.
+!!! warning
+    This is only necessary if you're using a reverse proxy. Otherwise, leave it empty.
 
 **Instance Name**
 
@@ -39,8 +39,8 @@ Set a custom instance name that will appear in the browser's tab title. Useful w
 
 Hostname or IP address used to access Bazarr (e.g., `bazarr.mydomain.local` or `192.168.0.100`).
 
-> [!WARNING]
-> Required for webhook security. This must be the address where external services can reach your Bazarr instance.
+!!! warning
+    Required for webhook security. This must be the address where external services can reach your Bazarr instance.
 
 ---
 
@@ -56,8 +56,8 @@ Choose how users authenticate to Bazarr:
 - **Basic Authentication**: Browser popup-based login (less secure without SSL)
 - **Forms Login**: Web form-based login (recommended)
 
-> [!CAUTION]
-> Basic authentication is not secure without SSL/TLS. If using basic auth, always pair it with a reverse proxy using SSL.
+!!! caution
+    Basic authentication is not secure without SSL/TLS. If using basic auth, always pair it with a reverse proxy using SSL.
 
 **Username**
 
@@ -80,8 +80,8 @@ Unique API key for programmatic access to Bazarr's REST API.
 
 Allow third-party applications to make cross-origin requests to Bazarr.
 
-> [!CAUTION]
-> Requires a restart of Bazarr when changed. Only enable if you understand the security implications.
+!!! caution
+    Requires a restart of Bazarr when changed. Only enable if you understand the security implications.
 
 ---
 
@@ -94,12 +94,12 @@ Allow third-party applications to make cross-origin requests to Bazarr.
 
 Number of concurrent jobs allowed in the jobs manager. Bazarr will process multiple operations simultaneously up to this limit.
 
-> [!NOTE]
-> **Tuning Guide**
->
-> - **Too High**: Can cause performance issues, system slowdowns, and excessive resource usage
-> - **Too Low**: Jobs remain queued longer than necessary
-> - **Recommendation**: Start with your CPU core count and adjust based on system responsiveness
+!!! note
+    **Tuning Guide**
+
+    - **Too High**: Can cause performance issues, system slowdowns, and excessive resource usage
+    - **Too Low**: Jobs remain queued longer than necessary
+    - **Recommendation**: Start with your CPU core count and adjust based on system responsiveness
 
 ---
 
@@ -142,12 +142,12 @@ Password for proxy authentication (only required if your proxy needs authenticat
 
 List of domains or IP addresses that should bypass the proxy. Separate multiple entries with commas.
 
-> [!NOTE]
->
-> - Supports: Domain names, IPv4 addresses, and subdomain wildcards
-> - Not supported: Asterisk wildcards, regex, CIDR notation
-> - **Example**: `.example.com` will exclude all subdomains of example.com
-> - **Example**: `192.168.1.1` will exclude that specific IP
+!!! note
+
+    - Supports: Domain names, IPv4 addresses, and subdomain wildcards
+    - Not supported: Asterisk wildcards, regex, CIDR notation
+    - **Example**: `.example.com` will exclude all subdomains of example.com
+    - **Example**: `192.168.1.1` will exclude that specific IP
 
 ---
 
@@ -162,8 +162,8 @@ When enabled, Bazarr sends anonymous usage information to help the developers:
 - Bazarr, Python, Sonarr, and Radarr versions
 - Operating system information
 
-> [!TIP]
-> Keep this enabled. It's the primary way developers understand how Bazarr is used and helps prioritize features and bug fixes. No personally identifying information is collected.
+!!! tip
+    Keep this enabled. It's the primary way developers understand how Bazarr is used and helps prioritize features and bug fixes. No personally identifying information is collected.
 
 ---
 
@@ -189,8 +189,8 @@ Controls the "LIVE" badge that appears when SignalR connection is active:
 - **Always**: Always show the badge
 - **Never**: Never show the badge
 
-> [!NOTE]
-> The "DOWN" badge always appears when SignalR is disconnected, regardless of this setting.
+!!! note
+    The "DOWN" badge always appears when SignalR is disconnected, regardless of this setting.
 
 ---
 
@@ -222,8 +222,8 @@ How often Bazarr scans the disk to detect subtitle files for episodes. This refr
 
 When enabled, Bazarr caches embedded subtitle detection results to reduce disk I/O. When disabled, Bazarr re-analyzes all files each run.
 
-> [!WARNING]
-> Disabling this increases disk I/O significantly, which can impact system performance and wake sleeping hard drives.
+!!! warning
+    Disabling this increases disk I/O significantly, which can impact system performance and wake sleeping hard drives.
 
 **Update All Movie Subtitles from Disk**
 
@@ -249,8 +249,8 @@ How often Bazarr searches for better-quality versions of already-downloaded subt
 
 Absolute path to the directory where Bazarr should store backup files. Must be writable by the Bazarr process.
 
-> [!EXAMPLE]
-> `/backup/bazarr` or `C:\Backups\Bazarr`
+!!! example
+    `/backup/bazarr` or `C:\Backups\Bazarr`
 
 **Retention**
 
@@ -287,8 +287,8 @@ Enable automatic downloading and installation of Bazarr updates. Bazarr will res
 
 Enable debug-level logging for detailed troubleshooting. This significantly increases log file size.
 
-> [!TIP]
-> Only enable temporarily for troubleshooting. Disable after collecting logs.
+!!! tip
+    Only enable temporarily for troubleshooting. Disable after collecting logs.
 
 **Include Filter**
 

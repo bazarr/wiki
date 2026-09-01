@@ -8,22 +8,22 @@ Configure subtitle providers, translation services, anti-captcha services, and m
 
 Select which subtitle providers Bazarr should use when searching for subtitles.
 
-> [!TIP]
-> **Best Practices**
->
-> - Enable multiple providers for better coverage
-> - Create accounts with providers for faster/better results
-> - Some providers require paid anti-captcha services
-> - Support free providers when possible
+!!! tip
+    **Best Practices**
+
+    - Enable multiple providers for better coverage
+    - Create accounts with providers for faster/better results
+    - Some providers require paid anti-captcha services
+    - Support free providers when possible
 
 <!-- -->
-> [!NOTE]
-> **Provider Types**
->
-> - **Freemium**: Free tier available, optional premium
-> - **Paid**: Requires subscription or credits
-> - **Free**: Completely free
-> - **Special**: Unique providers like embedded subtitle extractors
+!!! note
+    **Provider Types**
+
+    - **Freemium**: Free tier available, optional premium
+    - **Paid**: Requires subscription or credits
+    - **Free**: Completely free
+    - **Special**: Unique providers like embedded subtitle extractors
 
 ---
 
@@ -62,15 +62,15 @@ Number of subtitle lines sent per API request.
 - **Higher values**: Fewer API calls, faster but risk timeouts
 - **Lower values**: More API calls, slower but more reliable
 
-> [!TIP]
-> Start with 300, adjust based on success/timeout rates.
+!!! tip
+    Start with 300, adjust based on success/timeout rates.
 
 **Gemini API Keys**
 
 Add API keys generated from https://aistudio.google.com/apikey
 
-> [!NOTE]
-> Bazarr rotates across multiple keys for rate limiting.
+!!! note
+    Bazarr rotates across multiple keys for rate limiting.
 
 **Add Translation Info at Beginning**
 
@@ -112,8 +112,8 @@ Choose your anti-captcha service:
 
 Your Anti-Captcha account key (API key)
 
-> [!TIP]
-> Register at [Anti-Captcha.com](http://getcaptchasolution.com/eixxo1rsnw)
+!!! tip
+    Register at [Anti-Captcha.com](http://getcaptchasolution.com/eixxo1rsnw)
 
 #### Death by Captcha Configuration
 
@@ -157,17 +157,17 @@ Examples include:
 
 Disable SSL/TLS certificate verification for all provider connections.
 
-> [!CAUTION]
-> Security risk! Only use if you understand the implications and have SSL issues with providers.
+!!! caution
+    Security risk! Only use if you understand the implications and have SSL issues with providers.
 
 <!-- -->
-> [!WARNING]
-> **When to Use**
->
-> - Provider has self-signed certificate
-> - Corporate proxy intercepting SSL
-> - Testing/development environment
+!!! warning
+    **When to Use**
+
+    - Provider has self-signed certificate
+    - Corporate proxy intercepting SSL
+    - Testing/development environment
 
 <!-- -->
-> [!CAUTION]
-> Do NOT use in production unless absolutely necessary.
+!!! caution
+    Do NOT use in production unless absolutely necessary.

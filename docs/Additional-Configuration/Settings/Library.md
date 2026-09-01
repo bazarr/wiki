@@ -21,8 +21,8 @@ Connect Bazarr to your Sonarr instance for automatic TV show subtitle management
 
 Toggle **Enabled** to activate Sonarr integration with Bazarr.
 
-> [!NOTE]
-> Once enabled, Bazarr will sync with Sonarr to get information about your TV series and episodes.
+!!! note
+    Once enabled, Bazarr will sync with Sonarr to get information about your TV series and episodes.
 
 ### Sonarr Host Configuration
 
@@ -30,8 +30,8 @@ Toggle **Enabled** to activate Sonarr integration with Bazarr.
 
 Hostname or IPv4 address where Sonarr is running (e.g., `sonarr.example.com` or `192.168.1.100`)
 
-> [!WARNING]
-> **Docker Users**: Cannot use loopback addresses (127.0.0.1, localhost) to reach other containers. Use the container name or internal IP address instead.
+!!! warning
+    **Docker Users**: Cannot use loopback addresses (127.0.0.1, localhost) to reach other containers. Use the container name or internal IP address instead.
 
 **Port**
 
@@ -43,8 +43,8 @@ TCP port Sonarr is listening on.
 
 If Sonarr is behind a reverse proxy with a path prefix (e.g., `http://example.com/sonarr`), enter `/sonarr` here.
 
-> [!WARNING]
-> Don't forget the leading slash. Make sure this exactly matches your Sonarr configuration.
+!!! warning
+    Don't forget the leading slash. Make sure this exactly matches your Sonarr configuration.
 
 **HTTP Timeout**
 
@@ -62,8 +62,8 @@ Enable if Sonarr is accessed via HTTPS. Not needed for local IP addresses.
 
 Click the test button after configuration. A successful test confirms Bazarr can reach Sonarr and authenticate properly.
 
-> [!IMPORTANT]
-> Always test the connection before proceeding with the rest of the setup.
+!!! important
+    Always test the connection before proceeding with the rest of the setup.
 
 ### Sonarr Synchronization Options
 
@@ -71,19 +71,19 @@ Click the test button after configuration. A successful test confirms Bazarr can
 
 When Bazarr connects or reconnects to Sonarr, immediately perform a full sync to ensure data is current.
 
-> [!NOTE]
-> Enable this to ensure Bazarr has the latest series and episode information immediately after startup.
+!!! note
+    Enable this to ensure Bazarr has the latest series and episode information immediately after startup.
 
 **Excluded Tags**
 
 Episodes from series with these tags (case-sensitive) in Sonarr will be excluded from subtitle searches and downloads. Tags are user-defined in Sonarr and help categorize series.
 
-> [!EXAMPLE]
-> If you tag anime series with "anime" in Sonarr, add "anime" here to exclude them from automatic downloads. Tags are case-sensitive.
+!!! example
+    If you tag anime series with "anime" in Sonarr, add "anime" here to exclude them from automatic downloads. Tags are case-sensitive.
 
 <!-- -->
-> [!TIP]
-> Use multiple tags separated by commas. For example: `anime, no-subs, manual-only`
+!!! tip
+    Use multiple tags separated by commas. For example: `anime, no-subs, manual-only`
 
 **Excluded Series Types**
 
@@ -93,43 +93,43 @@ Automatically exclude certain series types from subtitle searches:
 - **Anime**: Anime series (often have different naming conventions)
 - **Daily**: Daily news/sports programs (e.g., news broadcasts, sports events)
 
-> [!EXAMPLE]
-> If you don't want Bazarr to search subtitles for anime series, select "Anime" here.
+!!! example
+    If you don't want Bazarr to search subtitles for anime series, select "Anime" here.
 
 **Download Only Monitored**
 
 Only search for subtitles for episodes marked as monitored in Sonarr. Useful if you want to exclude archived series or specific seasons.
 
-> [!NOTE]
-> Monitored status is configured per series and per episode in Sonarr. Only episodes marked as monitored will have subtitles downloaded.
+!!! note
+    Monitored status is configured per series and per episode in Sonarr. Only episodes marked as monitored will have subtitles downloaded.
 
 **Sync Only Monitored Series**
 
 Only synchronize series marked as monitored in Sonarr. Allows you to keep unmonitored series excluded from Bazarr's consideration entirely.
 
-> [!TIP]
-> If you update an unmonitored series in Sonarr and want Bazarr to know about it, toggle its monitored status briefly in Sonarr and Bazarr will sync the changes.
+!!! tip
+    If you update an unmonitored series in Sonarr and want Bazarr to know about it, toggle its monitored status briefly in Sonarr and Bazarr will sync the changes.
 
 **Sync Only Monitored Episodes**
 
 Combined with "Sync Only Monitored Series", only syncs episodes that are individually monitored. Especially useful for long-running shows like Saturday Night Live where you only want current season episodes synced.
 
-> [!NOTE]
-> This prevents Bazarr from trying to download subtitles for archived episodes of long-running shows.
+!!! note
+    This prevents Bazarr from trying to download subtitles for archived episodes of long-running shows.
 
 **Defer Searching of Subtitles Until Scheduled Task Execution**
 
 When enabled, Bazarr won't search for subtitles immediately when episodes are imported into Sonarr. Instead, searches happen only during scheduled tasks. This prevents immediate API strain when importing many episodes at once.
 
-> [!NOTE]
-> Use this if you do bulk imports to Sonarr and want to avoid overwhelming subtitle providers with simultaneous requests.
+!!! note
+    Use this if you do bulk imports to Sonarr and want to avoid overwhelming subtitle providers with simultaneous requests.
 
 **Exclude Season Zero (Extras)**
 
 Season 0 contains specials, extras, behind-the-scenes content, and bonus episodes. Enable this to exclude these from subtitle searches and downloads.
 
-> [!EXAMPLE]
-> Most users enable this since extras rarely need subtitles and they can clutter search results.
+!!! example
+    Most users enable this since extras rarely need subtitles and they can clutter search results.
 
 ### Sonarr Path Mappings
 
@@ -141,8 +141,8 @@ Use this section only if Sonarr and Bazarr access the same files using different
 - NAS accessed differently from Sonarr vs Bazarr
 - Using Docker containers with different volume mounts
 
-> [!CAUTION]
-> **IF YOU HAVE THE SAME PATHS ON BOTH SIDES, YOU DON'T NEED PATH MAPPINGS!** Having identical paths on both sides when you don't need mapping will cause errors and prevent subtitle detection.
+!!! caution
+    **IF YOU HAVE THE SAME PATHS ON BOTH SIDES, YOU DON'T NEED PATH MAPPINGS!** Having identical paths on both sides when you don't need mapping will cause errors and prevent subtitle detection.
 
 **Adding a Path Mapping**
 
@@ -153,29 +153,29 @@ Click "Add" to create a new mapping:
 
 Bazarr will translate between these paths when checking file properties and downloading subtitles.
 
-> [!EXAMPLE]
->
-> - If Sonarr uses `/media/tv_shows/` and Bazarr uses `\\nas\tv\`, create a mapping between these base paths
-> - Bazarr will then translate `/media/tv_shows/Breaking_Bad/Season01/` to `\\nas\tv\Breaking_Bad\Season01\` automatically
-> - This allows both systems to find and work with the same files
+!!! example
+
+    - If Sonarr uses `/media/tv_shows/` and Bazarr uses `\\nas\tv\`, create a mapping between these base paths
+    - Bazarr will then translate `/media/tv_shows/Breaking_Bad/Season01/` to `\\nas\tv\Breaking_Bad\Season01\` automatically
+    - This allows both systems to find and work with the same files
 
 <!-- -->
-> [!NOTE]
-> For Docker setups with consistent volume mounts, path mappings are usually not needed. Please review TRaSH's [Hardlink Tutorial](https://trash-guides.info/hardlinks) for best practices.
+!!! note
+    For Docker setups with consistent volume mounts, path mappings are usually not needed. Please review TRaSH's [Hardlink Tutorial](https://trash-guides.info/hardlinks) for best practices.
 
 ### Sonarr Webhook Integration
 
 To trigger subtitle searches immediately when episodes are imported (instead of waiting for scheduled tasks), use this webhook command in Sonarr:
 
-> [!EXAMPLE]
->
-> ```bash
-> curl -H "Content-Type: application/json" \
->   -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
->   -X POST \
->   -d '{ "eventType": "Download", "episodeFiles": [ { "id": SONARR_EPISODEFILE_ID } ] }' \
->   http://your-bazarr-address:6767/api/webhooks/sonarr
-> ```
+!!! example
+
+    ```bash
+    curl -H "Content-Type: application/json" \
+      -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
+      -X POST \
+      -d '{ "eventType": "Download", "episodeFiles": [ { "id": SONARR_EPISODEFILE_ID } ] }' \
+      http://your-bazarr-address:6767/api/webhooks/sonarr
+    ```
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
 
@@ -189,8 +189,8 @@ Configure Bazarr to manage subtitles for movies through Radarr.
 
 Toggle **Enabled** to activate Radarr integration with Bazarr.
 
-> [!NOTE]
-> Once enabled, Bazarr will sync with Radarr to get information about your movies.
+!!! note
+    Once enabled, Bazarr will sync with Radarr to get information about your movies.
 
 ### Radarr Host Configuration
 
@@ -198,8 +198,8 @@ Toggle **Enabled** to activate Radarr integration with Bazarr.
 
 Hostname or IPv4 address where Radarr is running (e.g., `radarr.example.com` or `192.168.1.100`)
 
-> [!WARNING]
-> **Docker Users**: Cannot use loopback addresses (127.0.0.1, localhost) to reach other containers. Use the container name or internal IP address instead.
+!!! warning
+    **Docker Users**: Cannot use loopback addresses (127.0.0.1, localhost) to reach other containers. Use the container name or internal IP address instead.
 
 **Port**
 
@@ -211,8 +211,8 @@ TCP port Radarr is listening on. Note this is different from Sonarr's default po
 
 If Radarr is behind a reverse proxy with a path prefix (e.g., `http://example.com/radarr`), enter `/radarr` here.
 
-> [!WARNING]
-> Don't forget the leading slash. Make sure this exactly matches your Radarr configuration.
+!!! warning
+    Don't forget the leading slash. Make sure this exactly matches your Radarr configuration.
 
 **HTTP Timeout**
 
@@ -230,8 +230,8 @@ Enable if Radarr is accessed via HTTPS. Not needed for local IP addresses.
 
 Click the test button after configuration. A successful test confirms Bazarr can reach Radarr and authenticate properly.
 
-> [!IMPORTANT]
-> Always test the connection before proceeding with the rest of the setup.
+!!! important
+    Always test the connection before proceeding with the rest of the setup.
 
 ### Radarr Synchronization Options
 
@@ -239,47 +239,47 @@ Click the test button after configuration. A successful test confirms Bazarr can
 
 When Bazarr connects or reconnects to Radarr, immediately perform a full sync to ensure data is current.
 
-> [!NOTE]
-> Enable this to ensure Bazarr has the latest movie information immediately after startup.
+!!! note
+    Enable this to ensure Bazarr has the latest movie information immediately after startup.
 
 **Excluded Tags**
 
 Movies with these tags (case-sensitive) in Radarr will be excluded from subtitle searches and downloads. Tags are user-defined in Radarr and help categorize movies.
 
-> [!EXAMPLE]
-> If you tag foreign language films with "original-lang" in Radarr, add "original-lang" here to exclude them from automatic downloads if you only want subtitles for English movies.
+!!! example
+    If you tag foreign language films with "original-lang" in Radarr, add "original-lang" here to exclude them from automatic downloads if you only want subtitles for English movies.
 
 <!-- -->
-> [!TIP]
-> Use multiple tags separated by commas. For example: `no-subs, manual-only, dubbed-only`
+!!! tip
+    Use multiple tags separated by commas. For example: `no-subs, manual-only, dubbed-only`
 
 **Download Only Monitored**
 
 Only search for subtitles for movies marked as monitored in Radarr. Useful if you want to exclude certain movies from automatic subtitle downloads.
 
-> [!NOTE]
-> Monitored status is configured per movie in Radarr. Only movies marked as monitored will have subtitles downloaded automatically.
+!!! note
+    Monitored status is configured per movie in Radarr. Only movies marked as monitored will have subtitles downloaded automatically.
 
 **Sync Only Monitored Movies**
 
 Only synchronize movies marked as monitored in Radarr. Allows you to keep unmonitored movies excluded from Bazarr's consideration entirely.
 
-> [!TIP]
-> If you add or update a movie in Radarr and want Bazarr to immediately sync it, ensure the movie is marked as monitored in Radarr.
+!!! tip
+    If you add or update a movie in Radarr and want Bazarr to immediately sync it, ensure the movie is marked as monitored in Radarr.
 
 **Defer Searching of Subtitles Until Scheduled Task Execution**
 
 When enabled, Bazarr won't search for subtitles immediately when movies are imported into Radarr. Instead, searches happen only during scheduled tasks. This prevents immediate API strain when importing many movies at once.
 
-> [!NOTE]
-> Use this if you do bulk imports to Radarr and want to avoid overwhelming subtitle providers with simultaneous requests.
+!!! note
+    Use this if you do bulk imports to Radarr and want to avoid overwhelming subtitle providers with simultaneous requests.
 
 ### Radarr Path Mappings
 
 Use the same approach as Sonarr for path mappings when Radarr and Bazarr access files differently.
 
-> [!CAUTION]
-> **IF YOU HAVE THE SAME PATHS ON BOTH SIDES, YOU DON'T NEED PATH MAPPINGS!** Having identical paths on both sides when you don't need mapping will cause errors.
+!!! caution
+    **IF YOU HAVE THE SAME PATHS ON BOTH SIDES, YOU DON'T NEED PATH MAPPINGS!** Having identical paths on both sides when you don't need mapping will cause errors.
 
 **Adding a Path Mapping**
 
@@ -290,28 +290,28 @@ Click "Add" to create a new mapping:
 
 Bazarr will translate between these paths when checking file properties and downloading subtitles.
 
-> [!EXAMPLE]
->
-> - If Radarr uses `/media/movies/` and Bazarr uses `\\nas\films\`, create a mapping between these paths
-> - Bazarr will then translate `/media/movies/Inception.mkv` to `\\nas\films\Inception.mkv` automatically
+!!! example
+
+    - If Radarr uses `/media/movies/` and Bazarr uses `\\nas\films\`, create a mapping between these paths
+    - Bazarr will then translate `/media/movies/Inception.mkv` to `\\nas\films\Inception.mkv` automatically
 
 <!-- -->
-> [!NOTE]
-> For Docker setups with consistent volume mounts, path mappings are usually not needed.
+!!! note
+    For Docker setups with consistent volume mounts, path mappings are usually not needed.
 
 ### Radarr Webhook Integration
 
 To trigger subtitle searches immediately when movies are imported (instead of waiting for scheduled tasks), use this webhook command in Radarr:
 
-> [!EXAMPLE]
->
-> ```bash
-> curl -H "Content-Type: application/json" \
->   -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
->   -X POST \
->   -d '{ "eventType": "Download", "movieFile": { "id": RADARR_MOVIEFILE_ID } }' \
->   http://your-bazarr-address:6767/api/webhooks/radarr
-> ```
+!!! example
+
+    ```bash
+    curl -H "Content-Type: application/json" \
+      -H "X-API-KEY: YOUR_BAZARR_API_KEY" \
+      -X POST \
+      -d '{ "eventType": "Download", "movieFile": { "id": RADARR_MOVIEFILE_ID } }' \
+      http://your-bazarr-address:6767/api/webhooks/radarr
+    ```
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
 
@@ -329,8 +329,8 @@ If Bazarr cannot connect to Sonarr or Radarr:
 4. **Firewall**: Check that firewalls aren't blocking connections
 5. **Docker Networking**: For Docker users, verify container networking is set up correctly
 
-> [!TIP]
-> Check the Bazarr logs (enable Debug mode in Application > Maintenance) for detailed connection error messages.
+!!! tip
+    Check the Bazarr logs (enable Debug mode in Application > Maintenance) for detailed connection error messages.
 
 ### Synchronization Issues
 
