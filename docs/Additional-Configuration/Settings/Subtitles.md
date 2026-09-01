@@ -13,13 +13,13 @@ Manage how subtitle files are stored, formatted, and processed on disk.
 Choose where to store downloaded subtitles:
 
 - **AlongSide Media File** (recommended): Same folder as the video file. Best for media player compatibility and keeping everything organized.
-  - Example: `/videos/Movies/Inception/` contains `Inception.mkv` and `Inception.en.srt`
+    - Example: `/videos/Movies/Inception/` contains `Inception.mkv` and `Inception.en.srt`
 
 - **Relative Path to Media File**: Store subtitles in a subfolder relative to the video file
-  - Example: Subtitles in `./Subs/` subdirectory
+    - Example: Subtitles in `./Subs/` subdirectory
 
 - **Absolute Path**: Store all subtitles in a custom directory
-  - Must specify the absolute path in "Custom Subtitles Folder"
+    - Must specify the absolute path in "Custom Subtitles Folder"
 
 **Hearing-Impaired Subtitles Extension**
 

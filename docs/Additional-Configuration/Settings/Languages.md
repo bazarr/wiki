@@ -73,9 +73,9 @@ Each profile consists of:
 1. **Profile Name**: A descriptive name (e.g., "English + French", "Spanish Only")
 
 2. **Languages**: The languages to include. For each language, configure:
-   - **Forced Subtitles**: Include forced subtitles (subtitles appearing when characters speak foreign languages or for text in scenes)
-   - **Hearing Impaired (HI)**: Include hearing-impaired subtitles for accessibility
-   - **Exclude Audio**: Don't download subtitles for this language if the audio matches it
+    - **Forced Subtitles**: Include forced subtitles (subtitles appearing when characters speak foreign languages or for text in scenes)
+    - **Hearing Impaired (HI)**: Include hearing-impaired subtitles for accessibility
+    - **Exclude Audio**: Don't download subtitles for this language if the audio matches it
 
 3. **Cutoff Language**: (Optional) Stop searching other languages once this language is found
 
