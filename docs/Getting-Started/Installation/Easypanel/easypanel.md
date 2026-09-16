@@ -4,5 +4,7 @@
 
 [![Deploy on Easypanel](https://easypanel.io/img/deploy-on-easypanel-40.svg)](https://easypanel.io/templates/bazarr)
 
+![Bazarr running in the Easypanel panel](images/easypanel-panel.png)
+
 !!! info
     Bazarr does not scan the disk to detect series and movies - point the `/movies` and `/tv` volumes at libraries already managed by Sonarr/Radarr.
