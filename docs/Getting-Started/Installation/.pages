@@ -7,3 +7,4 @@ nav:
     - MacOS: /Getting-Started/Installation/MacOS/macos
     - FreeBSD: /Getting-Started/Installation/FreeBSD/freebsd
     - Synology: /Getting-Started/Installation/Synology/synology
+    - Easypanel: /Getting-Started/Installation/Easypanel/easypanel
