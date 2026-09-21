@@ -1,6 +1,6 @@
 title: Additional Configuration
 nav:
-    - Settings: /Additional-Configuration/Settings
+    - Settings
     - Plex.md
     - Jellyfin.md
     - Webhooks.md
