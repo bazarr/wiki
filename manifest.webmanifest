@@ -1,0 +1,15 @@
+{
+    "name": "Bazarr Wiki",
+    "short_name": "Bazarr",
+    "description": "Wiki for Bazarr, Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.",
+    "icons": [
+      {
+        "src": "img/logo.png",
+        "sizes": "200x200",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#911F93",
+    "background_color": "#ffffff",
+    "display": "standalone"
+  }
