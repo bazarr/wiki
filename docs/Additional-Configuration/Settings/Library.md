@@ -11,6 +11,9 @@ Bazarr integrates with Sonarr and Radarr to automatically manage subtitles for y
 
 Once connected, Bazarr can automatically search for and download subtitles based on your configured language profiles and providers.
 
+!!! info "How Bazarr connects"
+    Bazarr reads your library through the Sonarr/Radarr API and listens to their read-only SignalR event feed for live updates. See [How Bazarr Connects to Sonarr and Radarr](/Getting-Started/How-Bazarr-Connects-to-Sonarr-and-Radarr/) for what that means for security, scheduling and the `LIVE`/`DOWN`/`OFF` badges.
+
 ---
 
 ## Sonarr
@@ -165,7 +168,7 @@ Bazarr will translate between these paths when checking file properties and down
 
 ### Sonarr Webhook Integration
 
-To trigger subtitle searches immediately when episodes are imported (instead of waiting for scheduled tasks), use this webhook command in Sonarr:
+To trigger an additional subtitle search as soon as an episode is imported, use this webhook command in Sonarr:
 
 !!! example
 
@@ -176,6 +179,9 @@ To trigger subtitle searches immediately when episodes are imported (instead of 
         -d '{ "eventType": "Download", "episodeFiles": [ { "id": SONARR_EPISODEFILE_ID } ] }' \
         http://your-bazarr-address:6767/api/webhooks/sonarr
     ```
+
+!!! note
+    Bazarr matches `episodeFiles[].id` against its database. When it hasn't synced that file yet, include the matching `episodes[].id` in the payload so Bazarr can sync the episode first; otherwise the event is skipped.
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
 
@@ -301,7 +307,7 @@ Bazarr will translate between these paths when checking file properties and down
 
 ### Radarr Webhook Integration
 
-To trigger subtitle searches immediately when movies are imported (instead of waiting for scheduled tasks), use this webhook command in Radarr:
+To trigger an additional subtitle search as soon as a movie is imported, use this webhook command in Radarr:
 
 !!! example
 
@@ -312,6 +318,9 @@ To trigger subtitle searches immediately when movies are imported (instead of wa
         -d '{ "eventType": "Download", "movieFile": { "id": RADARR_MOVIEFILE_ID } }' \
         http://your-bazarr-address:6767/api/webhooks/radarr
     ```
+
+!!! note
+    Bazarr matches `movieFile.id` against its database. When it hasn't synced that file yet, include `movie.id` in the payload so Bazarr can sync the movie first; otherwise the event is skipped.
 
 See [Webhooks](../Webhooks.md) for more details on setting up webhook notifications.
 

@@ -2,4 +2,5 @@ nav:
     - Installation
     - Setup Guide: Setup-Guide.md
     - First time installation configuration: First-time-installation-configuration.md
+    - How Bazarr connects to Sonarr and Radarr: How-Bazarr-Connects-to-Sonarr-and-Radarr.md
     - Autostart
