@@ -183,14 +183,13 @@ Number of items displayed per page in list views (tables).
 
 **Show Live Badge**
 
-Controls the "LIVE" badge that appears when SignalR connection is active:
+Controls whether the "LIVE" badge appears while Bazarr is connected to Sonarr or Radarr:
 
-- **Auto**: Show when connected
-- **Always**: Always show the badge
-- **Never**: Never show the badge
+- **Show Live Badge When SignalR is Connected**: Show `LIVE` while the live feed is connected.
+- **Don't Show Live Badge When SignalR is Connected**: Hide `LIVE` while the feed is connected.
 
 !!! note
-    The "DOWN" badge always appears when SignalR is disconnected, regardless of this setting.
+    `DOWN` (feed unreachable) and `OFF` (real-time updates disabled with `--no-signalr` or `NO_SIGNALR=true`) are always shown, regardless of this setting. `NO_SIGNALR` and the `OFF` badge are upcoming features and are not in released builds yet.
 
 ---
 
