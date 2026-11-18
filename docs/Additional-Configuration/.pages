@@ -1,6 +1,7 @@
 title: Additional Configuration
 nav:
     - Settings
+    - OpenID-Connect.md
     - Plex.md
     - Jellyfin.md
     - Webhooks.md

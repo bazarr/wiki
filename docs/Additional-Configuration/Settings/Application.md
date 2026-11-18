@@ -55,17 +55,18 @@ Choose how users authenticate to Bazarr:
 - **No Authentication**: Anyone with access to the URL can use Bazarr
 - **Basic Authentication**: Browser popup-based login (less secure without SSL)
 - **Forms Login**: Web form-based login (recommended)
+- **OpenID Connect (OIDC)**: Sign in through an identity provider, such as Pocket ID. See [OpenID Connect authentication](../OpenID-Connect.md) for availability, provider setup, allowed identities, and recovery.
 
 !!! caution
     Basic authentication is not secure without SSL/TLS. If using basic auth, always pair it with a reverse proxy using SSL.
 
 **Username**
 
-Username required to access Bazarr when authentication is enabled.
+Username required for Basic Authentication or Forms Login. OIDC uses the identity provider's account instead.
 
 **Password**
 
-Password required to access Bazarr when authentication is enabled.
+Password required for Basic Authentication or Forms Login. Local password login is disabled while OIDC is selected.
 
 **API Key**
 
